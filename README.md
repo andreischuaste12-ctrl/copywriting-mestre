@@ -1,7 +1,5 @@
 # Copywriter Master
 
-**Author and copyright holder: Andrei Schuaste.** Version **1.2.0** · **Apache-2.0**.
-
 Copywriter Master is an instruction skill for AI assistants. It helps an assistant plan, write, and review commercial copy using audience research, clear strategy, human language, and evidence-aware claims. It is an instruction package with an optional local validator for structured briefs and draft outputs. It does not guarantee conversion; outcomes also depend on the offer, audience, channel, and execution.
 
 ## What the skill does
