@@ -269,6 +269,8 @@ Não é possível produzir um ranking histórico objetivo: os meios, métricas, 
 | **Dan Kennedy** | Oferta e marketing direto para negócios. | *The Ultimate Sales Letter* |
 | **Joanna Wiebe** | Pesquisa, mensagem e otimização de copy digital. | [Copyhackers](https://copyhackers.com/about-copy-hackers/) |
 
+Perfis operacionais de cada profissional (princípios, quando invocar, como aplicar): pasta `mestres/`, começando por `mestres/_indice.md`. Links consolidados: `fontes.md`.
+
 ### Como interpretar as atribuições
 
 - **AIDA:** a atribuição tradicional a Lewis é debatida; use o modelo sem repetir uma origem como fato incontestável. [Pesquisa histórica](https://ojs.library.carleton.ca/index.php/pcharm/article/view/4340/3310).

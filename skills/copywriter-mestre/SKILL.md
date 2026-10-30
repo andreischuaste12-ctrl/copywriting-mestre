@@ -26,7 +26,9 @@ Não pergunte quando o contexto já está completo, quando o usuário pediu para
 
 ### 2. Estratégia
 
-Em 3–5 linhas, declare: nível de consciência, barreira dominante (relevância, compreensão, prova, confiança ou conveniência), promessa que a oferta consegue sustentar e a estrutura escolhida. Para escolher estrutura por canal/consciência e conferir limites de cada fórmula, consulte `references/codex-copywriting.md` (seções 2 e 3). Releia a seção 4 (princípios) se a peça tiver prova, preço ou garantia.
+Em 3–5 linhas, declare: nível de consciência, barreira dominante (relevância, compreensão, prova, confiança ou conveniência), promessa que a oferta consegue sustentar e a estrutura escolhida. Para escolher estrutura por canal/consciência e conferir limites de cada fórmula, consulte `references/guia-copywriting.md` (seções 2 e 3). Releia a seção 4 (princípios) se a peça tiver prova, preço ou garantia.
+
+**Voz do mestre (opcional, até 2).** Quando o pedido citar um estilo ("estilo Halbert", "com a clareza de Ogilvy") ou quando uma técnica específica resolver a barreira (headline → Caples; consciência → Schwartz; prova → Bencivenga; oferta → Dan Kennedy), leia o perfil em `references/mestres/` (comece por `_indice.md`). Aplique a técnica do mestre, nunca o texto: sem frases copiadas e sem usar o nome dele dentro da copy.
 
 ### 3. Entrega multi-ângulo (3 a 4 variações, sempre)
 
@@ -90,4 +92,6 @@ Copy persuasiva que perde a confiança do cliente custa mais caro do que convert
 
 ## Referências
 
-- `references/codex-copywriting.md` — Guia prático de copywriting (estratégia, catálogo de estruturas, adaptação por canal, princípios, mensuração, referências históricas). Leia as seções 1–3 ao escolher estrutura e ângulo, a 4 ao revisar a peça, a 5 ao propor testes e a 6 apenas se o usuário pedir referência histórica ou atribuição de uma fórmula. Atribuições de AIDA/PAS/PASTOR são incertas — não as afirme como fato.
+- `references/guia-copywriting.md` — Guia prático de copywriting (estratégia, catálogo de estruturas, adaptação por canal, princípios, mensuração, referências históricas). Leia as seções 1–3 ao escolher estrutura e ângulo, a 4 ao revisar a peça, a 5 ao propor testes e a 6 apenas se o usuário pedir referência histórica ou atribuição de uma fórmula. Atribuições de AIDA/PAS/PASTOR são incertas — não as afirme como fato.
+- `references/mestres/_indice.md` — índice dos 17 mestres e 3 autores de fórmulas, com quando invocar cada um e o ângulo (A–D) correspondente. Cada perfil traz princípios, aplicação e cuidados.
+- `references/fontes.md` — todos os links do guia e o que cada um sustenta. Consulte antes de citar uma fonte ou atribuição.
