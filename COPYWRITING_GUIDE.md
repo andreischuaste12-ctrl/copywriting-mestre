@@ -33,6 +33,8 @@ Compare the offer with what the reader currently does, including doing nothing. 
 
 ## 3. Choose a strategy, not a pile of formulas
 
+AIDA, PAS and BAB are examples, not a limit. Any advertising or copywriting framework may be used when it fits the objective, audience, offer, channel and available proof, including frameworks outside this guide. A named formula is optional; adapt or combine structures only when that improves the message.
+
 Use specificity, contrast, curiosity, demonstration, proof, legitimate urgency, and risk reduction only where they fit the offer and decision stage. Do not stack formulas to make copy appear persuasive.
 
 Build one central argument:

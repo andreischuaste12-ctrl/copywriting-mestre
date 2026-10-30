@@ -18,6 +18,8 @@ Market sophistication describes how familiar the audience is with repeated categ
 
 ## 2. Choose a structure only when it helps
 
+The structures below are illustrative, not exhaustive. Use any suitable advertising or copywriting framework, including one not listed here, and honor a requested framework when it fits the brief. Adapt or combine structures when helpful; do not force a named formula onto a task that works better with a direct message. Audience, objective, offer, channel, evidence and user constraints determine the choice.
+
 | Structure | Sequence | Useful for | Limit |
 |---|---|---|---|
 | AIDA | Attention → Interest → Desire → Action | Simple persuasive flow | Traditional attribution to E. St. Elmo Lewis is debated; stages are not mandatory |

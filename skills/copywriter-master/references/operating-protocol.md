@@ -13,6 +13,8 @@ The user's requested language, quantity, format, and scope override the default 
 7. **CTA:** Match the requested conversion action and actual destination. Problem exploration may lead to learning or viewing a demonstration; an evaluated offer may lead to a quote or trial; a purchase-ready offer may lead to purchase. Do not promise free access, a refund, or no commitment unless confirmed. Do not change the action merely to match this default.
 8. **Risk and format:** Confirm relevant market/category/channel permissions; enforce length, quantity, exact figures and language. Apply quality-rubric.md and revise before delivery.
 
+Choose any advertising/copywriting framework that supports the selected message, including frameworks outside the reference library; AIDA, PAS and BAB are examples. The draft angles in SKILL.md are optional. A named formula is not required.
+
 When several barriers remain plausible, choose the one with the strongest supplied evidence and largest impact on this decision. If tied, state a hypothesis outside the copy where allowed; do not produce unsupported certainty.
 
 ## Default output contract

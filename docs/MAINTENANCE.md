@@ -6,7 +6,7 @@ Andrei Schuaste is the project author and copyright holder under Apache-2.0. Mai
 
 | Component | Current version | Breaking change examples |
 |---|---|---|
-| Skill behavior | Release 1.3.0; contract 1.0 | Incompatible mode routing, mandatory wrappers for previously copy-only requests |
+| Skill behavior | Release 1.3.1; contract 1.0 | Incompatible mode routing, mandatory wrappers for previously copy-only requests |
 | Brief/output | Schema contract 1.0 | Required new fields, removed enums, changed field meaning |
 | Reports/events/batches | Contract 1.0 | Removed fields, changed status/exit meaning, altered event denominator |
 | Rule catalog | 1.0.0 | Removed/renamed finding codes or materially changed rule meaning |
@@ -19,7 +19,7 @@ Use a patch for compatible fixes/documentation; a minor for additive capabilitie
 1. Review behavior, rules, schemas and examples together. Identify breaking changes and migration impact. Update VERSION, skill metadata, README and CHANGELOG consistently.
 2. Preserve the separate rubric version unless editorial scoring changes; preserve old raw benchmark runs. Compare completed runs only with matching model/settings and fixed suite. Do not label fixtures as real campaigns.
 3. Run `python tools/release.py check`, the unit suite, and Bash syntax checks. Inspect native Linux/macOS/Windows CI results for the exact commit. Installer checks must include licenses, schemas, project destinations, update and uninstall.
-4. Run `python tools/release.py build --out ./dist --expected-version v1.3.0` into a new directory, then `python tools/release.py verify --directory ./dist`. The archive is reproducible for identical skill bytes and compression runtime; checksums verify every included file.
+4. Run `python tools/release.py build --out ./dist --expected-version v1.3.1` into a new directory, then `python tools/release.py verify --directory ./dist`. The archive is reproducible for identical skill bytes and compression runtime; checksums verify every included file.
 5. Review package contents, changelog, risk-regression results, known limitations and live benchmark status. Tag only the reviewed commit with the matching version. The tag-triggered workflow builds and uploads a workflow artifact; it does not create a GitHub Release or publish a service automatically.
 6. After release, retain the archive/manifest and commit identity, link actual CI results, and record regressions or rollback decisions. Revert the affected code/version through a reviewed change; do not overwrite previous artifacts.
 

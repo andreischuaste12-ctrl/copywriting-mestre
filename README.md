@@ -4,7 +4,7 @@ Copywriter Master is an instruction skill for AI assistants. It helps an assista
 
 ## Start here
 
-Version **1.3.0** · **Apache-2.0**.
+Version **1.3.1** · **Apache-2.0**.
 
 Follow the 15-minute [Portuguese quickstart](docs/QUICKSTART.pt-BR.md) or [English quickstart](docs/QUICKSTART.en.md). For supported integration paths and what has actually been tested, see the [compatibility matrix](docs/COMPATIBILITY.md). Filesystem installation checks do not establish that a live model loaded or followed the skill.
 
@@ -19,7 +19,7 @@ The examples are synthetic and run without an API key. The CLI validates existin
 ## What the skill does
 
 1. **Diagnoses proportionally.** Uses available context and asks only questions that block an accurate or safe response.
-2. **Follows the brief.** The user's requested format, amount, and scope take precedence. Open-ended ideation can include distinct options when useful.
+2. **Follows the brief.** The user's requested format, amount, and scope take precedence. Open-ended ideation can include distinct options when useful. AIDA, PAS and BAB are examples; any suitable advertising or copywriting framework may be used, including frameworks outside the reference library.
 3. **Uses research in the requested way.** It can synthesize research or use it to write copy, depending on the request.
 4. **Writes clearly and humanely.** Uses concrete, natural language without invented evidence or generic hype.
 5. **Checks editorial quality.** Applies eight anchored criteria and blocks unsupported claims, unconfirmed regulated promises, invented scarcity, changed terms, privacy violations, and explicit scope failures.
@@ -153,7 +153,7 @@ GitHub Actions defines Python validation checks on Linux, macOS and Windows, plu
 
 ### Releases and benchmark comparison
 
-The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.3.0` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. Matching-version tags trigger a test/build workflow and a downloadable workflow artifact; they do not automatically publish a GitHub Release.
+The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.3.1` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. Matching-version tags trigger a test/build workflow and a downloadable workflow artifact; they do not automatically publish a GitHub Release.
 
 Completed human-reviewed runs can be compared with `python tools/evaluate.py compare run1.json run2.json --out comparison.html --format html`. The report is incomplete until generic/baseline/candidate have matching sets of at least three repetitions, the same model/settings, and consistent skill fingerprints per condition. It displays per-case means, ranges, pass rates and hard failures. No completed benchmark data is bundled or invented.
 

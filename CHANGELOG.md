@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 — 2026-10-30
+
+- Clarified that AIDA, PAS, BAB, draft angles and the framework library are illustrative rather than restrictive. Any suitable advertising/copywriting framework may be selected, adapted or combined; a named formula is optional.
+- Preserved the existing runtime, schemas, rule catalog and editorial rubric.
+
 ## 1.3.0 — 2026-10-30
 
 - Separated the offline runtime/API from CLI wrappers and reference knowledge; preserved the v1.2 validator entrypoint, strict brief/output schemas and exit codes.
