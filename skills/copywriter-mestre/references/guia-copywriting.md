@@ -50,6 +50,8 @@ Reúna linguagem de avaliações, entrevistas, atendimento, pesquisas, buscas in
 
 Use o material para entender padrões e vocabulário. Uma frase isolada não representa todo o mercado. Não invente depoimentos, não exponha dados pessoais desnecessários e não transforme correlação em causa.
 
+Para planejar entrevistas, codificar evidências e separar relato de hipótese, consulte `pesquisa-e-posicionamento.md`.
+
 ## 1.2 Job to Be Done (JTBD)
 
 Pergunte qual progresso a pessoa tenta fazer numa situação concreta e o que a leva a procurar uma solução. JTBD é uma lente de pesquisa e posicionamento, não uma fórmula de copy. Ajuda a ir além de personas definidas apenas por idade, renda ou cargo.

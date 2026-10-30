@@ -4,13 +4,17 @@ Skill de copywriting de alta conversão, baseada nas estratégias e nos estilos 
 
 ## O que ela faz
 
-1. **Mapeamento cirúrgico.** Antes de escrever, analisa o contexto e faz de 2 a 4 perguntas essenciais (público, dor, canal, oferta) só se faltar informação.
-2. **Entrega multi-ângulo.** Sempre 3 a 4 variações com lógicas psicológicas distintas: PAS (dor), BAB (transformação), quebra de objeção e urgência/ação imediata.
-3. **Reorganização de estudos.** Sintetiza briefs, relatórios e pesquisas em Dores Principais, Desejos Ocultos, Objeções e UVP.
-4. **Tom de alta conversão.** Linguagem direta, verbos de ação, sem jargão genérico e sem alegações que não tenham prova.
+1. **Diagnóstico proporcional.** Usa o contexto disponível e pergunta apenas o que bloqueia uma entrega precisa ou segura.
+2. **Variações quando ajudam.** Para pedidos abertos de ideação comercial, oferece ângulos distintos. Formato, quantidade e escopo explícitos do usuário sempre prevalecem.
+3. **Pesquisa e redação no fluxo pedido.** Organiza briefs e pesquisas quando solicitado; se o usuário já pediu copy com base nesses materiais, usa-os para escrever sem interromper a entrega.
+4. **Tom de alta conversão.** Linguagem direta, humana e sem jargão genérico; exige prova factual e checagem de permissão para alegações reguladas.
 5. **Voz dos mestres.** Aplica técnicas de 17 copywriters históricos e de 3 autores de fórmulas (perfis em `skills/copywriter-mestre/references/mestres/`).
 
-Serve para headlines, copy de vendas, páginas de produto e landing pages, anúncios, e-mails, CTAs e microcopy.
+Serve para copy comercial: headlines, páginas de produto e landing pages, anúncios, e-mails, CTAs de conversão e scripts de venda. Revisões funcionais não comerciais, traduções e correções simples ficam fora do escopo.
+
+## Voz humana e referências
+
+O [guia de voz e copy](COPYWRITING_GUIDE.md) complementa a skill com orientações de humanização, ritmo e adaptação por canal. A [bibliografia complementar](REFERENCES.md) reúne referências gerais; consulte também as [fontes da skill](skills/copywriter-mestre/references/fontes.md), que registram o alcance e o status conhecido de cada atribuição.
 
 ## Instalação rápida
 
@@ -64,13 +68,13 @@ Copie a pasta `skills/copywriter-mestre` inteira (com `SKILL.md` e `references/`
 
 As pastas padrão estão listadas no início de cada script (`DEFAULT_SUBDIRS` / `$DefaultSubdirs`). Para outro assistente ou outra pasta, use `--dest` / `-Dest`.
 
-Segurança do instalador: ele só substitui ou remove uma pasta `copywriter-mestre` que contenha um `SKILL.md` com `name: copywriter-mestre`. Se encontrar outra coisa com esse nome, para e avisa.
+Segurança do instalador: ele valida a identidade da skill antes de substituir ou remover uma instalação, recusa destinos que coincidam ou se sobreponham à origem e prepara a nova cópia antes de trocar a versão existente. O modo de simulação aplica as mesmas validações sem alterar as pastas de destino. No PowerShell, caminhos que passam por links simbólicos ou junctions são recusados; use o caminho físico.
 
 ## Verificar a instalação
 
 1. Confirme que o arquivo existe em `<pasta de skills>/copywriter-mestre/SKILL.md`.
 2. Reinicie o assistente (ou abra uma nova sessão).
-3. Peça algo como: *"Escreva headlines para um tênis de corrida, público de iniciantes."* A skill deve fazer 2–4 perguntas, ou declarar suas suposições, e depois entregar 3–4 variações.
+3. Peça algo como: *"Escreva headlines para um tênis de corrida, público de iniciantes."* A skill deve perguntar apenas por dados que bloqueiem uma resposta útil ou seguir com suposições seguras; a quantidade de opções deve respeitar seu pedido.
 
 ## Como usar
 
@@ -104,13 +108,16 @@ Dica: quanto mais contexto você der (público, produto, preço, prova, canal), 
 ```
 install.sh · install.ps1          instaladores
 LICENSE · NOTICE                  licença Apache-2.0 e avisos
-evals/                            pedidos de teste, assertions e resultados
 skills/copywriter-mestre/
 ├── SKILL.md                      instruções da skill
 └── references/
     ├── guia-copywriting.md       guia: estratégia, estruturas, canais, testes
+    ├── pesquisa-e-posicionamento.md pesquisa, VoC, entrevista e argumento com evidência
+    ├── casos-de-aplicacao.md     exemplos de decisão editorial e fidelidade ao escopo
     ├── otimizacao-e-testes.md    ciclo de teste, amostra, SRM, guardrails, barreiras
     ├── conformidade-br.md        CDC, CONAR, LGPD e checklist de alegações
+    ├── matriz-de-alegacoes.md    evidência, autorização, condições e escopo
+    ├── humanizacao.md            voz natural e específica sem regras mecânicas
     ├── fontes.md                 links, status de verificação e pontos com dúvida
     └── mestres/                  17 mestres + 3 autores de fórmulas
 ```

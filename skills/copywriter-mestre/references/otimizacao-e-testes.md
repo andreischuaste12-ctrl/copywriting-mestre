@@ -9,7 +9,7 @@ Use ao propor testes, ler resultados ou diagnosticar por que uma peça não conv
 3. **Métrica primária + proteções (guardrails):** conversão, margem, devolução, cancelamento, qualidade do lead, reclamações. CTR sozinho engana.
 4. **Dimensione antes de rodar:** calcule o tamanho de amostra necessário para o efeito mínimo que importa ao negócio (calculadora de Evan Miller). Defina duração em ciclos completos (semanas inteiras).
 5. **Rode sem "espiar":** parar no primeiro resultado "significativo" infla falsos positivos. Defina o critério de parada antes.
-6. **Cheque a divisão de tráfego (SRM):** se a proporção real entre variações diverge da planejada, há erro de aleatorização ou de medição e o resultado não é confiável (Kohavi et al.).
+6. **Cheque a divisão de tráfego (SRM):** compare contagens observadas e esperadas com o teste de SRM da plataforma ou um teste estatístico apropriado, sob um critério definido antes da análise. Uma diferença percentual isolada não demonstra falha: flutuações aleatórias dependem do tamanho da amostra. Um alerta estatístico indica possível problema de qualidade, não identifica sua causa. Suspenda a interpretação do efeito até investigar atribuição, coleta, filtros e segmentação; não use um limiar universal sem justificativa (Kohavi et al.).
 7. **Leia o efeito, não só o p-valor:** tamanho do efeito, intervalo e impacto em dinheiro. Um teste informa a decisão naquele contexto; não valida uma fórmula para sempre.
 8. **Registre o aprendizado:** hipótese, resultado, limite e próxima pergunta.
 
@@ -17,13 +17,9 @@ Use ao propor testes, ler resultados ou diagnosticar por que uma peça não conv
 
 Com poucas conversões, teste A/B clássico não detecta efeitos pequenos. Alternativas: testar mudanças grandes (ângulos distintos A–D, não troca de palavra), usar métricas intermediárias com cuidado, combinar com entrevistas e leitura de atendimento/avaliações, e comparar antes/depois só com ressalvas de sazonalidade e mix de canal.
 
-## 3. O que testar primeiro (maior alavanca, em ordem)
+## 3. Como priorizar o que testar
 
-1. Oferta, preço, condições e garantia (o que é dito).
-2. Ângulo da mensagem: dor, transformação, objeção, ação.
-3. Prova e clareza da promessa na primeira dobra.
-4. Headline e CTA.
-5. Detalhes de formato (ordem de blocos, tamanho, imagem).
+Não há uma ordem universal de alavancas. Priorize o gargalo observado, impacto esperado, confiança na evidência e esforço para intervir. Mudanças em oferta, preço, condições ou garantia são decisões de negócio: proponha-as como opções e não suponha autorização ou disponibilidade.
 
 ## 4. Mapa de forças de decisão (útil no modo estudo)
 
@@ -43,15 +39,17 @@ Reduzir ansiedade e hábito costuma render mais do que aumentar a promessa (opin
 - **Leitura por varredura:** estudos de Nielsen e Morkes (1997) encontraram que a maioria dos usuários escaneia páginas e que texto conciso, escaneável e objetivo teve melhor usabilidade que texto promocional. Amostras pequenas e antigas: use como direção (subtítulos informativos, blocos curtos, menos adjetivo), não como percentual a citar.
 - **Checkout:** custos inesperados (frete, impostos, taxas) lideram os motivos de abandono citados pela Baymard. Os percentuais variam entre levantamentos; não cite número sem ler a fonte. Ação prática: mostrar preço total, prazo e condições antes da decisão (também exigência de transparência, ver `conformidade-br.md`).
 
-## 6. Intervenção típica por barreira
+## 6. Hipóteses de intervenção por barreira
 
-| Barreira | Sinal comum | Intervenção de copy |
+Os sinais abaixo não isolam causa. Use-os para formular hipóteses e procure evidência adicional — por exemplo, gravações de erro, termos de busca, objeções no atendimento, teste de compreensão, preço, frete, estoque, usabilidade ou falha de pagamento — antes de escolher uma intervenção.
+
+| Barreira possível | Sinal que pode motivar investigação | Hipótese de intervenção |
 |---|---|---|
 | Relevância | cliques baixos, rejeição alta | gancho mais específico ao segmento; headline com a linguagem do público |
-| Compreensão | rolagem sem ação, dúvidas repetidas no atendimento | explicar "o que é, para quem, como funciona" em 1–2 frases e demonstração |
-| Prova | leem mas não clicam em comprar | evidência compatível com a alegação (demonstração, avaliações reais, dados contextualizados) |
-| Confiança | abandono no checkout/formulário | garantia, política de troca, dados da empresa, termos claros |
-| Conveniência | abandono em etapas | menos campos, CTA que diz o que acontece depois, preço total visível |
+| Compreensão | rolagem sem ação ou dúvidas recorrentes | explicar "o que é, para quem, como funciona" em 1–2 frases e demonstrar |
+| Prova | leitura sem compra | testar evidência compatível com a alegação, após investigar preço e adequação |
+| Confiança | abandono no checkout/formulário | verificar termos, política, reputação e falhas funcionais antes de alterar a mensagem |
+| Conveniência | abandono em etapas | investigar fricção, campos, custo total, estoque e pagamento antes de simplificar o texto |
 
 ## Fontes
 

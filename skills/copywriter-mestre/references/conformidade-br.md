@@ -1,6 +1,6 @@
 # Conformidade e transparência (Brasil)
 
-Uso: antes de entregar copy com alegação de resultado, preço, saúde, finanças, influenciadores ou coleta de dados. **Isto é orientação de redação, não parecer jurídico.** Os textos legais abaixo foram conferidos apenas por trechos de busca; confirme no texto oficial e consulte o jurídico em casos de risco.
+Uso: apoio editorial para copy destinada ao Brasil que envolva alegações, preço, saúde, finanças, influenciadores ou dados pessoais. **Isto não é parecer jurídico nem confirmação de que uma alegação está autorizada.** Antes de publicar, verifique o texto oficial vigente e as regras específicas do produto, setor e canal com a pessoa responsável por conformidade.
 
 ## 1. Código de Defesa do Consumidor (Lei 8.078/1990)
 
@@ -20,26 +20,30 @@ Uso: antes de entregar copy com alegação de resultado, preço, saúde, finanç
 
 - Escolha e registre a **base legal** (consentimento, legítimo interesse, execução de contrato). Consentimento: livre, informado e inequívoco, para finalidade determinada, sem caixa pré-marcada.
 - **Legítimo interesse** exige teste documentado (LIA); consulte o guia orientativo da ANPD sobre o tema. Não serve para dado sensível.
-- Todo e-mail de marketing leva **descadastro funcional**; respeite a oposição do titular (art. 18).
+- Ofereça um meio claro e funcional para interromper comunicações de marketing e processe solicitações do titular conforme a base legal, a finalidade e os requisitos aplicáveis. Trate isso como controle operacional de marketing; não descreva o link de descadastro como transcrição literal de um dispositivo específico sem confirmar o fundamento jurídico.
 - Evite listas compradas: sem base legal adequada e com alto risco.
 - Colete só o necessário e não exponha dados pessoais em depoimentos ou estudos de caso sem autorização.
 
 ## 4. Setores e plataformas
 
-- **Regulados** (saúde, suplementos, finanças e crédito, jogos, infantil): há regras setoriais e restrições de promessa. Evite cura, emagrecimento garantido, retorno garantido, "antes e depois" sem base, apelo a crianças. Sinalize o risco e entregue a versão segura.
+- **Regulados** (saúde, suplementos, finanças e crédito, jogos, infantil): há regras setoriais e restrições de alegação. A existência de evidência não confirma permissão regulatória. Identifique país, categoria, produto e alegação autorizada, incluindo condições de uso. Para suplementos no Brasil, consulte as alegações aprovadas e restrições da Anvisa para a categoria; não redija alegações de emagrecimento, tratamento ou resultado corporal sem confirmação específica. Se a alegação não puder ser confirmada, omita-a e use apenas atributos verificáveis que não dependam dela. Não trate uma promessa mais moderada nem um placeholder como autorização.
 - **Plataformas de anúncio:** as políticas mudam com frequência. Confira a política vigente da plataforma antes de definir texto e imagem.
 
 ## 5. Checklist antes de entregar
 
-- [ ] Cada alegação factual tem prova disponível ou um placeholder visível `[inserir: dado + fonte]`.
+- [ ] Cada alegação factual tem prova compatível; placeholders não aparecem como promessa publicável.
+- [ ] Cada alegação regulada está permitida para o país, categoria, produto, canal e condições relevantes; prova e autorização foram checadas separadamente.
 - [ ] Preço total, prazo, frete e condições estão claros e perto da decisão.
 - [ ] Urgência e escassez correspondem a prazo/estoque reais.
 - [ ] Nada promete resultado garantido, cura ou ganho sem base.
 - [ ] Conteúdo patrocinado ou de influenciador está identificável.
-- [ ] Coleta de dados tem finalidade, base legal e descadastro.
+- [ ] Coleta e uso de dados têm finalidade e base legal avaliadas; há um processo funcional para pedidos de interrupção de comunicações.
 
-## Fontes
+## Fontes para conferir antes de orientar uma campanha
 
-- Lei 8.078/1990 (CDC), arts. 30, 31, 36, 37 e 38: texto no portal do Planalto (não acessível nesta checagem).
-- CONAR, Código Brasileiro de Autorregulamentação Publicitária e guia de influenciadores: site oficial do CONAR (não acessível nesta checagem).
-- Lei 13.709/2018 (LGPD) e Guia Orientativo da ANPD sobre legítimo interesse (fev. 2024): conferidos apenas por resumos.
+- [Código de Defesa do Consumidor — Lei 8.078/1990](https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm), em especial arts. 30, 31, 36, 37 e 38.
+- [LGPD — Lei 13.709/2018](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm). Distinga revogação de consentimento (art. 18, IX, em conjunto com art. 8º, §5º) da oposição prevista no art. 18, §2º; não atribua a esses dispositivos um formato específico de link de descadastro.
+- [Anvisa — Perguntas frequentes sobre suplementos alimentares](https://www.gov.br/anvisa/pt-br/assuntos/alimentos/suplementos-alimentares/perguntas-frequentes/) e [cuidado com a propaganda enganosa](https://www.gov.br/anvisa/pt-br/assuntos/alimentos/suplementos-alimentares/cuidado-com-a-propaganda-enganosa/). Verifique a alegação autorizada e as condições aplicáveis ao produto.
+- CONAR, Código Brasileiro de Autorregulamentação Publicitária e guia de influenciadores: consulte a versão oficial vigente antes de citar regras específicas.
+
+**Status nesta revisão:** os links e fundamentos acima foram indicados para conferência; os domínios oficiais não estavam acessíveis pela rede deste ambiente. Não os descreva como verificados nesta data. Para orientação legal específica, consulte o texto oficial e o responsável jurídico/regulatório.
