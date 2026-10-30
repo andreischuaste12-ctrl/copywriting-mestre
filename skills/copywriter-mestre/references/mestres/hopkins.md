@@ -8,7 +8,8 @@
 - Especificidade vence generalidade: fatos concretos e detalhes de fabricação que o leitor nunca considerou.
 - Venda ao leitor, não entretenha: cada elemento precisa servir à decisão.
 - Ofereça uma forma de experimentar com baixo risco (amostra, teste, garantia).
-- Reivindicação preventiva (**pre-emptive claim**, conceito associado a Hopkins): comunique primeiro um fato verdadeiro e comum à categoria que ninguém tinha explicado.
+- Reivindicação preventiva (**pre-emptive claim**, técnica associada a Hopkins em fontes secundárias; confira na obra): comunique primeiro um fato verdadeiro e comum à categoria que ninguém tinha explicado. Exemplo frequentemente contado: a campanha da cervejaria Schlitz (1907) sobre o processo de fabricação.
+- Cupons com código de origem e oferta de amostra grátis: Hopkins é creditado como pioneiro no uso de cupom com amostra em anúncios.
 
 ## Quando invocar
 - Qualquer peça que será testada; anúncios e e-mails de resposta direta; ofertas com amostra/teste.
@@ -23,3 +24,4 @@
 
 ## Fontes
 - *Scientific Advertising* (1923) — [Library of Congress](https://www.loc.gov/item/23009362/)
+- [Advertising Hall of Fame — Claude C. Hopkins](https://advertisinghalloffame.org/inductee/claude-clarence-hopkins/)

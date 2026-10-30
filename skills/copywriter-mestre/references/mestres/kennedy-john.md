@@ -1,6 +1,6 @@
 # John E. Kennedy — "salesmanship in print" e reason-why
 
-**Escola:** publicidade de resposta direta (início do séc. XX). **Atuação mais associada:** copy para a agência Lord & Thomas, ligado ao trabalho com Albert Lasker.
+**Escola:** publicidade de resposta direta (início do séc. XX). **Atuação mais associada:** copy para a agência Lord & Thomas e o contato com Albert Lasker, em torno de 1904 (a maioria dos relatos; há datas divergentes). Seus princípios saíram em artigos em 1905 e foram reunidos em *Reason Why Advertising*.
 **Contribuição central:** definir publicidade como "salesmanship in print" (venda impressa) e popularizar a copy **reason-why**: dar ao leitor uma razão para comprar.
 
 ## Princípios para a redação

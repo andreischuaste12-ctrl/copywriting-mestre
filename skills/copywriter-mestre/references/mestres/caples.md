@@ -1,6 +1,6 @@
 # John Caples — headlines testadas
 
-**Escola:** resposta direta (agência BBDO). **Obra-chave:** *Tested Advertising Methods* (1932, com edições posteriores).
+**Escola:** resposta direta. Escreveu o anúncio do piano na Ruthrauff & Ryan (1925–1926, datas variam) e depois chegou a vice-presidente da BBDO. **Obra-chave:** *Tested Advertising Methods* (1932; edição revista em 1947; edições posteriores).
 **Contribuição central:** headlines e teste de resposta: a diferença entre uma headline e outra pode multiplicar o resultado, e só o teste mostra qual.
 
 ## Princípios para a redação
@@ -22,3 +22,4 @@
 
 ## Fontes
 - Acervo — [Smithsonian National Museum of American History](https://sirismm.si.edu/EADpdfs/NMAH.AC.0393.pdf)
+- [Advertising Hall of Fame — John Caples](https://advertisinghalloffame.org/inductee/john-caples/) · [Creative Hall of Fame — John Caples](https://creativehalloffame.org/inductees/john-caples/)

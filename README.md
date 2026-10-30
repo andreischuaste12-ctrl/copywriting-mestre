@@ -104,11 +104,14 @@ Dica: quanto mais contexto você der (público, produto, preço, prova, canal), 
 ```
 install.sh · install.ps1          instaladores
 LICENSE · NOTICE                  licença Apache-2.0 e avisos
+evals/                            pedidos de teste, assertions e resultados
 skills/copywriter-mestre/
 ├── SKILL.md                      instruções da skill
 └── references/
     ├── guia-copywriting.md       guia: estratégia, estruturas, canais, testes
-    ├── fontes.md                 todos os links e o que cada um sustenta
+    ├── otimizacao-e-testes.md    ciclo de teste, amostra, SRM, guardrails, barreiras
+    ├── conformidade-br.md        CDC, CONAR, LGPD e checklist de alegações
+    ├── fontes.md                 links, status de verificação e pontos com dúvida
     └── mestres/                  17 mestres + 3 autores de fórmulas
 ```
 

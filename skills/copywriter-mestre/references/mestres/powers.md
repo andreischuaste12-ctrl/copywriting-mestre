@@ -1,6 +1,6 @@
 # John E. Powers — franqueza factual no varejo
 
-**Escola:** publicidade varejista (séc. XIX). **Atuação mais associada:** copy de loja de departamentos (Wanamaker's).
+**Escola:** publicidade varejista (séc. XIX). **Atuação mais associada:** copy para a loja de departamentos Wanamaker's, que o contratou no fim da década de 1870 ou em 1880 (as fontes divergem) e onde ficou até 1886, segundo relatos secundários.
 **Contribuição central:** linguagem simples, factual e franca; um dos primeiros a atuar como copywriter em tempo integral.
 
 ## Princípios para a redação
@@ -23,4 +23,5 @@
 - O registro histórico sobre Powers é limitado; use-o como estilo, sem atribuir frases a ele.
 
 ## Fontes
-- Citado no guia (`../guia-copywriting.md`, seção 6) como referência de "história da publicidade varejista"; sem link primário no guia.
+- [Advertising Hall of Fame — John E. Powers](https://advertisinghalloffame.org/inductee/john-e-powers/)
+- Citado no guia (`../guia-copywriting.md`, seção 6). Datas e anedotas vêm de fontes secundárias e promocionais; confirme antes de citá-las.

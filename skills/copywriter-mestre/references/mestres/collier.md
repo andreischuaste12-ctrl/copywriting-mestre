@@ -21,3 +21,4 @@
 
 ## Fontes
 - Citado no guia (seção 6) pela obra *The Robert Collier Letter Book*; sem link no guia.
+- A frase "enter the conversation already taking place in the customer's mind" é atribuída a Collier por sites de citações e resenhas; a redação varia e a passagem original não foi localizada nesta checagem. Use a ideia, não aspas.

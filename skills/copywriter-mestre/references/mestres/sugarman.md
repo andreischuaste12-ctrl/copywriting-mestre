@@ -1,6 +1,6 @@
 # Joe Sugarman — continuidade da leitura
 
-**Escola:** resposta direta para produtos complexos (JS&A). **Obra-chave:** *The Adweek Copywriting Handbook* (2007).
+**Escola:** resposta direta para produtos complexos (JS&A). **Obra-chave:** *The Adweek Copywriting Handbook* (dez. 2006 ou jan. 2007, conforme a fonte), atualização de *Advertising Secrets of the Written Word*, que já usa a imagem do escorregador.
 **Contribuição central:** fazer cada elemento da peça levar o leitor ao próximo (a "slippery slide") e vender produtos que exigem explicação.
 
 ## Princípios para a redação
@@ -21,4 +21,4 @@
 - Curiosidade sem entrega vira clickbait (guia, seção 2.5).
 
 ## Fontes
-- Citado no guia (seção 6) pela obra *The Adweek Copywriting Handbook*; sem link no guia.
+- Citado no guia (seção 6) pela obra *The Adweek Copywriting Handbook*; sem link no guia. O capítulo "The Slippery Slide" consta no sumário da edição da Wiley. Números de vendas de produtos (por exemplo, óculos) variam entre fontes e não foram verificados: não os cite.

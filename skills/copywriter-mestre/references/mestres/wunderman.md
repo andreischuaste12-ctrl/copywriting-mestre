@@ -1,6 +1,6 @@
 # Lester Wunderman — marketing direto e relacionamento
 
-**Escola:** marketing direto. **Obra associada:** *Being Direct* (memórias). **Marco mais associado:** clube de discos de resposta por correspondência.
+**Escola:** marketing direto. **Obra associada:** *Being Direct* (memórias). **Marcos mais associados:** clube de discos por correspondência (Columbia, 1955) e a difusão do termo "direct marketing" (1961 ou 1967, conforme a fonte). O crédito pelo número 0800 vem de fontes secundárias; não o afirme como fato.
 **Contribuição central:** marketing direto, resposta identificável e relacionamento contínuo com o cliente.
 
 ## Princípios para a redação

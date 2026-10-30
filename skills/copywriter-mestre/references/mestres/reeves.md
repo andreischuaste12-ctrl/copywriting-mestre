@@ -4,9 +4,9 @@
 **Contribuição central:** a **USP**: uma razão clara, relevante e distinta para comprar.
 
 ## Princípios para a redação
-- Cada peça faz uma proposta ao consumidor: "compre este produto e receba este benefício".
-- A proposta precisa ser algo que a concorrência não oferece ou não comunica.
-- Deve ser forte o bastante para mover o público-alvo, não só ser lembrada.
+- Cada peça faz uma **proposta** ao consumidor: "compre este produto e receba este benefício".
+- A proposta precisa ser algo que a concorrência **não oferece ou não comunica**.
+- Deve ser **forte o bastante para mover** o público-alvo. Um diferencial único mas irrelevante não vende (exemplo do próprio Reeves: um creme dental que "sai como uma fita e deita sobre a escova" era único, mas não movia o público).
 - Uma proposta por peça: foco vence lista de atributos.
 
 ## Quando invocar
@@ -22,3 +22,4 @@
 
 ## Fontes
 - [Creative Hall of Fame — Rosser Reeves](https://creativehalloffame.org/inductees/rosser-reeves/)
+- Resumos das três partes da USP: [Muse (Johns Hopkins)](https://muse.jhu.edu/article/548118/summary) · [Bly — Reality in Advertising](https://bly.com/Pages/DMNCOL12.htm). O livro nasceu como documento interno da Ted Bates.

@@ -5,7 +5,7 @@
 
 ## Princípios para a redação
 - Escreva como quem fala com uma pessoa; frases curtas, ritmo de conversa.
-- O mercado certo pesa mais que a copy: ideia associada a Halbert de que uma multidão faminta compra até com texto mediano.
+- O mercado certo pesa mais que a copy: ideia amplamente associada a Halbert ("starving crowd") de que uma multidão faminta compra até com texto mediano. Não foi possível confirmar a origem nesta checagem; trate como atribuição popular.
 - Especificidade e história: um detalhe real prende mais que um adjetivo.
 - Faça a abertura prender na primeira linha; cada frase leva à próxima.
 - Peça a ação com clareza.

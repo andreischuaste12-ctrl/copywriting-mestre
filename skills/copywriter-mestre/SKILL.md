@@ -39,6 +39,8 @@ Uma única versão obriga o usuário a aceitar a aposta do redator; variações 
 - **C — Quebra de objeção:** abre pela principal barreira (preço, confiança, compatibilidade, esforço) e a desarma com prova ou condição.
 - **D — Urgência / Ação imediata:** custo de esperar + próximo passo claro. **Só use urgência ou escassez que seja real** (prazo, estoque, vagas verdadeiros). Se não houver, troque o D por outro ângulo: prova/mecanismo, curiosidade com entrega ou demonstração — e diga que trocou e por quê.
 
+Ao redigir, copie os números e condições do briefing literalmente (2.300 avaliações continua 2.300, não "mais de 2.300"; "cancela quando quiser" não vira "sem multa"). Arredondar para cima ou embelezar um dado é alegação sem prova.
+
 Para cada variação entregue: o texto completo no formato pedido (headline, corpo, CTA; assunto + preheader em e-mail; primário/título/descrição em anúncio, respeitando limites do canal) e uma linha de **"quando usar / hipótese"** (que público ou barreira esse ângulo ataca). Termine com **uma recomendação** de qual rodar primeiro e **o que testar** (uma hipótese, uma métrica primária, uma métrica de proteção como conversão ou margem além de CTR).
 
 Formato padrão:
@@ -63,7 +65,7 @@ _Hipótese:_ …
 
 ### 4. Modo "Reorganização de estudos"
 
-Quando o usuário enviar relatório, brief, pesquisa, avaliações, transcrições ou estudo de mercado, não comece a escrever copy: sintetize primeiro. Separe sempre em quatro blocos, citando a evidência (trecho ou dado) de cada ponto e marcando o que é **dado**, **relato/opinião** ou **hipótese sua**:
+Quando o usuário enviar relatório, brief, pesquisa, avaliações, transcrições ou estudo de mercado, não comece a escrever copy: sintetize primeiro. Separe sempre em quatro blocos (equivalem às quatro forças de decisão: dor = push, desejo = pull, objeção = ansiedade, e acrescente o hábito/alternativa atual quando o estudo mostrar), citando a evidência (trecho ou dado) de cada ponto e marcando o que é **dado**, **relato/opinião** ou **hipótese sua**:
 
 1. **Dores principais** — problemas e frustrações, ranqueados por frequência/intensidade, com a linguagem do público entre aspas.
 2. **Desejos ocultos** — o resultado emocional ou social por trás do pedido explícito (status, alívio, controle, pertencimento), sinalizado como inferência quando for.
@@ -85,13 +87,28 @@ Feche com **lacunas** (o que o estudo não responde e custaria testar) e o **pla
 
 Copy persuasiva que perde a confiança do cliente custa mais caro do que converte. Portanto:
 
+- **Fidelidade ao briefing:** use exatamente os números, prazos e condições informados. Não some qualificadores que alteram a alegação ("mais de 2.300" quando o dado é 2.300; "sem multa" ou "sem burocracia" quando o dado é "cancela quando quiser") nem generalizações sobre a categoria ou os concorrentes ("café de supermercado usa grão ruim") sem prova. Cálculo derivado (R$ 89 ÷ 30 dias) só com a conta à vista e marcado como derivado.
 - Nunca invente depoimentos, números, resultados, selos, prazos ou estoque. Se precisar de dado que não foi fornecido, use um placeholder visível como `[inserir: % de clientes que… + fonte]` e liste o que falta.
 - Toda alegação factual precisa de prova compatível (demonstração, dado contextualizado, avaliação real, termos de garantia).
 - Preço total, prazo, condições e consentimento nunca podem ser escondidos por persuasão (checkout e microcopy).
 - Setores regulados (saúde, finanças, suplementos, jogos, infantil) e plataformas de anúncio têm restrições de promessa; sinalize o risco quando a copy tocar nelas e proponha a versão mais segura.
 
+### 7. Checagem antes de entregar
+
+Rode mentalmente esta lista e corrija antes de enviar; é o que separa copy que converte de copy que gera risco:
+
+- Entreguei de 3 a 4 variações realmente diferentes (ângulos distintos, não sinônimos)?
+- Cada alegação factual tem prova disponível ou um placeholder visível? Nada de número, depoimento ou selo inventado, e nenhum qualificador a mais do que o dado informado ("mais de", "sem multa").
+- Urgência e escassez correspondem a prazo ou estoque reais? Sem isso, troquei o ângulo D.
+- Preço, prazo e condições aparecem onde a decisão acontece?
+- O texto respeita o limite de caracteres do canal? (Os limites mudam: confirme os vigentes da plataforma, ou use o que o usuário informou.)
+- Há risco regulatório (saúde, finanças, influenciador, coleta de dados)? Se sim, consulte `references/conformidade-br.md` e sinalize.
+- Terminei com recomendação e um teste com hipótese, métrica primária e proteção? (ver `references/otimizacao-e-testes.md`)
+
 ## Referências
 
 - `references/guia-copywriting.md` — Guia prático de copywriting (estratégia, catálogo de estruturas, adaptação por canal, princípios, mensuração, referências históricas). Leia as seções 1–3 ao escolher estrutura e ângulo, a 4 ao revisar a peça, a 5 ao propor testes e a 6 apenas se o usuário pedir referência histórica ou atribuição de uma fórmula. Atribuições de AIDA/PAS/PASTOR são incertas — não as afirme como fato.
 - `references/mestres/_indice.md` — índice dos 17 mestres e 3 autores de fórmulas, com quando invocar cada um e o ângulo (A–D) correspondente. Cada perfil traz princípios, aplicação e cuidados.
+- `references/otimizacao-e-testes.md` — ciclo de teste, tamanho de amostra, SRM e guardrails, mapa de forças de decisão, intervenção por barreira. Leia ao propor testes ou diagnosticar baixa conversão.
+- `references/conformidade-br.md` — CDC, CONAR, LGPD, setores regulados e checklist. Leia quando houver alegação de resultado, saúde, finanças, influenciador ou coleta de dados.
 - `references/fontes.md` — todos os links do guia e o que cada um sustenta. Consulte antes de citar uma fonte ou atribuição.
