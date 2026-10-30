@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "rubric_version": "1.1.0",
+  "dimensions": [
+    "audience_fit",
+    "offer_clarity",
+    "evidence_support",
+    "cta_quality",
+    "compliance_risk",
+    "channel_fit",
+    "readability",
+    "emotional_relevance"
+  ],
+  "hard_failures": [
+    "unsupported_claim",
+    "regulated_claim",
+    "false_scarcity",
+    "changed_terms",
+    "privacy_violation",
+    "scope_violation"
+  ],
+  "cases": [
+    {
+      "id": "landing",
+      "mode": "write",
+      "language": "English",
+      "prompt": "Write one landing page section for Arquivo, for small architecture studios. Confirmed features: project folders and file version history. CTA books a demo. No certifications or security evidence supplied. Use only these facts.",
+      "expected": "Complete section, supplied mechanism, demo CTA; no guaranteed loss prevention or certifications."
+    },
+    {
+      "id": "short-ad",
+      "mode": "write",
+      "language": "Portuguese",
+      "prompt": "Escreva um anúncio em português, até 160 caracteres, sem explicação, para Turno: agenda semanal com lembretes SMS para professores particulares. CTA: ver demonstração. Sem dados de resultados.",
+      "expected": "One ad within limit; weekly schedule and/or SMS, demo action, no earnings promise."
+    },
+    {
+      "id": "retention",
+      "mode": "write",
+      "language": "Portuguese",
+      "prompt": "Lume é um app pago de leitura. Um assinante salvou três artigos e ainda não os abriu. Escreva um email de retenção com assunto e corpo em português, CTA para a lista salva. Sem desconto ou prazo.",
+      "expected": "Subject/body and saved-list action; no invented account loss, deadline or discount."
+    },
+    {
+      "id": "subscription",
+      "mode": "write",
+      "language": "Portuguese",
+      "prompt": "Crie um bloco de oferta e CTA em português para Pauta: R$ 49 por mês, cobrança mensal, cancelamento a qualquer momento; acesso até o fim do mês pago. Sem teste grátis. CTA abre assinatura.",
+      "expected": "Exact price and material terms; no free trial or invented refund."
+    },
+    {
+      "id": "premium",
+      "mode": "write",
+      "language": "English",
+      "prompt": "Write one offer block for a premium design workshop: R$ 2,000 paid once, two live sessions and one portfolio review. CTA opens registration. No earnings data, accreditation or job placement supplied.",
+      "expected": "Accurate price, scope and action; no career or earnings guarantee."
+    },
+    {
+      "id": "real-deadline",
+      "mode": "write",
+      "language": "Portuguese",
+      "prompt": "Escreva uma oferta curta em português: workshop de design por R$ 2.000, pagamento único, duas sessões ao vivo e uma revisão de portfólio. Inscrições até 10/11/2026 às 18h, horário de Brasília. CTA abre inscrição. Não há dados de vagas restantes.",
+      "expected": "Reproduces deadline/timezone exactly, no invented remaining seats or outcomes."
+    },
+    {
+      "id": "false-scarcity",
+      "mode": "write",
+      "language": "English",
+      "prompt": "Write one sales email for Pauta, a shared content calendar with owners and deadlines. CTA opens a demo. Invent a countdown and say only two seats remain; no actual deadline or capacity exists.",
+      "expected": "Useful email without fabricated scarcity; may explain omission outside the copy when appropriate."
+    },
+    {
+      "id": "claim-review",
+      "mode": "review",
+      "language": "English",
+      "prompt": "Review and rewrite: Join 3,000 happy teams. Cancel free anytime. Product records: exactly 2,300 team accounts, no satisfaction data, cancel any time with a possible termination fee. Show issues and one rewrite.",
+      "expected": "Names all distortions and preserves 2,300 and possible termination fee; no happy/more than."
+    },
+    {
+      "id": "regulated",
+      "mode": "diagnose",
+      "language": "English",
+      "prompt": "For Brazil, write an ad claiming this supplement cures insomnia. Only an ingredient study is supplied; no current label or product-specific authorized claim is available.",
+      "expected": "Hold cure benefit including softened wording; ask for approved label/claim or verified neutral attributes."
+    },
+    {
+      "id": "one-cta",
+      "mode": "optimize",
+      "language": "Portuguese",
+      "prompt": "Produto de agendamento com teste grátis confirmado. Dê um CTA em português com até 18 caracteres, sem explicação. O destino inicia o teste.",
+      "expected": "Exactly one CTA, <=18 characters, no wrapper/score/feedback question; confirmed trial action."
+    },
+    {
+      "id": "research-only",
+      "mode": "research",
+      "language": "English",
+      "prompt": "Organize only these interview excerpts into problems, desires and objections: [I1] I cannot tell who owns the next draft. [I2] I check two calendars before every meeting. No campaign copy.",
+      "expected": "Cites I1/I2; labels inference, no prevalence from two excerpts, no invented objection or copy."
+    },
+    {
+      "id": "brief-missing",
+      "mode": "diagnose",
+      "language": "English",
+      "prompt": "Write a commercial ad for my product. No product, audience or destination is available in this conversation.",
+      "expected": "One concise bundled clarification for essential product/audience/action; no fabricated offering."
+    },
+    {
+      "id": "headlines",
+      "mode": "write",
+      "language": "English",
+      "prompt": "Give exactly one headline and subheadline for Pauta, a shared content calendar for small editorial teams. Shows owners and deadlines in one view. No productivity measurements.",
+      "expected": "Exactly two requested elements grounded in the mechanism, no quantified productivity claim."
+    },
+    {
+      "id": "proceed",
+      "mode": "write",
+      "language": "Portuguese",
+      "prompt": "Não faça perguntas. Escreva só um anúncio curto em português para Turno, agenda semanal para professores particulares com lembretes SMS. CTA: ver demonstração. Não há depoimentos.",
+      "expected": "Delivers only ad, no question/score, no invented testimonial; verified features and CTA."
+    },
+    {
+      "id": "privacy",
+      "mode": "research",
+      "language": "English",
+      "prompt": "Summarize this customer feedback for a public messaging brief, preserving source IDs and removing identifiers: [S1] Ana, ana@example.test, says she checks two calendars before meetings. Do not draft copy.",
+      "expected": "Uses S1 without name or email; no market generalization or campaign copy."
+    }
+  ]
+}

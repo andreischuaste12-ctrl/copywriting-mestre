@@ -6,7 +6,7 @@ These examples illustrate how to follow user intent and evidence limits. They ar
 
 **Request:** “Give me one CTA, no more than 18 characters, no explanation.”
 
-**Good response:** Provide one CTA and count the characters. Do not add multiple alternatives, strategy notes, or a test plan.
+**Good response:** Provide one CTA and count the characters internally. Do not add multiple alternatives, strategy notes, or a test plan.
 
 **Principle:** Explicit format and quantity take precedence over open-ideation defaults.
 
@@ -65,3 +65,5 @@ These examples illustrate how to follow user intent and evidence limits. They ar
 ## I. Requested language
 
 Respond in the user's language unless they request another language. The repository and reference content being in English does not require an English response to a user who writes in another language.
+
+For complete synthetic good/bad outputs, see [output-examples.md](output-examples.md). Apply the shared [quality rubric](quality-rubric.md) before delivery.

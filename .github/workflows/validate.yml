@@ -1,0 +1,36 @@
+name: Validate skill package
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python tools/evaluate.py check
+      - run: bash -n install.sh
+      - run: python -m unittest discover -s tests -v
+  powershell-install:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install, update, dry run and uninstall with attribution
+        shell: pwsh
+        run: |
+          $dest = Join-Path $env:RUNNER_TEMP 'copywriter test skills'
+          ./install.ps1 -Dest $dest -DryRun
+          if (Test-Path $dest) { throw 'Dry run created a directory' }
+          ./install.ps1 -Dest $dest
+          ./install.ps1 -Dest $dest
+          foreach ($name in @('LICENSE', 'NOTICE')) {
+            $expected = (Get-FileHash -LiteralPath $name).Hash
+            $actual = (Get-FileHash -LiteralPath (Join-Path $dest "copywriter-master/$name")).Hash
+            if ($expected -ne $actual) { throw "Installed $name differs" }
+          }
+          ./install.ps1 -Dest $dest -Uninstall
+          if (Test-Path (Join-Path $dest 'copywriter-master')) { throw 'Uninstall failed' }

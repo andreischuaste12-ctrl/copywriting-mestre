@@ -103,8 +103,8 @@ When volume and infrastructure allow, compare versions with one hypothesis at a 
 
 Adapt examples, expressions, units, cultural references, and calls to action to the language and region. Literal translation can distort intent or claims. Use scannable structure, informative headings, explicit instructions, and familiar words. Do not rely only on color, imagery, or placement to communicate an instruction. For pages and interfaces, check contrast, keyboard access, labels, and messages against applicable accessibility requirements.
 
-## 11. Use an editorial rubric
+## 11. Use the shared editorial rubric
 
-Score each dimension from 0 to 2: **audience fit**, **offer clarity**, **argument strength**, **proof**, **human voice**, **assertiveness**, **next action**, and **channel fit**. Zero means missing or incorrect; one, partial; two, clear and supported. The total guides revision; it is not evidence of conversion.
+Use the [quality rubric](skills/copywriter-master/references/quality-rubric.md) as the single scoring contract: **audience fit**, **offer clarity**, **evidence support**, **CTA quality**, **compliance risk**, **channel fit**, **readability**, and **emotional relevance**, each from 0 to 2. Read the anchored criteria rather than assigning scores by impression.
 
-An unsupported material claim is a blocker regardless of the total. Revise dimensions below two and record anything that still needs client confirmation or testing.
+A ready draft needs at least **13/16**, no zero dimension, and no hard failure. Unsupported claims, unconfirmed regulated benefits, false scarcity, changed terms, privacy violations, and explicit scope violations block readiness regardless of the total. Revise or hold the affected claim. Keep scoring internal unless requested; a single-CTA request still receives a single CTA. Editorial scores are not evidence of conversion.

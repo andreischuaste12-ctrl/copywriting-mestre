@@ -1,5 +1,7 @@
 # Copywriter Master
 
+**Author and copyright holder: Andrei Schuaste.** Version **1.1.0** · **Apache-2.0**.
+
 Copywriter Master is an instruction skill for AI assistants. It helps an assistant plan, write, and review commercial copy using audience research, clear strategy, human language, and evidence-aware claims. It is a knowledge package, not a standalone application. It does not guarantee conversion; outcomes also depend on the offer, audience, channel, and execution.
 
 ## What the skill does
@@ -8,7 +10,8 @@ Copywriter Master is an instruction skill for AI assistants. It helps an assista
 2. **Follows the brief.** The user's requested format, amount, and scope take precedence. Open-ended ideation can include distinct options when useful.
 3. **Uses research in the requested way.** It can synthesize research or use it to write copy, depending on the request.
 4. **Writes clearly and humanely.** Uses concrete, natural language without invented evidence or generic hype.
-5. **Provides specialist reference material.** Includes operational profiles of historical copywriters and framework authors, with caveats about attribution and evidence.
+5. **Checks editorial quality.** Applies eight anchored criteria and blocks unsupported claims, unconfirmed regulated promises, invented scarcity, changed terms, privacy violations, and explicit scope failures.
+6. **Provides specialist reference material.** Includes operational profiles of historical copywriters and framework authors, with caveats about attribution and evidence.
 
 It is intended for commercial copy such as headlines, product pages, landing pages, ads, emails, CTAs, and sales scripts. It is not intended for noncommercial editing, proofreading, or translation.
 
@@ -16,6 +19,11 @@ It is intended for commercial copy such as headlines, product pages, landing pag
 
 - skills/copywriter-master/SKILL.md — the assistant's core behavior and routing instructions.
 - skills/copywriter-master/references/ — supporting knowledge to consult only when relevant: strategy, research, humanization, compliance, testing, source notes, and copywriter profiles.
+- [Output examples](skills/copywriter-master/references/output-examples.md) — ten complete synthetic good/bad examples for ads, headlines, landing sections, emails, CTAs, review, research, regulated claims, subscriptions, and premium offers.
+- [Operating protocol](skills/copywriter-master/references/operating-protocol.md) — mode routing, decision tree, and proportional output contract.
+- [Quality rubric](skills/copywriter-master/references/quality-rubric.md) — eight anchored dimensions, a 13/16 gate, and hard failures.
+- [Evaluation protocol](evaluation/README.md) — 15 fixed cases, manual benchmark workflow, and scoring tools.
+- [Changelog](CHANGELOG.md) and VERSION — versioned behavior and release history.
 - COPYWRITING_GUIDE.md — practical writing guidance.
 - REFERENCES.md — complementary bibliography.
 
@@ -54,16 +62,58 @@ Options:
 Run install.ps1 from the repository folder:
 
 ~~~powershell
-.\\install.ps1
+.\install.ps1
 ~~~
 
 Use -Dest, -Project, -DryRun, or -Uninstall for the equivalent options. If PowerShell blocks the script, run it with -ExecutionPolicy Bypass.
 
 The scripts validate the skill identity, reject source and destination paths that overlap, stage a replacement before moving an existing installation, and restore the prior copy if activation fails. The PowerShell installer rejects paths that pass through symbolic links or junctions; use the physical path.
 
-## Use and review
+## Practical use
 
-After installation, restart or open a new assistant session and try a representative commercial copy request. This can confirm that the skill loaded and followed that request's scope. It does not measure conversion or establish performance across audiences and channels.
+Restart or open a new assistant session after installation. The assistant follows your language; the package being in English does not force English output.
+
+| Mode | Example request |
+|---|---|
+| Diagnose | “Given this brief, identify the main decision barrier and missing evidence. Do not write copy yet.” |
+| Write | “Write one landing page section for this audience, using only these product facts. CTA: book a demo.” |
+| Review | “Review this sales email, list factual risks, and provide one rewrite preserving the exact price and terms.” |
+| Research | “Organize these interviews into problems, desires, and objections. Cite source IDs; do not write ads.” |
+| Optimize CTA / offer | “Give one Portuguese CTA, at most 18 characters, for a confirmed free trial. No explanation.” |
+
+### A useful brief
+
+> Write one Portuguese ad, at most 160 characters, with no explanation. Turno is a weekly calendar for independent tutors with SMS reminders. CTA opens a demonstration. Use only these facts; there is no earnings evidence or deadline.
+
+An appropriate synthetic output is:
+
+> Organize suas aulas da semana e envie lembretes por SMS com o Turno. Veja a demonstração.
+
+A weak prompt is “Make my product irresistible.” It omits the product, audience, channel and action. A bad output would be “Double your income in 7 days. Last free seats!” because it invents results, scarcity and free access. These are teaching examples, not measured performance results.
+
+### When the assistant asks questions
+
+The assistant asks a concise bundled question when a missing product identity, conflicting price, or required regulated permission blocks useful work. It proceeds when context is adequate, chooses a reasonable tone if none is supplied, and does not demand testimonials to fill a template. If you request no questions, it uses verified facts and holds unsupported promises. It never guesses material terms or permission.
+
+Open-ended strategy can use Brief, Audience, Problem, Offer, Proof, CTA, Risks, and Final copy. A request for one CTA receives one CTA, with no audit or feedback questionnaire. Research-only work receives findings and next decisions rather than unsolicited sales copy.
+
+## Quality checks and benchmark status
+
+Before delivery, the skill applies the [editorial rubric](skills/copywriter-master/references/quality-rubric.md): audience fit, offer clarity, evidence, CTA, compliance, channel fit, readability, and emotional relevance. Each dimension scores 0–2; readiness requires at least 13/16, no zero, and no hard failure. This is a revision rule, not proof of improved conversions. Self-ratings are not independent evaluation.
+
+Check the package and tools locally with Python 3.10+ and Bash:
+
+```sh
+python3 tools/evaluate.py check
+python3 -m unittest discover -s tests -v
+bash -n install.sh
+```
+
+GitHub Actions also defines a Windows PowerShell installer check. Repository checks validate package integrity, scoring gates and installation, not generated copy. There are **no completed live model benchmarks or conversion results for this release**. Follow the [evaluation protocol](evaluation/README.md) to compare generic, baseline and candidate conditions using the same model/settings, fresh sessions, three or more repetitions, and human review. Compatibility across models remains unmeasured until those comparisons are run.
+
+## Feedback and evolution
+
+Give concrete feedback such as “the offer is unclear,” “this phrase changes the guarantee,” or “keep the tone more direct.” The skill uses feedback available in the current conversation. It saves a case externally only when you request it and has no telemetry, automatic training or guaranteed memory between sessions. Use the [case-record template](skills/copywriter-master/references/feedback-loop.md) for explicitly requested, redacted records. The [changelog](CHANGELOG.md) records behavioral changes; version metadata and benchmark fingerprints identify what was tested.
 
 ## Scope and limitations
 
@@ -71,4 +121,6 @@ The skill supports editorial decisions; it does not replace product, legal, regu
 
 ## License
 
-Distributed under the Apache License 2.0. See LICENSE and NOTICE for details.
+Copyright 2026 **Andrei Schuaste**, project author and copyright holder. Distributed under the [Apache License 2.0](LICENSE); see [NOTICE](NOTICE) for attribution. The same LICENSE and NOTICE are included in the installable skill folder, so both scripted and manual folder installations retain them.
+
+Third-party books, campaigns, names, and trademarks retain their respective owners and rights. The project license covers this project's original material; referencing a work does not license that original work or imply endorsement.
