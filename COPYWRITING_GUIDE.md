@@ -1,111 +1,110 @@
-# Guia de voz e copy
+# Voice and Copywriting Guide
 
-Use este guia ao criar, revisar ou reescrever qualquer texto de marketing. O objetivo é escrever como uma pessoa que entende o assunto e respeita a inteligência do leitor: com calor humano, opinião clara e argumento sustentado.
+Use this guide to create, review, or rewrite marketing copy. Write like a person who understands the subject and respects the reader: warm, clear in its point of view, and supported by an argument.
 
-O fluxo completo começa antes da redação. Um texto forte depende de contexto confiável, uma oferta compreensível e um próximo passo que faça sentido para o leitor.
+Strong writing starts before drafting. It depends on reliable context, an understandable offer, and a next step that makes sense to the reader.
 
-## 0. Monte o contexto
+## 1. Build the context
 
-Registre o que se sabe e o que ainda precisa ser confirmado:
+Record what is known and what still needs confirmation:
 
-- **Marca:** voz, valores, termos preferidos, termos proibidos e exemplos aprovados.
-- **Mercado:** categoria, alternativas reais, condições locais, sazonalidade e exigências do canal.
-- **Leitor:** papel, experiência, contexto de uso, barreiras práticas e linguagem observada.
-- **Negócio:** oferta, preço e condições quando pertinentes, diferencial verificável e objetivo mensurável.
-- **Restrições:** limites legais, privacidade, consentimento, acessibilidade, formato, tamanho e prazo.
+- **Brand:** voice, values, preferred and prohibited terms, approved examples.
+- **Market:** category, real alternatives, local conditions, seasonality, channel requirements.
+- **Reader:** role, experience, use context, practical barriers, observed language.
+- **Business:** offer, relevant price and terms, verifiable differentiator, measurable objective.
+- **Constraints:** law, privacy, consent, accessibility, format, length, deadline.
 
-Não confunda perfil demográfico com motivação. Procure evidências de comportamento: entrevistas, perguntas de vendas, atendimento, avaliações, consultas de busca e dados próprios autorizados. Registre de onde veio cada insight e se é fato, interpretação ou hipótese. Use somente o necessário de dados pessoais e remova identificadores ao compartilhar exemplos.
+Do not confuse demographics with motivation. Look for behavior evidence: interviews, sales questions, customer support, reviews, search queries, and authorized first-party data. Record each insight's source and whether it is fact, interpretation, or hypothesis. Use only necessary personal data and remove identifiers from shared examples.
 
-## 1. Comece pelo leitor e pela oferta
+## 2. Start with the reader and offer
 
-Antes de redigir, determine:
+Before drafting, identify:
 
-- **Público:** quem decide e em que situação concreta está.
-- **Consciência:** se reconhece o problema, procura soluções, compara opções ou já conhece a oferta.
-- **Dor e desejo:** o que quer resolver e o que espera conseguir, nas palavras que usaria numa conversa.
-- **Oferta e mecanismo:** o que é oferecido, como funciona e por que pode ajudar.
-- **Provas:** dados, demonstrações, depoimentos autorizados, credenciais ou fatos que sustentam a promessa.
-- **Objetivo, canal e ação:** o que o texto precisa fazer, onde será lido e qual é o próximo passo.
+- **Audience:** who decides and in what concrete situation.
+- **Awareness:** whether they recognize the problem, seek solutions, compare options, or already know the offer.
+- **Problem and desire:** what they want to solve and achieve, in their own words.
+- **Offer and mechanism:** what is offered, how it works, and why it may help.
+- **Proof:** data, demonstrations, authorized testimonials, credentials, or facts that support the promise.
+- **Objective, channel, and action:** what the copy should do, where it appears, and the next step.
 
-Não preencha lacunas com estatísticas, histórias, benefícios ou objeções inventados. Se uma informação muda a promessa ou a recomendação, pergunte por ela. Se não for essencial, avance com uma suposição explícita e fácil de corrigir.
+Do not fill gaps with invented statistics, stories, benefits, or objections. Ask for information if it changes the promise or recommendation. Otherwise proceed with an explicit, easy-to-correct assumption.
 
-Antes de escolher o ângulo, compare a oferta com a alternativa que o leitor usa hoje — inclusive não fazer nada. Diferenciação só vale quando importa para esse leitor e pode ser explicada com fatos. Não copie concorrentes; use a análise para entender expectativas, lacunas e convenções da categoria.
+Compare the offer with what the reader currently does, including doing nothing. A differentiator matters only if it matters to the reader and can be explained with facts. Do not copy competitors; analyze them to understand expectations, gaps, and category conventions.
 
-## 2. Escolha uma estratégia, não uma colagem de fórmulas
+## 3. Choose a strategy, not a pile of formulas
 
-Use princípios clássicos de persuasão — especificidade, contraste, curiosidade, demonstração, prova, urgência legítima e redução de risco — conforme a oferta e o estágio de decisão. Não empilhe fórmulas só para parecer persuasivo.
+Use specificity, contrast, curiosity, demonstration, proof, legitimate urgency, and risk reduction only where they fit the offer and decision stage. Do not stack formulas to make copy appear persuasive.
 
-Construa um argumento central:
+Build one central argument:
 
-1. Abra com um problema, desejo ou observação que o leitor reconheça.
-2. Mostre o custo prático de continuar como está, sem dramatizar além dos fatos.
-3. Apresente uma solução e explique o mecanismo em linguagem simples.
-4. Sustente a promessa com a melhor prova disponível.
-5. Responda à objeção mais importante, se houver informação para isso.
-6. Peça uma ação específica e proporcional ao nível de confiança necessário.
+1. Open with a problem, desire, or observation the reader recognizes.
+2. Explain the practical cost of the status quo without dramatizing beyond the evidence.
+3. Present a solution and explain its mechanism in plain language.
+4. Support the promise with the strongest available proof.
+5. Address the most important objection when the information is available.
+6. Ask for a specific action proportionate to the trust required.
 
-Para quem ainda não percebe o problema, esclareça a situação antes de vender. Para quem já compara alternativas, mostre diferenças verificáveis. Para quem conhece a oferta, retire atrito do próximo passo. Ajuste a sequência ao canal; não force todos os passos em todo texto.
+For readers who do not recognize the problem, explain the situation before selling. For readers comparing alternatives, show verifiable differences. For readers who know the offer, reduce friction at the next step. Adapt the sequence to the channel; do not force every step into every asset.
 
-## 3. Soe humano
+## 4. Sound human
 
-- Nas três primeiras frases, prefira um detalhe que possa ser visto ou conferido: uma situação, objeto, lugar, número ou nome real. Não invente esse detalhe para cumprir a regra.
-- Prefira nomes e exemplos específicos a substantivos vagos. Troque generalidades por cenas e consequências observáveis.
-- Varie o ritmo e o tamanho dos parágrafos. Uma frase curta próxima de uma mais longa pode funcionar quando soar natural; não force contagens de palavras nem uma cadência que deixe a peça artificial.
-- Use contrações e palavras comuns quando combinarem com a marca. Leia em voz alta e troque qualquer frase que pareça escrita para impressionar outros profissionais de marketing.
-- Deixe espaço para uma ressalva real, um custo ou uma limitação quando isso for relevante. Não fabrique falhas, erros de digitação ou intimidade para simular humanidade.
-- Termine no último ponto concreto: benefício demonstrável, decisão ou chamada para ação. Evite um parágrafo final que apenas repete a mensagem.
+- In the opening lines, use a detail that can be seen or checked: a situation, object, place, number, or real name. Never invent one to satisfy a style rule.
+- Prefer specific names and examples to vague nouns. Replace generalities with observable scenes and consequences.
+- Vary sentence and paragraph length. A short sentence beside a longer one can create rhythm when it sounds natural; do not force word counts or an artificial cadence.
+- Use contractions and common words when they fit the brand. Read aloud and replace anything written to impress marketers rather than help the reader.
+- Include a real caveat, cost, or limitation when relevant. Do not fabricate errors, typos, or intimacy to simulate humanity.
+- End on the last concrete point: a demonstrable benefit, decision, or call to action. Avoid a closing paragraph that merely repeats the message.
 
-## 4. Seja assertivo sem exagerar
+## 5. Be assertive without overclaiming
 
-Defenda uma ideia por vez. Use verbos diretos e diga quem deve agir, o que deve fazer e o que acontece em seguida. Corte ressalvas automáticas, rodeios e adjetivos que não acrescentam informação.
+Defend one idea at a time. Use direct verbs and say who should act, what to do, and what happens next. Cut automatic caveats, detours, and adjectives that add no information.
 
-Assertividade não é certeza sem prova. Diferencie fatos, hipóteses e recomendações; quantifique apenas quando houver fonte; use urgência somente quando prazo, limite ou disponibilidade forem reais. Não transforme possibilidade em garantia nem pressão em argumento.
+Assertiveness is not certainty without proof. Separate facts, hypotheses, and recommendations. Quantify only with a source. Use urgency only when a real deadline, limit, or availability constraint exists. Do not turn possibility into a guarantee or pressure into an argument.
 
-## 5. Evite padrões artificiais
+## 6. Avoid artificial patterns
 
-- Não narre a estrutura do texto (“agora veremos”, “como vimos acima”) nem repita a mesma ideia em miniatura no começo e no fim.
-- Não anuncie conclusões com “em resumo”, “concluindo” ou equivalentes quando uma frase concreta já encerra o argumento.
-- Não use encerramentos motivacionais genéricos ou frases que apenas ecoem o pedido recebido.
-- Não esconda uma lista mecânica dentro de parágrafos (“o primeiro motivo…, o segundo motivo…”); conecte as ideias como um argumento.
-- Evite no sentido figurado: **alavancar, otimizar, capacitar, desbloquear, impulsionar, sinergia, paradigma, jornada, farol, ecossistema** e **panorama**. Substitua pelo verbo, objeto ou resultado concreto. O uso literal pode permanecer quando for tecnicamente correto.
-- Corte promessas infladas, clichês, jargão, falsa intimidade, positividade uniforme e adjetivos como “revolucionário” sem evidência.
+- Do not narrate the structure (“now we will see,” “as noted above”) or repeat the same idea in miniature at the beginning and end.
+- Do not announce conclusions with “in summary” or similar phrases when a concrete sentence can end the argument.
+- Avoid generic motivational endings or sentences that merely echo the user's request.
+- Do not hide a mechanical list inside prose. Connect ideas as an argument.
+- Avoid figurative business jargon such as leverage, optimize, empower, unlock, accelerate, synergy, paradigm, journey, beacon, ecosystem, and landscape. Replace it with the actual verb, object, or outcome. Keep literal technical uses when accurate.
+- Cut inflated promises, clichés, jargon, false intimacy, uniform positivity, and unsupported adjectives such as “revolutionary.”
 
-## 6. Revise antes de entregar
+## 7. Review before delivery
 
-Confirme que:
+Confirm that the copy:
 
-- O texto fala com o público e o nível de consciência definidos.
-- A ideia central está clara e a recomendação toma uma posição.
-- As primeiras frases trazem concretude quando há dados para isso.
-- Há variação de ritmo, incluindo uma frase curta próxima de uma frase longa.
-- Cada promessa tem sustentação; nenhum fato foi inventado.
-- O próximo passo é específico, possível e fácil de localizar.
-- O final deixa uma decisão, ação ou detalhe concreto, sem resumo automático.
+- Speaks to the defined audience and awareness level.
+- Has a clear central idea and takes a clear position.
+- Uses concrete opening details only when supported by context.
+- Has natural rhythm and no invented facts.
+- Gives the reader a specific, possible next step.
+- Ends with an action, decision, or concrete detail rather than an automatic summary.
 
-Se dois ou mais pontos falharem, reescreva e revise novamente. Preserve a voz da marca e o conteúdo factual, mesmo ao mudar bastante a forma.
+Preserve brand voice and factual content even when substantially changing the wording.
 
-## 7. Adapte ao canal e à jornada
+## 8. Adapt to channel and journey
 
-- **Página de venda:** deixe explícitos proposta de valor, para quem serve, como funciona, prova, condições e próximo passo. Resolva dúvidas perto do ponto em que surgem.
-- **E-mail:** alinhe assunto, abertura e conteúdo; entregue o motivo prometido no assunto e uma ação principal.
-- **Anúncio:** priorize uma ideia, um benefício relevante e uma ação compatível com o espaço e a etapa de decisão.
-- **Conteúdo educativo:** responda primeiro à pergunta do leitor; diferencie explicação útil de promoção e sinalize quando uma recomendação depende de contexto.
-- **Produto e interface:** use rótulos curtos e previsíveis; explique consequências antes de ações importantes e escreva mensagens de erro que indiquem como se recuperar.
+- **Sales page:** clarify value proposition, audience fit, mechanism, proof, terms, and next step. Address questions near the point where they arise.
+- **Email:** align subject, opening, and body; deliver the reason promised in the subject and provide one primary action.
+- **Ad:** prioritize one idea, a relevant benefit, and an action that fits the space and decision stage.
+- **Educational content:** answer the reader's question first; distinguish useful explanation from promotion and note when advice depends on context.
+- **Product and interface copy:** use short, predictable labels; explain consequences before consequential actions; make error messages explain how to recover.
 
-Não use o mesmo texto em todos os canais sem adaptação. Preserve a promessa central, mas ajuste ordem, profundidade, vocabulário, formato e nível de detalhe ao contexto de leitura.
+Do not reuse identical copy across channels without adaptation. Preserve the central promise while adjusting order, depth, vocabulary, format, and detail to the reading context.
 
-## 8. Teste com disciplina
+## 9. Test with discipline
 
-Defina o objetivo antes de escolher a métrica. Cliques, cadastros, compras, compreensão ou redução de dúvidas respondem perguntas diferentes; visualizações e curtidas, sozinhas, não provam resultado de negócio.
+Set the objective before choosing a metric. Clicks, sign-ups, purchases, comprehension, and fewer support questions answer different questions. Views and likes alone do not prove business impact.
 
-Quando houver volume e infraestrutura adequados, compare versões com uma hipótese por vez e mantenha público, período e condições comparáveis. Não declare vencedor com amostra pequena, mudanças simultâneas ou variação sazonal sem controle. Em pesquisas qualitativas, trate comentários como sinais para investigar, não como estimativa da frequência de uma opinião. Registre resultado, limitações e a decisão tomada.
+When volume and infrastructure allow, compare versions with one hypothesis at a time and keep audience, period, and conditions comparable. Do not declare a winner from a small sample, simultaneous changes, or uncontrolled seasonality. Treat qualitative comments as signals to investigate, not estimates of opinion frequency. Record the result, limitations, and decision.
 
-## 9. Localize e torne acessível
+## 10. Localize and make accessible
 
-Adapte exemplos, expressões, unidades, referências culturais e chamadas para ação ao idioma e à região; tradução literal pode distorcer intenção ou promessa. Use estrutura escaneável, títulos informativos, instruções explícitas e palavras comuns. Não dependa apenas de cor, imagem ou posição para transmitir uma instrução. Para páginas e interfaces, confira contraste, teclado, rótulos e mensagens com os requisitos de acessibilidade aplicáveis.
+Adapt examples, expressions, units, cultural references, and calls to action to the language and region. Literal translation can distort intent or claims. Use scannable structure, informative headings, explicit instructions, and familiar words. Do not rely only on color, imagery, or placement to communicate an instruction. For pages and interfaces, check contrast, keyboard access, labels, and messages against applicable accessibility requirements.
 
-## 10. Use uma rubrica de saída
+## 11. Use an editorial rubric
 
-Dê nota de 0 a 2 para cada dimensão: **adequação ao público**, **clareza da oferta**, **força do argumento**, **provas**, **voz humana**, **assertividade**, **ação seguinte** e **adequação ao canal**. Zero significa ausente ou incorreto; um, parcial; dois, claro e sustentado. Some as notas apenas para orientar a revisão, não como prova de conversão.
+Score each dimension from 0 to 2: **audience fit**, **offer clarity**, **argument strength**, **proof**, **human voice**, **assertiveness**, **next action**, and **channel fit**. Zero means missing or incorrect; one, partial; two, clear and supported. The total guides revision; it is not evidence of conversion.
 
-Afirmação material sem evidência é bloqueio: remova-a ou peça a fonte, independentemente da nota total. Reescreva os pontos abaixo de dois e anote o que ainda depende de validação do cliente ou de teste.
+An unsupported material claim is a blocker regardless of the total. Revise dimensions below two and record anything that still needs client confirmation or testing.
