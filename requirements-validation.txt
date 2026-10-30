@@ -1,0 +1,2 @@
+# Optional local validation CLI and its tests; the instruction skill needs no Python dependencies.
+jsonschema>=4.18,<5

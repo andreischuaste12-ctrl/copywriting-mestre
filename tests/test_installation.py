@@ -1,6 +1,7 @@
 """Check distributable attribution and preservation during installer operations."""
 from pathlib import Path
 import shutil
+import os
 import subprocess
 import tempfile
 import unittest
@@ -8,7 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@unittest.skipUnless(shutil.which('bash'), 'Bash required')
+@unittest.skipUnless(shutil.which('bash') and os.name != 'nt', 'Native Bash tests; Windows uses the PowerShell CI job')
 class InstallationTests(unittest.TestCase):
     def install(self, destination, *args, success=True):
         proc = subprocess.run(['bash', str(ROOT / 'install.sh'), '--dest', str(destination), *args],
@@ -28,6 +29,10 @@ class InstallationTests(unittest.TestCase):
             target = dest / 'copywriter-master'
             for name in ('LICENSE', 'NOTICE'):
                 self.assertEqual((ROOT / name).read_bytes(), (target / name).read_bytes())
+            for name in ('brief', 'output'):
+                relative = f'schemas/{name}.schema.json'
+                self.assertEqual((ROOT / 'skills/copywriter-master' / relative).read_bytes(),
+                                 (target / relative).read_bytes())
             (target / 'old-local-marker').write_text('previous installation')
             self.install(dest, '--dry-run')
             self.assertTrue((target / 'old-local-marker').exists())

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0 — 2026-10-30
+
+- Added installable JSON Schema Draft 2020-12 contracts for trusted briefs and structured final copy. Normal chat output remains proportional to the user request.
+- Added an optional local Python validator for quantity, length, required/forbidden phrases, CTA wording, numeric tokens, exact registered claims, sources and authorization state. No AI API or automatic rewrite is used.
+- Reports bind checks to brief/output fingerprints and distinguish detected violations from mandatory human review; passing checks do not certify truth, permission or conversion impact.
+- Added Portuguese/English fixtures and adversarial regressions for changed prices/dates, omitted terms, invented numbers, missing sources, held claims, schema overrides, privacy signals and incomplete semantic coverage.
+- Expanded CI definitions to Linux, macOS and Windows. These definitions do not establish that remote CI has run successfully.
+- Kept the editorial rubric at 1.1.0 independently of the skill release, preserving the fixed evaluation suite. No live model benchmark or campaign performance results are claimed.
+
 ## 1.1.0 — 2026-10-30
 
 - Added explicit Diagnose, Write, Review, Research, and CTA/offer modes, a decision tree, and a proportional output contract that preserves short copy-only requests.

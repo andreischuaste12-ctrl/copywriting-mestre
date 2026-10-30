@@ -58,8 +58,13 @@ def check_repository():
         raise ValueError('Skill metadata must match VERSION and Apache-2.0')
     if '  author: Andrei Schuaste\n' not in text:
         raise ValueError('Skill author attribution missing')
-    if suite['rubric_version'] != version:
-        raise ValueError('Review rubric version must match this release')
+    rubric = (folder / 'references/quality-rubric.md').read_text(encoding='utf-8')
+    if f'Rubric version: {suite["rubric_version"]}.' not in rubric:
+        raise ValueError('Case suite must match the separately versioned rubric')
+    for name in ('brief', 'output'):
+        schema = json.loads((folder / 'schemas' / f'{name}.schema.json').read_text(encoding='utf-8'))
+        if schema.get('$schema') != 'https://json-schema.org/draft/2020-12/schema':
+            raise ValueError('Local validation schemas must declare Draft 2020-12')
     for name in ('LICENSE', 'NOTICE'):
         if (ROOT / name).read_bytes() != (folder / name).read_bytes():
             raise ValueError(f'Installable {name} differs from repository copy')

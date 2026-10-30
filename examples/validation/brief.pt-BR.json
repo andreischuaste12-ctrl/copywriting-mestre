@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "id": "pauta-pt",
+  "language": "pt-BR",
+  "format": "offer",
+  "audience": "Pequenas equipes editoriais",
+  "offer": {
+    "name": "Pauta",
+    "facts": [
+      "Calendário compartilhado com responsáveis e prazos.",
+      "R$ 49 por mês",
+      "Cobrança mensal.",
+      "Cancele quando quiser; acesso até o fim do mês pago."
+    ]
+  },
+  "cta": {
+    "action": "Abre a assinatura do Pauta",
+    "accepted_phrases": [
+      "Assinar o Pauta"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 240,
+    "required_phrases": [
+      "R$ 49 por mês",
+      "Cobrança mensal.",
+      "Cancele quando quiser; acesso até o fim do mês pago."
+    ],
+    "forbidden_phrases": [
+      "teste grátis",
+      "reembolso garantido"
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic product brief for examples; not a real campaign."
+    }
+  ],
+  "claims": [
+    {
+      "id": "calendar",
+      "text": "Calendário compartilhado com responsáveis e prazos.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "BR",
+  "category": "general"
+}

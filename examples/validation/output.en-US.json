@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "trial-en",
+  "language": "en-US",
+  "format": "cta",
+  "items": [
+    {
+      "id": "cta-1",
+      "text": "Start free trial",
+      "claims": []
+    }
+  ]
+}

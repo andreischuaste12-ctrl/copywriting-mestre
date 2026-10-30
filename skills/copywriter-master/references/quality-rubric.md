@@ -1,5 +1,7 @@
 # Editorial Quality Rubric
 
+Rubric version: 1.1.0. This scoring contract is versioned separately from the skill release.
+
 Score the final deliverable, not the effort spent. Use 0 = absent/incorrect, 1 = partial, 2 = fully meets the anchor. A total is a review aid, not conversion evidence. During external evaluation, a human reviewer assigns scores with a short rationale; do not treat a model's self-rating as independent validation.
 
 | Dimension | 0 | 1 | 2 |

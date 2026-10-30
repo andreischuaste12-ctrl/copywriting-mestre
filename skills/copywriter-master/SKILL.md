@@ -4,7 +4,7 @@ description: Plans, writes, and reviews persuasive commercial copy for ads, land
 license: Apache-2.0
 metadata:
   author: Andrei Schuaste
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Copywriter Master
@@ -110,6 +110,12 @@ Never label a draft ready if it contains an unsupported claim, unconfirmed regul
 - Is there regulatory risk involving health, finance, influencers, or data collection? Consult references/brazilian-compliance.md when relevant.
 - If I recommended a test, did I define a hypothesis, metric, and guardrail without implying CTR alone proves success? See references/optimization-and-testing.md.
 
+### Optional structured validation
+
+When a user or integration explicitly requests machine-readable final copy, follow the installed [brief schema](schemas/brief.schema.json) and [output schema](schemas/output.schema.json). Preserve the human-maintained brief as the source of constraints; do not silently edit it or confirm your own claim permissions. See [local-validation.md](references/local-validation.md) for exact rules and the repository CLI. Correct detected output violations, rerun when tools are available, and report remaining blockers. If the validator is unavailable, say so; never claim a check ran. Keep normal chat output in the user's requested format.
+
+A passing automatic check leaves human review required for meaning, source validity and current legal permission. Do not describe it as publication clearance or performance evidence.
+
 ### 8. Feedback and evolution
 
 Apply feedback already provided in this conversation. For ongoing work, offer one optional focused feedback question only when the format allows and it helps the next revision; never append it to a copy-only request. Record preferences or results outside the conversation only when the user requests saving them. Use [feedback-loop.md](references/feedback-loop.md) for a redacted case record and release rules. Do not claim automatic learning, cross-session memory, telemetry, or measured improvement without recorded evidence.
@@ -130,3 +136,4 @@ Apply feedback already provided in this conversation. For ongoing work, offer on
 - references/quality-rubric.md — anchored editorial scoring and publication blockers.
 - references/output-examples.md — complete synthetic good/bad outputs across common channels.
 - references/feedback-loop.md — explicit feedback, case log, privacy, and versioned changes.
+- references/local-validation.md — optional JSON contract, local validator, exact checks and limitations.

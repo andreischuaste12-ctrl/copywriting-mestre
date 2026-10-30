@@ -1,8 +1,8 @@
 # Copywriter Master
 
-**Author and copyright holder: Andrei Schuaste.** Version **1.1.0** · **Apache-2.0**.
+**Author and copyright holder: Andrei Schuaste.** Version **1.2.0** · **Apache-2.0**.
 
-Copywriter Master is an instruction skill for AI assistants. It helps an assistant plan, write, and review commercial copy using audience research, clear strategy, human language, and evidence-aware claims. It is a knowledge package, not a standalone application. It does not guarantee conversion; outcomes also depend on the offer, audience, channel, and execution.
+Copywriter Master is an instruction skill for AI assistants. It helps an assistant plan, write, and review commercial copy using audience research, clear strategy, human language, and evidence-aware claims. It is an instruction package with an optional local validator for structured briefs and draft outputs. It does not guarantee conversion; outcomes also depend on the offer, audience, channel, and execution.
 
 ## What the skill does
 
@@ -31,7 +31,7 @@ The skill should follow the user's language. Its reference materials are written
 
 ## Add the skill to an assistant
 
-The package contains no standalone application or runtime dependencies. Install the skill folder into a compatible assistant's skills directory. The included scripts automate copying that folder; they do not install software.
+The instruction skill has no runtime dependencies. The optional local validation CLI separately requires Python 3.10+ and jsonschema. Install the skill folder into a compatible assistant's skills directory. The included scripts automate copying that folder; they do not install software.
 
 ### macOS, Linux, and WSL
 
@@ -97,6 +97,21 @@ The assistant asks a concise bundled question when a missing product identity, c
 
 Open-ended strategy can use Brief, Audience, Problem, Offer, Proof, CTA, Risks, and Final copy. A request for one CTA receives one CTA, with no audit or feedback questionnaire. Research-only work receives findings and next decisions rather than unsolicited sales copy.
 
+## Optional local validator (1.2)
+
+Check structured draft copy against a human-maintained brief without calling an AI service. The validator checks JSON schemas, item counts and limits, exact required terms, accepted CTAs, numeric tokens and registered claim references. It blocks detected violations and always retains human review for factual meaning and legal permission.
+
+```sh
+python -m pip install -r requirements-validation.txt
+python tools/validate_copy.py --brief examples/validation/brief.pt-BR.json --draft examples/validation/output.pt-BR.json
+```
+
+Try the blocked example by replacing the draft path with `examples/validation/output.blocked.pt-BR.json`. For an English CTA, use `brief.en-US.json` and `output.en-US.json` from the same directory. Examples are synthetic. Add `--out /path/to/new-report.json` to save a report; existing files are preserved.
+
+Exit `0`: automatic checks passed, human review required. Exit `1`: detected copy violations. Exit `2`: invalid input or tool error. A passing result does not prove that a claim is true, complete, or legally authorized. Sources are registered references, not verified evidence. The validator does not repair drafts or generate copy.
+
+Read the [contract, fields and limitations](skills/copywriter-master/references/local-validation.md). The [brief](skills/copywriter-master/schemas/brief.schema.json) and [output](skills/copywriter-master/schemas/output.schema.json) schemas accompany installed skills. Use structured mode only when requested; ordinary chat requests keep their format.
+
 ## Quality checks and benchmark status
 
 Before delivery, the skill applies the [editorial rubric](skills/copywriter-master/references/quality-rubric.md): audience fit, offer clarity, evidence, CTA, compliance, channel fit, readability, and emotional relevance. Each dimension scores 0–2; readiness requires at least 13/16, no zero, and no hard failure. This is a revision rule, not proof of improved conversions. Self-ratings are not independent evaluation.
@@ -104,12 +119,13 @@ Before delivery, the skill applies the [editorial rubric](skills/copywriter-mast
 Check the package and tools locally with Python 3.10+ and Bash:
 
 ```sh
+python3 -m pip install -r requirements-validation.txt
 python3 tools/evaluate.py check
 python3 -m unittest discover -s tests -v
 bash -n install.sh
 ```
 
-GitHub Actions also defines a Windows PowerShell installer check. Repository checks validate package integrity, scoring gates and installation, not generated copy. There are **no completed live model benchmarks or conversion results for this release**. Follow the [evaluation protocol](evaluation/README.md) to compare generic, baseline and candidate conditions using the same model/settings, fresh sessions, three or more repetitions, and human review. Compatibility across models remains unmeasured until those comparisons are run.
+GitHub Actions defines Python validation checks on Linux, macOS and Windows, plus a Windows PowerShell installer check. Repository tests exercise package integrity, scoring gates, installation and deterministic copy violations; they do not measure generated model quality. There are **no completed live model benchmarks or conversion results for this release**. Follow the [evaluation protocol](evaluation/README.md) to compare generic, baseline and candidate conditions using the same model/settings, fresh sessions, three or more repetitions, and human review. Compatibility across models remains unmeasured until those comparisons are run.
 
 ## Feedback and evolution
 

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "pauta-pt",
+  "language": "pt-BR",
+  "format": "offer",
+  "items": [
+    {
+      "id": "offer-1",
+      "text": "Pauta — R$ 49 por mês\nCalendário compartilhado com responsáveis e prazos.\nCobrança mensal. Cancele quando quiser; acesso até o fim do mês pago.\nAssinar o Pauta",
+      "claims": [
+        {
+          "claim_id": "calendar",
+          "quote": "Calendário compartilhado com responsáveis e prazos."
+        }
+      ]
+    }
+  ]
+}

@@ -21,7 +21,7 @@ class EvaluationTests(unittest.TestCase):
             self.path = Path(tmp) / 'run.json'
             ev.prepare(SimpleNamespace(condition='candidate', model='test-fixture/not-a-model-run',
                                        settings='unit test only', repetition=1, skill_dir=None, out=self.path))
-            self.run = json.loads(self.path.read_text())
+            self.run = json.loads(self.path.read_text(encoding='utf-8'))
         self.run['reviewer'] = 'unit-test-fixture'
         for r in self.run['records']:
             r['response'] = 'Synthetic fixture to test score validation; not a generated answer.'
