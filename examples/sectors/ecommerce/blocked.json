@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "ecommerce-example",
+  "language": "es-ES",
+  "format": "ad",
+  "items": [
+    {
+      "id": "version-1",
+      "text": "Trazo\nCuaderno con 80 páginas.\nPrecio total: EUR 12.\nComprar ahora Precio total: EUR 9.",
+      "claims": [
+        {
+          "claim_id": "feature",
+          "quote": "Cuaderno con 80 páginas."
+        }
+      ]
+    }
+  ]
+}

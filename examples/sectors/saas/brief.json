@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "saas-example",
+  "language": "pt-BR",
+  "format": "landing",
+  "audience": "Pequenas equipes editoriais B2B",
+  "offer": {
+    "name": "Pauta",
+    "facts": [
+      "Calendário compartilhado com responsáveis e prazos.",
+      "R$ 49 por mês"
+    ]
+  },
+  "cta": {
+    "action": "Ver demonstração",
+    "accepted_phrases": [
+      "Ver demonstração"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 400,
+    "required_phrases": [
+      "R$ 49 por mês"
+    ],
+    "forbidden_phrases": [
+      "R$ 29 por mês"
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic fixture only; no real customer, legal approval or performance result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature",
+      "text": "Calendário compartilhado com responsáveis e prazos.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "BR",
+  "category": "general"
+}

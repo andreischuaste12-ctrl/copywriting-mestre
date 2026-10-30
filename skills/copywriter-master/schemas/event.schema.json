@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{32}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "validator_version": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "runtime_contract_version": {
+      "const": "1.0"
+    },
+    "rule_catalog_version": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "rule_catalog_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "brief_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "output_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "automated_checks": {
+      "enum": [
+        "passed",
+        "failed"
+      ]
+    },
+    "human_review_required": {
+      "const": true
+    },
+    "finding_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "category_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "timestamp",
+    "validator_version",
+    "runtime_contract_version",
+    "rule_catalog_version",
+    "rule_catalog_sha256",
+    "brief_sha256",
+    "output_sha256",
+    "automated_checks",
+    "human_review_required",
+    "finding_counts",
+    "category_counts"
+  ],
+  "additionalProperties": false
+}

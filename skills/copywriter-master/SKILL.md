@@ -4,7 +4,7 @@ description: Plans, writes, and reviews persuasive commercial copy for ads, land
 license: Apache-2.0
 metadata:
   author: Andrei Schuaste
-  version: 1.2.0
+  version: 1.3.0
 ---
 
 # Copywriter Master
@@ -116,6 +116,8 @@ When a user or integration explicitly requests machine-readable final copy, foll
 
 A passing automatic check leaves human review required for meaning, source validity and current legal permission. Do not describe it as publication clearance or performance evidence.
 
+The installed `runtime-contract.json` identifies supported contract versions. Use [sector-review.md](references/sector-review.md) when the brief depends on sector or market conditions. Local runtime reports classify findings by priority and category; optional logs are off unless explicitly requested. An installed folder is not evidence that a host loaded the skill or that a model passed the benchmark.
+
 ### 8. Feedback and evolution
 
 Apply feedback already provided in this conversation. For ongoing work, offer one optional focused feedback question only when the format allows and it helps the next revision; never append it to a copy-only request. Record preferences or results outside the conversation only when the user requests saving them. Use [feedback-loop.md](references/feedback-loop.md) for a redacted case record and release rules. Do not claim automatic learning, cross-session memory, telemetry, or measured improvement without recorded evidence.
@@ -137,3 +139,4 @@ Apply feedback already provided in this conversation. For ongoing work, offer on
 - references/output-examples.md — complete synthetic good/bad outputs across common channels.
 - references/feedback-loop.md — explicit feedback, case log, privacy, and versioned changes.
 - references/local-validation.md — optional JSON contract, local validator, exact checks and limitations.
+- references/sector-review.md — sector checklists and market-specific review questions; not legal authorization.

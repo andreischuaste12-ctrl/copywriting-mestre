@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "education-example",
+  "language": "en-US",
+  "format": "email",
+  "audience": "Working adults comparing short courses",
+  "offer": {
+    "name": "Outline",
+    "facts": [
+      "Two live writing sessions and one portfolio review.",
+      "One payment of USD 200."
+    ]
+  },
+  "cta": {
+    "action": "View course details",
+    "accepted_phrases": [
+      "View course details"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 400,
+    "required_phrases": [
+      "One payment of USD 200."
+    ],
+    "forbidden_phrases": [
+      "Guaranteed job placement."
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic fixture only; no real customer, legal approval or performance result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature",
+      "text": "Two live writing sessions and one portfolio review.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "US",
+  "category": "general"
+}

@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.10'
       - run: python -m pip install -r requirements-validation.txt
-      - run: python tools/evaluate.py check
+      - run: python tools/release.py check
       - if: runner.os != 'Windows'
         run: bash -n install.sh
       - run: python -m unittest discover -s tests -v
@@ -41,3 +41,23 @@ jobs:
           }
           ./install.ps1 -Dest $dest -Uninstall
           if (Test-Path (Join-Path $dest 'copywriter-master')) { throw 'Uninstall failed' }
+      - name: Check both project installation targets
+        shell: pwsh
+        run: |
+          $project = Join-Path $env:RUNNER_TEMP 'copywriter project test'
+          New-Item -ItemType Directory -Path $project | Out-Null
+          $installer = Join-Path $env:GITHUB_WORKSPACE 'install.ps1'
+          Push-Location $project
+          try {
+            & $installer -Project
+            foreach ($base in @('.claude', '.agents')) {
+              $target = Join-Path $project "$base/skills/copywriter-master"
+              foreach ($name in @('SKILL.md', 'LICENSE', 'NOTICE', 'runtime-contract.json', 'rules/validation.json')) {
+                if (-not (Test-Path (Join-Path $target $name))) { throw "Project install missing $name" }
+              }
+            }
+            & $installer -Project -Uninstall
+            foreach ($base in @('.claude', '.agents')) {
+              if (Test-Path (Join-Path $project "$base/skills/copywriter-master")) { throw 'Project uninstall failed' }
+            }
+          } finally { Pop-Location }

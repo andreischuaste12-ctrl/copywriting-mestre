@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "health-example",
+  "language": "pt-BR",
+  "format": "ad",
+  "items": [
+    {
+      "id": "version-1",
+      "text": "Rótulo\nEmbalagem com 30 cápsulas.\nConsulte as informações do produto.\nVer rótulo Cura a insônia.",
+      "claims": [
+        {
+          "claim_id": "feature",
+          "quote": "Embalagem com 30 cápsulas."
+        }
+      ]
+    }
+  ]
+}

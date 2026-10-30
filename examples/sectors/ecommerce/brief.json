@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "ecommerce-example",
+  "language": "es-ES",
+  "format": "ad",
+  "audience": "Compradores de cuadernos en España",
+  "offer": {
+    "name": "Trazo",
+    "facts": [
+      "Cuaderno con 80 páginas.",
+      "Precio total: EUR 12."
+    ]
+  },
+  "cta": {
+    "action": "Comprar ahora",
+    "accepted_phrases": [
+      "Comprar ahora"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 400,
+    "required_phrases": [
+      "Precio total: EUR 12."
+    ],
+    "forbidden_phrases": [
+      "Precio total: EUR 9."
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic fixture only; no real customer, legal approval or performance result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature",
+      "text": "Cuaderno con 80 páginas.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "EU",
+  "category": "general"
+}

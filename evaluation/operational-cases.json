@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "evidence_type": "synthetic",
+  "cases": [
+    {
+      "id": "saas",
+      "sector": "saas",
+      "market": "BR",
+      "language": "pt-BR",
+      "channel": "landing",
+      "evidence_type": "synthetic",
+      "brief": "../examples/sectors/saas/brief.json",
+      "good_draft": "../examples/sectors/saas/output.json",
+      "bad_draft": "../examples/sectors/saas/blocked.json",
+      "expected_bad_codes": [
+        "forbidden_phrase"
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "sector": "ecommerce",
+      "market": "EU",
+      "language": "es-ES",
+      "channel": "ad",
+      "evidence_type": "synthetic",
+      "brief": "../examples/sectors/ecommerce/brief.json",
+      "good_draft": "../examples/sectors/ecommerce/output.json",
+      "bad_draft": "../examples/sectors/ecommerce/blocked.json",
+      "expected_bad_codes": [
+        "forbidden_phrase"
+      ]
+    },
+    {
+      "id": "education",
+      "sector": "education",
+      "market": "US",
+      "language": "en-US",
+      "channel": "email",
+      "evidence_type": "synthetic",
+      "brief": "../examples/sectors/education/brief.json",
+      "good_draft": "../examples/sectors/education/output.json",
+      "bad_draft": "../examples/sectors/education/blocked.json",
+      "expected_bad_codes": [
+        "forbidden_phrase"
+      ]
+    },
+    {
+      "id": "fintech",
+      "sector": "fintech",
+      "market": "US",
+      "language": "en-US",
+      "channel": "offer",
+      "evidence_type": "synthetic",
+      "brief": "../examples/sectors/fintech/brief.json",
+      "good_draft": "../examples/sectors/fintech/output.json",
+      "bad_draft": "../examples/sectors/fintech/blocked.json",
+      "expected_bad_codes": [
+        "forbidden_phrase"
+      ]
+    },
+    {
+      "id": "health",
+      "sector": "health",
+      "market": "BR",
+      "language": "pt-BR",
+      "channel": "ad",
+      "evidence_type": "synthetic",
+      "brief": "../examples/sectors/health/brief.json",
+      "good_draft": "../examples/sectors/health/output.json",
+      "bad_draft": "../examples/sectors/health/blocked.json",
+      "expected_bad_codes": [
+        "forbidden_phrase"
+      ]
+    },
+    {
+      "id": "services",
+      "sector": "services",
+      "market": "BR",
+      "language": "pt-BR",
+      "channel": "SMS",
+      "evidence_type": "synthetic",
+      "brief": "../examples/sectors/services/brief.json",
+      "good_draft": "../examples/sectors/services/output.json",
+      "bad_draft": "../examples/sectors/services/blocked.json",
+      "expected_bad_codes": [
+        "forbidden_phrase"
+      ]
+    }
+  ]
+}

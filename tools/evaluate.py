@@ -179,6 +179,65 @@ def score_run(run):
     }
 
 
+def compare_runs(runs):
+    """Summarize actual reviewed runs; never fabricate responses or infer conversion lift."""
+    if not runs:
+        raise ValueError('At least one completed run is required')
+    reports = [score_run(run) for run in runs]
+    contexts = {(r['model'], r['settings'], r['suite_sha256'], r['rubric_version']) for r in reports}
+    if len(contexts) != 1:
+        raise ValueError('Comparison requires identical model, settings, suite and rubric')
+    seen = set()
+    fingerprints = {}
+    groups = {c: [] for c in CONDITIONS}
+    for report in reports:
+        key = (report['condition'], report['repetition'])
+        if key in seen:
+            raise ValueError('Duplicate condition/repetition would count evidence twice')
+        seen.add(key)
+        cond = report['condition']
+        previous = fingerprints.setdefault(cond, report['skill_sha256'])
+        if previous != report['skill_sha256']:
+            raise ValueError('Do not pool different skill fingerprints in one condition')
+        groups[cond].append(report)
+    repetitions = [{r['repetition'] for r in groups[c]} for c in CONDITIONS]
+    complete = len(repetitions[0]) >= 3 and all(r == repetitions[0] for r in repetitions)
+    if fingerprints.get('baseline') and fingerprints.get('baseline') == fingerprints.get('candidate'):
+        raise ValueError('Baseline and candidate fingerprints are identical')
+    cells = []
+    for cond, rows in groups.items():
+        for cid in [c['id'] for c in load_suite()['cases']]:
+            values = [next(c for c in r['cases'] if c['case_id'] == cid) for r in rows]
+            if not values:
+                continue
+            cells.append({'condition': cond, 'case_id': cid, 'runs': len(values),
+                          'mean_score': sum(v['total'] for v in values) / len(values),
+                          'score_min': min(v['total'] for v in values), 'score_max': max(v['total'] for v in values),
+                          'pass_rate': sum(v['passed'] for v in values) / len(values),
+                          'hard_failures': sum(len(v['hard_failures']) for v in values)})
+    return {'comparison_status': 'complete' if complete else 'incomplete',
+            'model': reports[0]['model'], 'settings': reports[0]['settings'],
+            'suite_sha256': reports[0]['suite_sha256'], 'rubric_version': reports[0]['rubric_version'],
+            'skill_fingerprints': fingerprints, 'run_count': len(reports), 'cases': cells,
+            'limitation': 'Human editorial ratings only, not conversion evidence. Complete means matched repetitions, not proven improvement.'}
+
+
+def render_comparison(report, format):
+    if format == 'json':
+        return json.dumps(report, ensure_ascii=False, indent=2) + '\n'
+    lines = ['# Editorial benchmark comparison', '', 'Status: ' + report['comparison_status'],
+             'Model: ' + report['model'], 'Settings: ' + report['settings'], '',
+             '| Condition | Case | Runs | Mean / 16 | Range | Pass rate | Hard failures |', '|---|---|---|---|---|---|---|']
+    for row in report['cases']:
+        lines.append(f"| {row['condition']} | {row['case_id']} | {row['runs']} | {row['mean_score']:.2f} | {row['score_min']}–{row['score_max']} | {row['pass_rate']:.1%} | {row['hard_failures']} |")
+    lines += ['', report['limitation']]
+    text = '\n'.join(lines) + '\n'
+    if format == 'html':
+        import html
+        return '<!doctype html><html lang="en"><meta charset="utf-8"><title>Editorial benchmark</title><style>body{font:16px system-ui;max-width:1200px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;line-height:1.6}</style><body><pre>' + html.escape(text) + '</pre></body></html>\n'
+    return text
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
@@ -193,6 +252,10 @@ def main():
     p = sub.add_parser('score', help='Score a completed human-reviewed run')
     p.add_argument('run')
     p.add_argument('--out', help='New report path; refuses to overwrite existing files')
+    p = sub.add_parser('compare', help='Compare completed reviewed runs; no model API calls')
+    p.add_argument('runs', nargs='+')
+    p.add_argument('--out', required=True)
+    p.add_argument('--format', choices=('json', 'markdown', 'html'), default='json')
     args = parser.parse_args()
     try:
         if args.command == 'check':
@@ -201,6 +264,11 @@ def main():
             if args.repetition < 1 or not nonempty(args.model) or not nonempty(args.settings):
                 raise ValueError('Provide model, settings and a positive repetition')
             prepare(args)
+        elif args.command == 'compare':
+            report = compare_runs([json.loads(Path(p).read_text(encoding='utf-8')) for p in args.runs])
+            with Path(args.out).open('x', encoding='utf-8') as stream:
+                stream.write(render_comparison(report, args.format))
+            return 0 if report['comparison_status'] == 'complete' else 1
         else:
             report = score_run(json.loads(Path(args.run).read_text(encoding='utf-8')))
             output = json.dumps(report, ensure_ascii=False, indent=2) + '\n'

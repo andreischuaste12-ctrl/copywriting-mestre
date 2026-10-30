@@ -69,3 +69,11 @@ Character limits count Unicode **NFC code points**, including spaces, punctuatio
 Reports include validator version, canonical brief/output SHA-256 fingerprints, item character counts and findings. `automated_checks` is `passed` or `failed`. `disposition` is `needs_human_review` or `blocked`. Every valid report retains `human_review_required: true`; exit `0` is not publication approval.
 
 The validator never certifies factual truth, complete claim coverage, implied promises, source validity, consent, legal permission or conversions. An unregistered paraphrase can evade literal checks. The mandatory `semantic_review` finding preserves that uncertainty even when no pattern fires. Sources and authorization entered into the brief are declarations by its owner, not independently verified facts. No model API, external lookup or telemetry is used.
+
+## Operational runtime (1.3)
+
+The core implementation lives in the repository's `copywriter_runtime/` package. The public offline API is `validate_copy(brief, output)`; invalid structured inputs raise `InputError`. The `tools/validate_copy.py` command remains compatible. The unified `tools/copywriter.py` CLI adds `init`, `validate`, `batch` and `summary`. `validate` supports `--format json|markdown|html` and an explicit optional `--log` path; no storage occurs without that flag.
+
+The installed `runtime-contract.json` declares version boundaries. `rules/validation.json` contains stable codes, risk priority, categories, remediation and known signal patterns. Report metadata includes the rule catalog version and fingerprint. Rule priority is triage guidance, not a legal conclusion. Batch case IDs must be unique ignoring case and cannot use `summary` or reserved Windows filenames. Paths in a batch manifest resolve relative to that manifest. JSON and Markdown reports are written to a new directory; malformed inputs are checked before files are created.
+
+In the repository, `docs/QUICKSTART.pt-BR.md`, `docs/QUICKSTART.en.md`, `docs/COMPATIBILITY.md`, `docs/OBSERVABILITY.md` and `docs/MAINTENANCE.md` explain the workflow, compatibility evidence, logging limits and release process. These repository-only tools/docs are not installed by the skill-folder installer. The installed schemas and references can be used by an integrating host without pretending the Python CLI is present.

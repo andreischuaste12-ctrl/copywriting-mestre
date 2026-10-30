@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "services-example",
+  "language": "pt-BR",
+  "format": "cta",
+  "items": [
+    {
+      "id": "version-1",
+      "text": "Agendar visita Últimas 2 vagas!",
+      "claims": []
+    }
+  ]
+}

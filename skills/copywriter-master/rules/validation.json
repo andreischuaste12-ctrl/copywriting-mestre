@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "version": "1.0.0",
+  "rules": [
+    {
+      "code": "brief_id_mismatch",
+      "category": "format",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Use the output for this brief ID."
+    },
+    {
+      "code": "language_mismatch",
+      "category": "audience",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Match the declared language and review the actual prose language."
+    },
+    {
+      "code": "format_mismatch",
+      "category": "format",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Use the final-copy format requested in the brief."
+    },
+    {
+      "code": "item_count",
+      "category": "format",
+      "priority": "medium",
+      "severity": "error",
+      "remediation": "Return exactly the requested number of complete items."
+    },
+    {
+      "code": "item_length",
+      "category": "format",
+      "priority": "medium",
+      "severity": "error",
+      "remediation": "Shorten this item without removing mandatory terms."
+    },
+    {
+      "code": "total_length",
+      "category": "format",
+      "priority": "medium",
+      "severity": "error",
+      "remediation": "Reduce the combined text length within the stated limit."
+    },
+    {
+      "code": "required_phrase",
+      "category": "offer",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Restore the exact required price, deadline or condition."
+    },
+    {
+      "code": "forbidden_phrase",
+      "category": "compliance",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Remove the forbidden wording and review its implied meaning."
+    },
+    {
+      "code": "cta_mismatch",
+      "category": "cta",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Use an accepted CTA that matches the actual destination."
+    },
+    {
+      "code": "unprovided_number",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Remove the number or obtain a reviewed brief update with its source."
+    },
+    {
+      "code": "duplicate_annotation",
+      "category": "evidence",
+      "priority": "medium",
+      "severity": "error",
+      "remediation": "Keep one annotation per registered claim per item."
+    },
+    {
+      "code": "quote_not_in_copy",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Annotate the actual literal wording present in this item."
+    },
+    {
+      "code": "unknown_claim",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Remove the invented reference or obtain an authorized claim registry update."
+    },
+    {
+      "code": "claim_wording_changed",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Restore registered wording or obtain a reviewed claim revision."
+    },
+    {
+      "code": "unannotated_claim",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "error",
+      "remediation": "Add the correct annotation; do not remove claim accountability."
+    },
+    {
+      "code": "claim_without_source",
+      "category": "evidence",
+      "priority": "critical",
+      "severity": "error",
+      "remediation": "Hold the claim until a supporting source is registered and reviewed."
+    },
+    {
+      "code": "authorization_pending",
+      "category": "compliance",
+      "priority": "critical",
+      "severity": "error",
+      "remediation": "Remove the held claim until applicable authorization is confirmed."
+    },
+    {
+      "code": "sensitive_claim_review",
+      "category": "compliance",
+      "priority": "high",
+      "severity": "review",
+      "remediation": "Review claim scope, current permission and consent for this market/channel."
+    },
+    {
+      "code": "category_review",
+      "category": "compliance",
+      "priority": "high",
+      "severity": "review",
+      "remediation": "Apply the sector/market review template with current official sources."
+    },
+    {
+      "code": "semantic_review",
+      "category": "clarity",
+      "priority": "medium",
+      "severity": "review",
+      "remediation": "Review meaning, evidence, implied promises and current permission before publication."
+    },
+    {
+      "code": "scarcity_signal",
+      "category": "compliance",
+      "priority": "high",
+      "severity": "review",
+      "remediation": "Check the real deadline, inventory and material conditions.",
+      "pattern": "\\b(?:last chance|only \\d+ (?:seats|spots)|limited (?:stock|time)|últimas? (?:vagas|unidades)|só hoje|contagem regressiva)\\b"
+    },
+    {
+      "code": "health_signal",
+      "category": "compliance",
+      "priority": "critical",
+      "severity": "review",
+      "remediation": "Verify product-specific health wording and current applicable permission.",
+      "pattern": "\\b(?:cures?|treats?|prevents?|cura|curar|trata|tratar|previne|prevenir)\\b"
+    },
+    {
+      "code": "financial_signal",
+      "category": "compliance",
+      "priority": "critical",
+      "severity": "review",
+      "remediation": "Verify financial claims, risk disclosure and applicable permission.",
+      "pattern": "\\b(?:guaranteed (?:income|returns?)|risk.free investment|renda garantida|retorno garantido|investimento sem risco)\\b"
+    },
+    {
+      "code": "testimonial_signal",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "review",
+      "remediation": "Verify testimonial accuracy, context and consent.",
+      "pattern": "[“”\"]|\\b(?:testimonial|depoimento|customers? say|clientes? dizem)\\b"
+    },
+    {
+      "code": "private_data_signal",
+      "category": "privacy",
+      "priority": "critical",
+      "severity": "error",
+      "remediation": "Remove the detected identifier; review all text for additional personal data.",
+      "pattern": "\\b[^\\s@]+@[^\\s@]+\\.[^\\s@]+\\b|\\b\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}\\b"
+    }
+  ]
+}

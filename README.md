@@ -1,8 +1,20 @@
 # Copywriter Master
 
-**Author and copyright holder: Andrei Schuaste.** Version **1.2.0** · **Apache-2.0**.
-
 Copywriter Master is an instruction skill for AI assistants. It helps an assistant plan, write, and review commercial copy using audience research, clear strategy, human language, and evidence-aware claims. It is an instruction package with an optional local validator for structured briefs and draft outputs. It does not guarantee conversion; outcomes also depend on the offer, audience, channel, and execution.
+
+## Start here
+
+Version **1.3.0** · **Apache-2.0**.
+
+Follow the 15-minute [Portuguese quickstart](docs/QUICKSTART.pt-BR.md) or [English quickstart](docs/QUICKSTART.en.md). For supported integration paths and what has actually been tested, see the [compatibility matrix](docs/COMPATIBILITY.md). Filesystem installation checks do not establish that a live model loaded or followed the skill.
+
+```sh
+python -m pip install -r requirements-validation.txt
+python tools/copywriter.py init --example pt-BR --dest ./first-case
+python tools/copywriter.py validate --brief ./first-case/brief.json --draft ./first-case/output.json --format markdown
+```
+
+The examples are synthetic and run without an API key. The CLI validates existing copy; generation stays with the assistant of your choice. Original briefs and registered source references remain the responsibility of their owner.
 
 ## What the skill does
 
@@ -97,7 +109,7 @@ The assistant asks a concise bundled question when a missing product identity, c
 
 Open-ended strategy can use Brief, Audience, Problem, Offer, Proof, CTA, Risks, and Final copy. A request for one CTA receives one CTA, with no audit or feedback questionnaire. Research-only work receives findings and next decisions rather than unsolicited sales copy.
 
-## Optional local validator (1.2)
+## Optional local runtime (1.3)
 
 Check structured draft copy against a human-maintained brief without calling an AI service. The validator checks JSON schemas, item counts and limits, exact required terms, accepted CTAs, numeric tokens and registered claim references. It blocks detected violations and always retains human review for factual meaning and legal permission.
 
@@ -112,6 +124,18 @@ Exit `0`: automatic checks passed, human review required. Exit `1`: detected cop
 
 Read the [contract, fields and limitations](skills/copywriter-master/references/local-validation.md). The [brief](skills/copywriter-master/schemas/brief.schema.json) and [output](skills/copywriter-master/schemas/output.schema.json) schemas accompany installed skills. Use structured mode only when requested; ordinary chat requests keep their format.
 
+### Batch review and local activity reports
+
+```sh
+python tools/copywriter.py batch --manifest examples/sectors/batch.json --out-dir ./sector-reports
+python tools/copywriter.py validate --brief examples/validation/brief.pt-BR.json --draft examples/validation/output.pt-BR.json --log ./events.jsonl
+python tools/copywriter.py summary --log ./events.jsonl --format html --out ./activity.html
+```
+
+Batch review exports JSON and Markdown to a new directory. Six [sector examples](examples/sectors/batch.json) cover SaaS/B2B, e-commerce, education, fintech, health and services/SMS across Portuguese, English and Spanish. All are synthetic fixtures; they do not prove live campaign quality. [Sector/market worksheets](skills/copywriter-master/references/sector-review.md) organize required human review without claiming a legal clearance engine.
+
+Logging is off unless `--log` is supplied. Events omit raw briefs, copy and source text. The local activity summary reports rule/category counts and block frequency; retries count as calls, and human review is required by design. See [observability](docs/OBSERVABILITY.md) for schemas, locking and metric limits. The [architecture](docs/ARCHITECTURE.md) separates behavior, knowledge, contracts, rules and execution and documents the public local Python API.
+
 ## Quality checks and benchmark status
 
 Before delivery, the skill applies the [editorial rubric](skills/copywriter-master/references/quality-rubric.md): audience fit, offer clarity, evidence, CTA, compliance, channel fit, readability, and emotional relevance. Each dimension scores 0–2; readiness requires at least 13/16, no zero, and no hard failure. This is a revision rule, not proof of improved conversions. Self-ratings are not independent evaluation.
@@ -120,12 +144,18 @@ Check the package and tools locally with Python 3.10+ and Bash:
 
 ```sh
 python3 -m pip install -r requirements-validation.txt
-python3 tools/evaluate.py check
+python3 tools/release.py check
 python3 -m unittest discover -s tests -v
 bash -n install.sh
 ```
 
 GitHub Actions defines Python validation checks on Linux, macOS and Windows, plus a Windows PowerShell installer check. Repository tests exercise package integrity, scoring gates, installation and deterministic copy violations; they do not measure generated model quality. There are **no completed live model benchmarks or conversion results for this release**. Follow the [evaluation protocol](evaluation/README.md) to compare generic, baseline and candidate conditions using the same model/settings, fresh sessions, three or more repetitions, and human review. Compatibility across models remains unmeasured until those comparisons are run.
+
+### Releases and benchmark comparison
+
+The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.3.0` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. Matching-version tags trigger a test/build workflow and a downloadable workflow artifact; they do not automatically publish a GitHub Release.
+
+Completed human-reviewed runs can be compared with `python tools/evaluate.py compare run1.json run2.json --out comparison.html --format html`. The report is incomplete until generic/baseline/candidate have matching sets of at least three repetitions, the same model/settings, and consistent skill fingerprints per condition. It displays per-case means, ranges, pass rates and hard failures. No completed benchmark data is bundled or invented.
 
 ## Feedback and evolution
 

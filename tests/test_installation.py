@@ -46,6 +46,21 @@ class InstallationTests(unittest.TestCase):
             self.assertFalse(target.exists())
             self.assertEqual((unrelated / 'keep').read_text(), 'unrelated')
 
+    def test_project_install_targets_both_assistant_directories(self):
+        with tempfile.TemporaryDirectory(prefix='copywriter project ') as tmp:
+            for arguments in (['--project', '--dry-run'], ['--project'], ['--project', '--uninstall']):
+                proc = subprocess.run(['bash', str(ROOT / 'install.sh'), *arguments], cwd=tmp,
+                                      capture_output=True, text=True)
+                self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+                for parent in ('.claude', '.agents'):
+                    target = Path(tmp) / parent / 'skills/copywriter-master'
+                    if '--dry-run' in arguments or '--uninstall' in arguments:
+                        self.assertFalse(target.exists())
+                    else:
+                        for relative in ('SKILL.md', 'LICENSE', 'NOTICE', 'runtime-contract.json', 'rules/validation.json'):
+                            self.assertEqual((ROOT / 'skills/copywriter-master' / relative).read_bytes(),
+                                             (target / relative).read_bytes())
+
     def test_refuses_unknown_installation(self):
         with tempfile.TemporaryDirectory() as tmp:
             dest = Path(tmp)

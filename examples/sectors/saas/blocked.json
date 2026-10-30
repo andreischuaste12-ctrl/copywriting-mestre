@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "saas-example",
+  "language": "pt-BR",
+  "format": "landing",
+  "items": [
+    {
+      "id": "version-1",
+      "text": "Pauta\nCalendário compartilhado com responsáveis e prazos.\nR$ 49 por mês\nVer demonstração R$ 29 por mês",
+      "claims": [
+        {
+          "claim_id": "feature",
+          "quote": "Calendário compartilhado com responsáveis e prazos."
+        }
+      ]
+    }
+  ]
+}

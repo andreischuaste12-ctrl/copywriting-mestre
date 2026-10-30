@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.3.0 — 2026-10-30
+
+- Separated the offline runtime/API from CLI wrappers and reference knowledge; preserved the v1.2 validator entrypoint, strict brief/output schemas and exit codes.
+- Added a versioned runtime contract, prioritized rule catalog, sector/market review worksheets and explicit compatibility evidence boundaries. Finding metadata is additive; existing report fields remain.
+- Added an onboarding CLI, JSON/Markdown/HTML reporting, batch validation and explicit local JSONL events with concurrent-writer rejection and validated summaries. Logging stays off by default.
+- Added six synthetic sector regressions and Portuguese/English quickstarts; no real campaign evidence or live model results are claimed.
+- Added lint/build/verify tooling for reproducible installable archives, checksums, package manifests and a tag-triggered test/build artifact workflow.
+- Added matched-run benchmark comparison reports that reject mixed contexts and label incomplete repetitions. The rubric remains independently versioned at 1.1.0.
+
 ## 1.2.0 — 2026-10-30
 
 - Added installable JSON Schema Draft 2020-12 contracts for trusted briefs and structured final copy. Normal chat output remains proportional to the user request.

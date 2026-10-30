@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "fintech-example",
+  "language": "en-US",
+  "format": "offer",
+  "items": [
+    {
+      "id": "version-1",
+      "text": "Ledger\nExport transaction categories as CSV.\nUSD 20 per month.\nBook a demonstration Guaranteed investment returns.",
+      "claims": [
+        {
+          "claim_id": "feature",
+          "quote": "Export transaction categories as CSV."
+        }
+      ]
+    }
+  ]
+}

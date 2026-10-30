@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "brief_id": "education-example",
+  "language": "en-US",
+  "format": "email",
+  "items": [
+    {
+      "id": "version-1",
+      "text": "Outline\nTwo live writing sessions and one portfolio review.\nOne payment of USD 200.\nView course details",
+      "claims": [
+        {
+          "claim_id": "feature",
+          "quote": "Two live writing sessions and one portfolio review."
+        }
+      ]
+    }
+  ]
+}

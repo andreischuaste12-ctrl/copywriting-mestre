@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "skill_contract_version": "1.0",
+  "runtime_contract_version": "1.0",
+  "brief_version": "1.0",
+  "output_version": "1.0",
+  "report_version": "1.0",
+  "event_version": "1.0",
+  "batch_version": "1.0",
+  "python_minimum": "3.10",
+  "rule_catalog": "rules/validation.json",
+  "human_review_required": true,
+  "exit_codes": {
+    "passed_checks": 0,
+    "blocked_copy": 1,
+    "invalid_input_or_tool_error": 2
+  },
+  "network_required": false,
+  "automatic_generation": false,
+  "logging_default": "off"
+}

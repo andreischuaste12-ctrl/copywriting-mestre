@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "id": "saas",
+      "brief": "saas/brief.json",
+      "draft": "saas/output.json"
+    },
+    {
+      "id": "ecommerce",
+      "brief": "ecommerce/brief.json",
+      "draft": "ecommerce/output.json"
+    },
+    {
+      "id": "education",
+      "brief": "education/brief.json",
+      "draft": "education/output.json"
+    },
+    {
+      "id": "fintech",
+      "brief": "fintech/brief.json",
+      "draft": "fintech/output.json"
+    },
+    {
+      "id": "health",
+      "brief": "health/brief.json",
+      "draft": "health/output.json"
+    },
+    {
+      "id": "services",
+      "brief": "services/brief.json",
+      "draft": "services/output.json"
+    }
+  ]
+}

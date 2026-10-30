@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "fintech-example",
+  "language": "en-US",
+  "format": "offer",
+  "audience": "Small-business owners comparing bookkeeping tools",
+  "offer": {
+    "name": "Ledger",
+    "facts": [
+      "Export transaction categories as CSV.",
+      "USD 20 per month."
+    ]
+  },
+  "cta": {
+    "action": "Book a demonstration",
+    "accepted_phrases": [
+      "Book a demonstration"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 400,
+    "required_phrases": [
+      "USD 20 per month."
+    ],
+    "forbidden_phrases": [
+      "Guaranteed investment returns."
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic fixture only; no real customer, legal approval or performance result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature",
+      "text": "Export transaction categories as CSV.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "US",
+  "category": "finance"
+}

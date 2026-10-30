@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "health-example",
+  "language": "pt-BR",
+  "format": "ad",
+  "audience": "Pessoas procurando informações do rótulo",
+  "offer": {
+    "name": "Rótulo",
+    "facts": [
+      "Embalagem com 30 cápsulas.",
+      "Consulte as informações do produto."
+    ]
+  },
+  "cta": {
+    "action": "Ver rótulo",
+    "accepted_phrases": [
+      "Ver rótulo"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 400,
+    "required_phrases": [
+      "Consulte as informações do produto."
+    ],
+    "forbidden_phrases": [
+      "Cura a insônia."
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic fixture only; no real customer, legal approval or performance result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature",
+      "text": "Embalagem com 30 cápsulas.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "BR",
+  "category": "health"
+}

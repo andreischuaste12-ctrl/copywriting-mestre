@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "id": "services-example",
+  "language": "pt-BR",
+  "format": "cta",
+  "audience": "Clientes que solicitaram o link de agendamento por SMS",
+  "offer": {
+    "name": "Agenda",
+    "facts": [
+      "Agendamento de visita técnica.",
+      "Agendar visita"
+    ]
+  },
+  "cta": {
+    "action": "Agendar visita",
+    "accepted_phrases": [
+      "Agendar visita"
+    ]
+  },
+  "constraints": {
+    "item_count": 1,
+    "max_characters_per_item": 18,
+    "required_phrases": [
+      "Agendar visita"
+    ],
+    "forbidden_phrases": [
+      "Últimas 2 vagas!"
+    ]
+  },
+  "sources": [
+    {
+      "id": "product",
+      "reference": "Synthetic fixture only; no real customer, legal approval or performance result."
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature",
+      "text": "Agendamento de visita técnica.",
+      "kind": "fact",
+      "source_ids": [
+        "product"
+      ],
+      "authorization": {
+        "status": "not_applicable",
+        "reference": ""
+      }
+    }
+  ],
+  "market": "BR",
+  "category": "general"
+}

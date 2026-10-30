@@ -49,3 +49,9 @@ Exit status: `0` all cases pass; `1` completed run has editorial failures; `2` i
 Report model/settings, skill and suite hashes, number of complete runs, per-case score/pass rate and hard failures, mean and range across repetitions, reviewer process, disagreements, and limitations. Compare each candidate case with its matching generic/baseline case; show regressions as well as gains. A mean increase with new hard failures is not an improvement. Do not label a compatible model “validated” from repository tests alone. Editorial ratings do not prove conversion; business outcomes need a separate controlled experiment with guardrails.
 
 Keep raw runs and outputs in an authorized private location by default. Do not commit customer data or confidential model outputs. The fixtures are synthetic, and an empty run is not a benchmark result.
+
+## Compare completed runs
+
+`python tools/evaluate.py compare run1.json run2.json --out comparison.html --format html` produces an offline report (JSON and Markdown are also supported). Supply all actual reviewed run paths: a complete comparison needs generic, baseline and candidate with matching sets of at least three repetition numbers. Different models/settings, duplicate runs and changing skill fingerprints within a condition are rejected. Missing conditions or repetitions produce an **incomplete** report and exit `1`; a complete report exits `0`, and invalid evidence exits `2`. Completion describes evidence structure, not superiority. Preserve hard failures even when average scores improve.
+
+The separate `operational-cases.json` corpus contains synthetic sector good/bad pairs for deterministic regression only. It does not supply model responses for the benchmark. Real case intake and permission requirements are in [maintenance](../docs/MAINTENANCE.md). The release linter checks those synthetic pairs before packaging.
