@@ -158,7 +158,7 @@ GitHub Actions defines Python validation checks on Linux, macOS and Windows, plu
 
 ### Releases and benchmark comparison
 
-The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.4.0` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. Matching-version tags trigger a test/build workflow and a downloadable workflow artifact; they do not automatically publish a GitHub Release.
+The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.4.0` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. A matching-version tag triggers the release workflow: after successful checks and packaging, it uploads an artifact and creates a GitHub Release with the archive, checksums and installers.
 
 Completed human-reviewed runs can be compared with `python tools/evaluate.py compare run1.json run2.json --out comparison.html --format html`. The report is incomplete until generic/baseline/candidate have matching sets of at least three repetitions, the same model/settings, and consistent skill fingerprints per condition. It displays per-case means, ranges, pass rates and hard failures. No completed benchmark data is bundled or invented.
 

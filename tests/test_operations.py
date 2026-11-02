@@ -187,6 +187,25 @@ class OperationsTests(unittest.TestCase):
         self.assertNotIn('<script>', text)
         self.assertIn('&lt;script&gt;', text)
 
+    def test_reports_identify_items_and_show_findings(self):
+        report = copy.deepcopy(self.report)
+        report['findings'] = [
+            {'item_id': 'first', 'priority': 'high', 'category': 'scope', 'code': 'a',
+             'message': 'First issue', 'remediation': 'Fix first'},
+            {'item_id': 'second', 'priority': 'high', 'category': 'scope', 'code': 'b',
+             'message': 'Second issue', 'remediation': 'Fix second'},
+            {'priority': 'low', 'category': 'review', 'code': 'c',
+             'message': 'Overall review', 'remediation': 'Review'},
+        ]
+        for fmt in ('markdown', 'html'):
+            with self.subTest(format=fmt):
+                text = render(report, fmt)
+                for value in ('first', 'second', 'First issue', 'Second issue', 'Overall review', '—'):
+                    self.assertIn(value, text)
+                if fmt == 'html':
+                    self.assertIn('<table>', text)
+                    self.assertNotIn('<pre>', text)
+
     def test_release_is_reproducible_and_detects_archive_tampering(self):
         with tempfile.TemporaryDirectory() as tmp, redirect_stdout(io.StringIO()):
             first, second = Path(tmp) / 'a', Path(tmp) / 'b'

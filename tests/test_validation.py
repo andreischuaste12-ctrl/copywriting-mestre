@@ -45,6 +45,14 @@ class ValidationTests(unittest.TestCase):
         self.check('required_phrase')
         self.check('unprovided_number')
 
+    def test_allowed_number_in_an_unsupported_claim_still_needs_review(self):
+        self.output['items'][0]['text'] += ' Economize 49 horas por mês.'
+        report = self.check()
+        self.assertEqual(report['automated_checks'], 'passed')
+        self.assertEqual(report['disposition'], 'needs_human_review')
+        review = next(f for f in report['findings'] if f['code'] == 'semantic_review')
+        self.assertIn('allowed number can still describe an unsupported fact', review['message'])
+
     def test_deceptive_suffix_does_not_satisfy_price(self):
         self.replace('R$ 49', 'R$ 490')
         self.check('required_phrase')

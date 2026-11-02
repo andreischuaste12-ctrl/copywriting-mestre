@@ -184,7 +184,7 @@ def validate_copy(brief, output):
         add('category_review', 'review', 'The stated category requires current market/channel and claim review.')
     # Always retain human review: unannotated paraphrases, context and actual language are not proven by these rules.
     add('semantic_review', 'review', 'Review factual meaning, source validity, real language, implied claims and legal permission; '
-        'these cannot be certified by this validator.')
+        'an allowed number can still describe an unsupported fact. These cannot be certified by this validator.')
     priorities = {'critical': 0, 'high': 1, 'medium': 2, 'low': 3}
     findings.sort(key=lambda f: (priorities[f['priority']], f['code'], f.get('item_id', '')))
     blocked = any(f['severity'] == 'error' for f in findings)

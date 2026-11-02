@@ -74,7 +74,7 @@ Use this mode when the user asks you to analyze or organize research before writ
 3. **Objections** — what creates hesitation, a possible response, and where it belongs in the copy.
 4. **Value proposition** — one sentence: for whom, what outcome, and why this offer may be relevant. Offer alternatives only if research supports distinct positions. This is a commercial synthesis, not a fifth force in the push/pull/anxiety/habit model.
 
-End with gaps and next steps. Write only if the user requested analysis alone; if they requested both analysis and copy, deliver both in a sensible order. For long source material, extract a short list of Voice of Customer language.
+End with gaps and next steps. If the user requested analysis alone, do not write copy; if they requested both analysis and copy, deliver both in a sensible order. For long source material, extract a short list of Voice of Customer language.
 
 ### 5. Commercial voice
 
