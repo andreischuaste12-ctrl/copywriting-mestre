@@ -19,7 +19,7 @@ This catalog records the scope and known status of sources used in the guide. A 
 | David Ogilvy | [WARC — Rolls-Royce campaign](https://www.warc.com/en/article/rolls-royce%3A-rolls-royce-factual-ads-campaign-4cc814503d51471dab28431fdf03cde5) | Campaign record; attribute work to its team. |
 | A/B testing | [Evan Miller](https://www.evanmiller.org/how-not-to-run-an-ab-test.html) · [Kohavi et al., Cambridge](https://www.cambridge.org/core/books/trustworthy-online-controlled-experiments/sample-ratio-mismatch-and-other-trustrelated-guardrail-metrics/8DBB0F59AC7729D7BC6B94690DB9CCD5) | Peeking risks and sample-ratio mismatch concepts. Apply methods to the experiment design and data. |
 | Checkout research | [Baymard](https://www.baymard.com/blog/cart-abandonment) | Reported reasons for abandonment; estimates vary across surveys and populations. |
-| Brazilian rules | See brazilian-compliance.md | Official legal texts were listed by earlier review; this project does not claim a current legal review. |
+| Brazilian rules | See jurisdictions/brazil.md | Official legal texts were listed by earlier review; this project does not claim a current legal review. |
 
 ## Attribution and evidence rules
 

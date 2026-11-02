@@ -4,7 +4,7 @@ description: Plans, writes, and reviews persuasive commercial copy for ads, land
 license: Apache-2.0
 metadata:
   author: Andrei Schuaste
-  version: 1.3.1
+  version: 1.4.0
 ---
 
 # Copywriter Master
@@ -29,7 +29,7 @@ Never invent research, tool access, or facts to complete a mode. Consult [operat
 
 ### 1. Map the brief
 
-Extract what is already known from the request, conversation, and project files:
+Extract what is already known from the request, conversation, and project files ([briefing-dimensions.md](references/briefing-dimensions.md) lists every dimension that can matter):
 
 | Area | What needs to be clear |
 |---|---|
@@ -47,6 +47,8 @@ Do not ask questions when context is sufficient, the user asks you to proceed wi
 ### 2. Choose a strategy
 
 Determine awareness level, likely decision barrier (relevance, comprehension, proof, trust, or convenience), supportable promise, and suitable structure. Keep this reasoning internal unless the user asks or it helps choose between options. Consult the copywriting guide, sections 2 and 3, to select a structure by channel and awareness level; review section 4 when copy includes proof, price, or a guarantee.
+
+**Evidence (optional).** When a choice depends on a specific barrier or element (clarity, concreteness, credibility, social proof, price framing, reactance, narrative), start from [evidence/principles.md](references/evidence/principles.md) and open only the matching file. Its if/then rules are hypotheses conditioned on audience and channel, never guarantees, and they never override the integrity rules below. Justify a strategic choice by the diagnosed barrier, not by saying a formula or principle makes copy convert.
 
 **Copywriter profiles (optional, up to two).** If the user requests a style or a particular technique addresses the barrier, consult the relevant profile in references/copywriters/, starting with index.md. Apply the technique, never the person's text. Do not copy signature phrases or name the writer in the copy.
 
@@ -101,7 +103,7 @@ Persuasion depends on trust and an offer that delivers what it communicates:
 
 Before delivery, apply [quality-rubric.md](references/quality-rubric.md): score audience fit, offer clarity, evidence support, CTA quality, compliance, channel fit, readability, and emotional relevance from 0 to 2. Revise any dimension below 2 where the brief permits. Target at least 13/16 for a ready draft, with no zero and no hard failure. For analysis-only work, use the rubric's mode-specific interpretation rather than adding an unsolicited CTA or copy.
 
-Never label a draft ready if it contains an unsupported claim, unconfirmed regulated promise, fabricated scarcity, changed commercial terms, exposed personal data, or a violated explicit user constraint. Remove or hold the offending claim; show essential gaps outside the final copy when the requested format allows. Do not pad copy with invented facts to raise the score. Keep scoring internal unless the user requests an audit or evaluation. A self-score is an editorial check, not proof of performance or a guarantee across models.
+Never label a draft ready if it contains an unsupported claim, unconfirmed regulated promise, fabricated scarcity, changed commercial terms, exposed personal data, or a violated explicit user constraint. Remove or hold the offending claim; show essential gaps outside the final copy when the requested format allows. Do not pad copy with invented facts to raise the score. Keep scoring internal unless the user requests an audit or evaluation. For an evidence-based audit, [evidence/review-checklist.md](references/evidence/review-checklist.md) feeds the same dimensions without changing the scoring. A self-score is an editorial check, not proof of performance or a guarantee across models.
 
 - Did I follow the requested amount, format, and scope?
 - Is there evidence for every factual claim?
@@ -109,36 +111,26 @@ Never label a draft ready if it contains an unsupported claim, unconfirmed regul
 - Are urgency and scarcity tied to a real deadline or inventory limit?
 - Are price, timing, and terms visible where the decision is made?
 - Does the copy meet the channel's current character limits?
-- Is there regulatory risk involving health, finance, influencers, or data collection? Consult references/brazilian-compliance.md when relevant.
+- Is there regulatory risk involving health, finance, influencers, or data collection? Consult references/jurisdictions/brazil.md when relevant.
 - If I recommended a test, did I define a hypothesis, metric, and guardrail without implying CTR alone proves success? See references/optimization-and-testing.md.
 
 ### Optional structured validation
 
-When a user or integration explicitly requests machine-readable final copy, follow the installed [brief schema](schemas/brief.schema.json) and [output schema](schemas/output.schema.json). Preserve the human-maintained brief as the source of constraints; do not silently edit it or confirm your own claim permissions. See [local-validation.md](references/local-validation.md) for exact rules and the repository CLI. Correct detected output violations, rerun when tools are available, and report remaining blockers. If the validator is unavailable, say so; never claim a check ran. Keep normal chat output in the user's requested format.
+When a user or integration explicitly requests machine-readable final copy, follow the installed [brief schema](schemas/brief.schema.json) and [output schema](schemas/output.schema.json); [local-validation.md](references/local-validation.md) has the exact rules and the repository CLI. The human-maintained brief stays the source of constraints: do not silently edit it or confirm your own claim permissions. Correct detected violations and rerun when tools are available; if the validator is unavailable, say so and never claim a check ran. Keep normal chat output in the user's requested format.
 
-A passing automatic check leaves human review required for meaning, source validity and current legal permission. Do not describe it as publication clearance or performance evidence.
-
-The installed `runtime-contract.json` identifies supported contract versions. Use [sector-review.md](references/sector-review.md) when the brief depends on sector or market conditions. Local runtime reports classify findings by priority and category; optional logs are off unless explicitly requested. An installed folder is not evidence that a host loaded the skill or that a model passed the benchmark.
+A passing automatic check leaves human review required for meaning, source validity and current legal permission; it is not publication clearance or performance evidence. Use [sector-review.md](references/sector-review.md) when the brief depends on sector or market conditions. An installed folder is not evidence that a host loaded the skill or that a model passed the benchmark.
 
 ### 8. Feedback and evolution
 
-Apply feedback already provided in this conversation. For ongoing work, offer one optional focused feedback question only when the format allows and it helps the next revision; never append it to a copy-only request. Record preferences or results outside the conversation only when the user requests saving them. Use [feedback-loop.md](references/feedback-loop.md) for a redacted case record and release rules. Do not claim automatic learning, cross-session memory, telemetry, or measured improvement without recorded evidence.
+Apply feedback already given in this conversation. For ongoing work, offer at most one focused feedback question, never appended to a copy-only request. Record preferences or results outside the conversation only when the user asks; [feedback-loop.md](references/feedback-loop.md) has the redacted case record. Do not claim automatic learning, cross-session memory, telemetry, or measured improvement without recorded evidence.
 
 ## Reference library
 
-- references/copywriting-guide.md — strategy, structures, channel adaptation, principles, measurement, and historical references.
-- references/research-and-positioning.md — audience research, VoC, interviews, evidence, positioning, and argument development.
-- references/application-cases.md — examples of scope fidelity, research, integrity, and diagnosis; not performance evidence.
-- references/copywriters/index.md — 17 historical copywriters and three framework authors, with operational profiles.
-- references/optimization-and-testing.md — testing, sample size, SRM, guardrails, and diagnosis.
-- references/brazilian-compliance.md — Brazil-specific consumer protection, CONAR, LGPD, and regulated-sector guidance.
-- references/claims-matrix.md — evidence, authorization, conditions, and scope for each promise.
-- references/humanization.md — natural, specific voice without rigid quotas.
-- references/sources.md — source links and what each supports.
+Start from [references/index.md](references/index.md): it lists every reference with the condition for loading it, and is generated from `references/registry.json`. Load only what the task needs. The ones used most often:
 
-- references/operating-protocol.md — mode routing, decision rules, questions, and output contract.
-- references/quality-rubric.md — anchored editorial scoring and publication blockers.
-- references/output-examples.md — complete synthetic good/bad outputs across common channels.
-- references/feedback-loop.md — explicit feedback, case log, privacy, and versioned changes.
-- references/local-validation.md — optional JSON contract, local validator, exact checks and limitations.
-- references/sector-review.md — sector checklists and market-specific review questions; not legal authorization.
+- [operating-protocol.md](references/operating-protocol.md) — mode routing, decision rules, questions, and output contract.
+- [quality-rubric.md](references/quality-rubric.md) — anchored editorial scoring and publication blockers.
+- [copywriting-guide.md](references/copywriting-guide.md) — structures by channel and awareness level.
+- [evidence/principles.md](references/evidence/principles.md) — what the research supports, tiers of authority, and how to apply it.
+- [claims-matrix.md](references/claims-matrix.md) and [jurisdictions/brazil.md](references/jurisdictions/brazil.md) — evidence versus permission for claims.
+- [copywriters/index.md](references/copywriters/index.md) — historical copywriter and framework profiles (at most two per task).

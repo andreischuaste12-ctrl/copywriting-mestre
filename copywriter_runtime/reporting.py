@@ -19,10 +19,14 @@ def render(data, format='json'):
                  f'Human-review-required rate: {data["human_review_required_rate"]}', '',
                  '| Failure/review code | Occurrences |', '|---|---|']
         lines.extend(f'| {key} | {value} |' for key, value in sorted(data['finding_counts'].items()))
-        lines += ['', 'Counts describe logged validation calls, including retries. Human review is required by design; this is not a measured editorial defect rate or conversion result.']
+        lines += ['', 'Counts describe logged validation calls, including retries. Human review is required by design; '
+                  'this is not a measured editorial defect rate or conversion result.']
     markdown = '\n'.join(lines) + '\n'
     if format == 'markdown':
         return markdown
     if format == 'html':
-        return '<!doctype html><html lang="en"><meta charset="utf-8"><title>Copywriter Master report</title><style>body{font:16px system-ui;max-width:1000px;margin:40px auto;padding:0 20px}pre{white-space:pre-wrap;line-height:1.6}</style><body><pre>' + html.escape(markdown) + '</pre></body></html>\n'
+        return ('<!doctype html><html lang="en"><meta charset="utf-8"><title>Copywriter Master report</title>'
+                '<style>body{font:16px system-ui;max-width:1000px;margin:40px auto;padding:0 20px}'
+                'pre{white-space:pre-wrap;line-height:1.6}</style><body><pre>'
+                + html.escape(markdown) + '</pre></body></html>\n')
     raise ValueError('Unsupported report format')

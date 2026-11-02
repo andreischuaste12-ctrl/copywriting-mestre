@@ -8,13 +8,18 @@
 #   ./install.sh --uninstall      removes the skill from the same destinations
 #   ./install.sh --dry-run        shows what would happen without making changes
 #
-# Without cloning the repository:
-#   curl -fsSL https://raw.githubusercontent.com/andreischuaste12-ctrl/copywriting-mestre/main/install.sh | bash
+# Without cloning the repository, install the pinned release (archive checksum is verified):
+#   curl -fsSL https://github.com/andreischuaste12-ctrl/copywriting-mestre/releases/download/v<version>/install.sh | bash
+#   ... | bash -s -- --sha256 <hash published out of band>   # optional stronger check
 
 set -euo pipefail
 
 SKILL_NAME="copywriter-master"
-REPO_TARBALL="https://github.com/andreischuaste12-ctrl/copywriting-mestre/archive/refs/heads/main.tar.gz"
+# Remote installs fetch this exact release archive and verify its SHA-256; they never follow a moving branch.
+# tools/release.py check fails when this pin differs from VERSION.
+RELEASE_VERSION="1.4.0"
+RELEASE_BASE_URL="${COPYWRITER_RELEASE_BASE_URL:-https://github.com/andreischuaste12-ctrl/copywriting-mestre/releases/download/v${RELEASE_VERSION}}"
+ARCHIVE_NAME="${SKILL_NAME}-${RELEASE_VERSION}.zip"
 
 # Skill directories read by AI assistants that support the SKILL.md format.
 DEFAULT_SUBDIRS=(".claude/skills" ".agents/skills")
@@ -23,8 +28,9 @@ dests=()
 mode="install"
 dry_run=0
 project=0
+expected_sha256=""
 
-usage() { sed -n '2,13p' "$0" 2>/dev/null | sed 's/^# \{0,1\}//' || true; }
+usage() { sed -n '2,14p' "$0" 2>/dev/null | sed 's/^# \{0,1\}//' || true; }
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -33,6 +39,8 @@ while [ $# -gt 0 ]; do
     --project)   project=1; shift ;;
     --uninstall) mode="uninstall"; shift ;;
     --dry-run)   dry_run=1; shift ;;
+    --sha256)    [ $# -ge 2 ] || { echo "Error: --sha256 requires a hash." >&2; exit 2; }
+                 expected_sha256="$2"; shift 2 ;;
     -h|--help)   usage; exit 0 ;;
     *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
   esac
@@ -131,18 +139,37 @@ if [ "$mode" = "uninstall" ]; then
   exit "$failed"
 fi
 
-# Locate source beside this script, or download the repository when run via curl.
+# Locate source beside this script, or download the pinned release archive when run via curl.
+sha256_of() {
+  if command -v sha256sum >/dev/null 2>&1; then sha256sum -- "$1" | cut -d' ' -f1
+  elif command -v shasum >/dev/null 2>&1; then shasum -a 256 -- "$1" | cut -d' ' -f1
+  else echo "Error: sha256sum or shasum is required to verify the download." >&2; return 1; fi
+}
+
 src="$local_src"
 if [ -n "$src" ]; then
   :
 else
-  command -v curl >/dev/null 2>&1 || { echo "Error: curl is required to download the skill." >&2; exit 1; }
-  command -v tar  >/dev/null 2>&1 || { echo "Error: tar is required to extract the skill." >&2; exit 1; }
+  for tool in curl unzip; do
+    command -v "$tool" >/dev/null 2>&1 || { echo "Error: $tool is required to download the skill." >&2; exit 1; }
+  done
   tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
-  echo "Downloading the skill..."
-  curl -fsSL "$REPO_TARBALL" | tar -xz -C "$tmp"
-  src="$(find "$tmp" -maxdepth 3 -type d -path "*/skills/$SKILL_NAME" | head -n 1)"
-  [ -n "$src" ] && [ -f "$src/SKILL.md" ] || { echo "Error: skill was not found in the download." >&2; exit 1; }
+  echo "Downloading $ARCHIVE_NAME (release v$RELEASE_VERSION)..."
+  curl -fsSL "$RELEASE_BASE_URL/$ARCHIVE_NAME" -o "$tmp/$ARCHIVE_NAME" \
+    || { echo "Error: could not download $RELEASE_BASE_URL/$ARCHIVE_NAME. Has release v$RELEASE_VERSION been published?" >&2; exit 1; }
+  curl -fsSL "$RELEASE_BASE_URL/SHA256SUMS" -o "$tmp/SHA256SUMS" \
+    || { echo "Error: could not download SHA256SUMS for release v$RELEASE_VERSION." >&2; exit 1; }
+  listed="$(awk -v name="$ARCHIVE_NAME" '$2 == name { print $1 }' "$tmp/SHA256SUMS")"
+  actual="$(sha256_of "$tmp/$ARCHIVE_NAME")" || exit 1
+  if [ -z "$listed" ] || [ "$listed" != "$actual" ]; then
+    echo "Error: checksum mismatch for $ARCHIVE_NAME; refusing to install." >&2; exit 1
+  fi
+  if [ -n "$expected_sha256" ] && [ "$(printf '%s' "$expected_sha256" | tr 'A-F' 'a-f')" != "$actual" ]; then
+    echo "Error: archive does not match the --sha256 you supplied; refusing to install." >&2; exit 1
+  fi
+  unzip -q "$tmp/$ARCHIVE_NAME" -d "$tmp/extract" || { echo "Error: could not extract the archive." >&2; exit 1; }
+  src="$tmp/extract/$SKILL_NAME"
+  [ -f "$src/SKILL.md" ] || { echo "Error: skill was not found in the archive." >&2; exit 1; }
 fi
 src="$(canonical_path "$src")"
 validate_skill_dir "$src"

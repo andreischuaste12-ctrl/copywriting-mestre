@@ -13,7 +13,11 @@ Evidence does not create permission. Removing the word “guaranteed” or weake
 
 ## Consumer advertising
 
-When Brazil applies, review the Brazilian Consumer Defense Code (CDC), applicable self-regulatory guidance from CONAR, and current sector rules. The advertisement must not mislead by statement or omission. Support objective claims, present material terms clearly, and avoid hiding costs or restrictions where the consumer decides. Do not treat this checklist as a substitute for checking the current official text and applicable interpretation.
+When Brazil applies, review the Brazilian Consumer Defense Code (CDC; art. 37 prohibits misleading and abusive advertising), applicable self-regulatory guidance from CONAR, and current sector rules. The advertisement must not mislead by statement or omission. Support objective claims, present material terms clearly, and avoid hiding costs or restrictions where the consumer decides. Do not treat this checklist as a substitute for checking the current official text and applicable interpretation.
+
+## Originality and copyright
+
+Write original expression. Do not copy a competitor's copy, protected campaign text, images or other protected material, and do not reproduce a copywriter's signature phrases. Ideas, methods and techniques are different from their expression: applying a technique is fine, copying the text is not. Check Brazil's copyright law (Lei 9.610/98) with the responsible reviewer when reuse is in question.
 
 ## Health, food, and supplements
 
@@ -37,6 +41,7 @@ Under Brazil's General Data Protection Law (LGPD), determine the lawful basis an
 - [Brazilian Consumer Defense Code](https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm)
 - [CONAR — Brazilian Advertising Self-Regulation Code](https://www.conar.org.br/codigo/codigo.php)
 - [Brazilian General Data Protection Law (LGPD)](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
+- [Brazilian Copyright Law (Lei 9.610/98)](https://www.planalto.gov.br/ccivil_03/leis/l9610.htm)
 - [Anvisa — dietary-supplement FAQs](https://www.gov.br/anvisa/pt-br/assuntos/alimentos/suplementos-alimentares/perguntas-frequentes/)
 
 The links are supplied as starting points. The project does not claim that these pages or rules were rechecked live in this revision.

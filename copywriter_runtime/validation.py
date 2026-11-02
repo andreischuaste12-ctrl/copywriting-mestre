@@ -2,12 +2,10 @@
 """Check a structured draft against a trusted brief, locally, without a model API."""
 from __future__ import annotations
 
-import argparse
 import hashlib
 import json
 from pathlib import Path
 import re
-import sys
 import unicodedata
 
 try:
@@ -19,8 +17,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / 'skills/copywriter-master/schemas'
 # Preserve separators: 2,300 is not silently rewritten as 2300 or 2.300.
 NUMBER = re.compile(r'(?<!\w)\d+(?:[.,:/-]\d+)*(?:\s*%)?(?!\w)')
-# Signals require review; their presence does not establish a false or illegal claim.
-
 
 
 class InputError(ValueError):
@@ -33,6 +29,8 @@ def normalize(text):
 
 def contains(text, phrase):
     text, phrase = normalize(text), normalize(phrase)
+    if not phrase:
+        raise InputError('An empty phrase cannot be matched')
     left = r'(?<!\w)' if phrase[0].isalnum() or phrase[0] == '_' else ''
     right = r'(?!\w)' if phrase[-1].isalnum() or phrase[-1] == '_' else ''
     return re.search(left + re.escape(phrase) + right, text) is not None
@@ -135,7 +133,7 @@ def validate_copy(brief, output):
     trusted_text = brief['offer']['facts'] + [c['text'] for c in brief['claims']]
     trusted_text += constraints['required_phrases'] + brief['cta']['accepted_phrases'] + [brief['offer']['name']]
     allowed_numbers = {normalize(m.group()) for text in trusted_text for m in NUMBER.finditer(text)}
-    for item, text in zip(output['items'], all_text):
+    for item, text in zip(output['items'], all_text, strict=True):
         iid = item['id']
         if 'max_characters_per_item' in constraints and len(text) > constraints['max_characters_per_item']:
             add('item_length', 'error', 'Item exceeds its character limit.', iid)
@@ -163,7 +161,8 @@ def validate_copy(brief, output):
                 continue
             claim = claims[cid]
             if normalize(annotation['quote']) != normalize(claim['text']):
-                add('claim_wording_changed', 'error', 'Claim quote differs from registered wording; register a reviewed revision first.', iid)
+                add('claim_wording_changed', 'error',
+                    'Claim quote differs from registered wording; register a reviewed revision first.', iid)
         for cid, claim in claims.items():
             present = contains(text, claim['text']) or cid in annotated
             if not present:
@@ -184,7 +183,8 @@ def validate_copy(brief, output):
     if brief['category'] != 'general':
         add('category_review', 'review', 'The stated category requires current market/channel and claim review.')
     # Always retain human review: unannotated paraphrases, context and actual language are not proven by these rules.
-    add('semantic_review', 'review', 'Review factual meaning, source validity, real language, implied claims and legal permission; these cannot be certified by this validator.')
+    add('semantic_review', 'review', 'Review factual meaning, source validity, real language, implied claims and legal permission; '
+        'these cannot be certified by this validator.')
     priorities = {'critical': 0, 'high': 1, 'medium': 2, 'low': 3}
     findings.sort(key=lambda f: (priorities[f['priority']], f['code'], f.get('item_id', '')))
     blocked = any(f['severity'] == 'error' for f in findings)
@@ -194,6 +194,6 @@ def validate_copy(brief, output):
             'brief_id': brief['id'], 'brief_sha256': fingerprint(brief), 'output_sha256': fingerprint(output),
             'automated_checks': 'failed' if blocked else 'passed',
             'disposition': 'blocked' if blocked else 'needs_human_review', 'human_review_required': True,
-            'character_counts': {i['id']: len(t) for i, t in zip(output['items'], all_text)},
+            'character_counts': {i['id']: len(t) for i, t in zip(output['items'], all_text, strict=True)},
             'total_characters': total_chars, 'findings': findings}
 

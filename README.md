@@ -4,7 +4,7 @@ Copywriter Master is an instruction skill for AI assistants. It helps an assista
 
 ## Start here
 
-Version **1.3.1** · **Apache-2.0**.
+Version **1.4.0** · **Apache-2.0**.
 
 Follow the 15-minute [Portuguese quickstart](docs/QUICKSTART.pt-BR.md) or [English quickstart](docs/QUICKSTART.en.md). For supported integration paths and what has actually been tested, see the [compatibility matrix](docs/COMPATIBILITY.md). Filesystem installation checks do not establish that a live model loaded or followed the skill.
 
@@ -30,7 +30,8 @@ It is intended for commercial copy such as headlines, product pages, landing pag
 ## Skill contents
 
 - skills/copywriter-master/SKILL.md — the assistant's core behavior and routing instructions.
-- skills/copywriter-master/references/ — supporting knowledge to consult only when relevant: strategy, research, humanization, compliance, testing, source notes, and copywriter profiles.
+- skills/copywriter-master/references/ — supporting knowledge to consult only when relevant, routed by a generated [reference index](skills/copywriter-master/references/index.md): strategy, research, humanization, jurisdiction packs, sector review, testing, source notes, and copywriter profiles. Adding one is a registry entry plus `python tools/references.py index` (see [architecture](docs/ARCHITECTURE.md)).
+- [Evidence principles](skills/copywriter-master/references/evidence/principles.md) — 21 research findings as conditioned rules with limits, caveats and citation status; hypotheses to test, never guarantees of conversion.
 - [Output examples](skills/copywriter-master/references/output-examples.md) — ten complete synthetic good/bad examples for ads, headlines, landing sections, emails, CTAs, review, research, regulated claims, subscriptions, and premium offers.
 - [Operating protocol](skills/copywriter-master/references/operating-protocol.md) — mode routing, decision tree, and proportional output contract.
 - [Quality rubric](skills/copywriter-master/references/quality-rubric.md) — eight anchored dimensions, a 13/16 gate, and hard failures.
@@ -77,7 +78,11 @@ Run install.ps1 from the repository folder:
 .\install.ps1
 ~~~
 
-Use -Dest, -Project, -DryRun, or -Uninstall for the equivalent options. If PowerShell blocks the script, run it with -ExecutionPolicy Bypass.
+Use -Dest, -Project, -DryRun, -Sha256, or -Uninstall for the equivalent options. If PowerShell blocks the script, run it with -ExecutionPolicy Bypass.
+
+### Installing without cloning
+
+Run on its own, both installers download the **pinned release archive** for their own version (`install.sh` / `install.ps1` carry the pin; the release workflow publishes the archive, `SHA256SUMS`, and the two installers) and refuse to install if the archive hash does not match `SHA256SUMS`. They never follow a branch. For an out-of-band check, pass the hash you obtained separately: `--sha256 HASH` (Bash) or `-Sha256 HASH` (PowerShell). A release must be published before this path works; until then, install from a clone. `COPYWRITER_RELEASE_BASE_URL` points the download at a mirror or local directory.
 
 The scripts validate the skill identity, reject source and destination paths that overlap, stage a replacement before moving an existing installation, and restore the prior copy if activation fails. The PowerShell installer rejects paths that pass through symbolic links or junctions; use the physical path.
 
@@ -153,7 +158,7 @@ GitHub Actions defines Python validation checks on Linux, macOS and Windows, plu
 
 ### Releases and benchmark comparison
 
-The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.3.1` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. Matching-version tags trigger a test/build workflow and a downloadable workflow artifact; they do not automatically publish a GitHub Release.
+The [maintenance policy](docs/MAINTENANCE.md) defines breaking changes, version boundaries, migration and the release checklist. `python tools/release.py build --out ./dist --expected-version v1.4.0` produces an installable skill ZIP, file manifest and SHA256SUMS without publishing. `python tools/release.py verify --directory ./dist` checks archive and individual files. Matching-version tags trigger a test/build workflow and a downloadable workflow artifact; they do not automatically publish a GitHub Release.
 
 Completed human-reviewed runs can be compared with `python tools/evaluate.py compare run1.json run2.json --out comparison.html --format html`. The report is incomplete until generic/baseline/candidate have matching sets of at least three repetitions, the same model/settings, and consistent skill fingerprints per condition. It displays per-case means, ranges, pass rates and hard failures. No completed benchmark data is bundled or invented.
 

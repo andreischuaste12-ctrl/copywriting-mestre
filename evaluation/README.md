@@ -2,7 +2,7 @@
 
 This is a fixed **manual model-evaluation protocol**, not an automatic LLM judge or a conversion benchmark. The Python tool uses only the standard library (Python 3.10+); it never calls an API or generates copy. Repository tests verify the tools and package, not model behavior. No live model runs have been performed for this release and there is no claimed lift over a generic prompt.
 
-The skill release and editorial rubric are versioned separately: release 1.2.0 retains rubric 1.1.0 and the existing fixed case suite. The optional structured-copy validator has separate deterministic regression tests and does not replace this model evaluation.
+The skill release and editorial rubric are versioned separately: the current release retains rubric 1.1.0 and the existing fixed case suite (see `VERSION` and `docs/MAINTENANCE.md` for the release in force). The optional structured-copy validator has separate deterministic regression tests and does not replace this model evaluation.
 
 ## Compare three conditions
 

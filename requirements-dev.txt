@@ -1,0 +1,4 @@
+# Maintainer tooling only; the instruction skill and the validation CLI do not need these.
+coverage>=7.4,<8
+mypy>=1.8,<2
+ruff>=0.5,<1

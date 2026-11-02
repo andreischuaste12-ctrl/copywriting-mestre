@@ -6,7 +6,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from copywriter_runtime.cli import add_validate_arguments, validate_command
-from copywriter_runtime.validation import InputError, contains, fingerprint, load_json, normalize, validate_copy, validate_structure
+from copywriter_runtime.validation import (  # noqa: F401  (re-exported: the v1.2 module API stays supported)
+    InputError, contains, fingerprint, load_json, normalize, validate_copy, validate_structure)
 
 
 def main():

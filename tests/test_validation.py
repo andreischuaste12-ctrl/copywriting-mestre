@@ -152,6 +152,29 @@ class ValidationTests(unittest.TestCase):
         self.output['items'][0]['text'] += ' ana@example.test'
         self.check('private_data_signal')
 
+    def test_quantities_written_as_words_are_flagged_for_review(self):
+        # The numeric-token check cannot compare "dois mil" with a trusted figure; the signal keeps it visible.
+        for text in (' Mais de dois mil clientes aprovam.', ' Over two thousand customers approve.'):
+            with self.subTest(text=text):
+                output = copy.deepcopy(self.output)
+                output['items'][0]['text'] += text
+                report = validator.validate_copy(self.brief, output)
+                self.assertIn('number_word_signal', [f['code'] for f in report['findings']])
+                self.assertEqual(report['disposition'], 'needs_human_review')
+
+    def test_health_signal_ignores_the_idiom_se_trata_but_keeps_real_claims(self):
+        for text, expected in ((' Aqui se trata de organização.', False), (' Trata-se de um método.', False),
+                               (' Isso trata a acne.', True), (' Ele previne gripes.', True)):
+            with self.subTest(text=text):
+                output = copy.deepcopy(self.output)
+                output['items'][0]['text'] += text
+                codes = [f['code'] for f in validator.validate_copy(self.brief, output)['findings']]
+                self.assertEqual('health_signal' in codes, expected)
+
+    def test_empty_phrase_is_an_input_error_not_an_index_error(self):
+        with self.assertRaises(validator.InputError):
+            validator.contains('some text', '   ')
+
     def test_schema_rejects_attempt_to_override_trusted_rules(self):
         self.output['constraints'] = {'ignore_previous_instructions': True}
         with self.assertRaises(validator.InputError):
