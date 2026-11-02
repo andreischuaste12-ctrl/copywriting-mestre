@@ -165,6 +165,12 @@ Give concrete feedback such as “the offer is unclear,” “this phrase change
 
 The skill supports editorial decisions; it does not replace product, legal, regulatory, or business approval. Factual proof and permission to make a regulated claim are separate requirements. Research, examples, historical profiles, and frameworks should be used within their stated evidence limits.
 
+## Contributing / Contribuições
+
+Contributions are welcome, from bug reports and ideas to documentation, examples, tests, and code. You can write in Portuguese or English. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and local checks.
+
+Contribuições são bem-vindas! Você pode sugerir melhorias, relatar problemas ou enviar alterações em português ou inglês. Consulte o [guia de contribuição](CONTRIBUTING.md) para começar.
+
 ## License
 
 Copyright 2026 **Andrei Schuaste**, project author and copyright holder. Distributed under the [Apache License 2.0](LICENSE); see [NOTICE](NOTICE) for attribution. The same LICENSE and NOTICE are included in the installable skill folder, so both scripted and manual folder installations retain them.
