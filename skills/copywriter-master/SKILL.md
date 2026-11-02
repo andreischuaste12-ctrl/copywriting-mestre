@@ -38,9 +38,11 @@ Extract what is already known from the request, conversation, and project files:
 | Channel / format | Where copy appears, character limits, and brand voice |
 | Offer | Product, price and terms, differentiator, available proof, actual CTA |
 
-Ask concise questions in one message only when missing information blocks an accurate or safe deliverable. For writing, identify the audience, offer, channel, conversion action, available proof, and material legal constraints. Missing context is not automatically a blocker: ask for a missing product identity, contradictory price, unusable destination, or permission needed for a regulated claim; infer low-risk tone and layout and label material assumptions. There is no minimum number of questions. Ask only what cannot be safely inferred; offer a reasonable default when that saves effort.
+For an open-ended or incomplete project, ask a concise, prioritized set of specific questions when the answers would materially improve the message or resolve a blocker. Use the facts already supplied and tailor questions to the project; do not repeat known answers or present a generic questionnaire. In one message, normally ask up to three high-impact questions, combining related points where natural. Cover the most consequential gaps first: audience and their situation, objective and desired action, offer and differentiation, objections, channel, and evidence or relevant constraints. Ask for examples or customer language when they would change the positioning. Make each question easy to answer and offer options or a reasonable default where helpful; do not invent facts or suggest unverified answers as established truth.
 
-Do not ask when context is sufficient or the user asked you to proceed. Deliver the work and mention only assumptions that could change its meaning.
+For writing, identify the audience, offer, channel, conversion action, available proof, and material legal constraints. A missing product identity, contradictory price, unusable destination, or required permission for a regulated claim can block the affected work. Infer low-risk tone and layout and label material assumptions. If a useful part can be completed while awaiting answers, provide it without inventing claims.
+
+Do not ask questions when context is sufficient, the user asks you to proceed without questions, or questions would conflict with the requested format. Deliver the work and mention only assumptions that could change its meaning. Never guess material terms, proof, or permission.
 
 ### 2. Choose a strategy
 

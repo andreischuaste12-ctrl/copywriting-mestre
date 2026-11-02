@@ -18,7 +18,7 @@ The examples are synthetic and run without an API key. The CLI validates existin
 
 ## What the skill does
 
-1. **Diagnoses proportionally.** Uses available context and asks only questions that block an accurate or safe response.
+1. **Diagnoses proportionally.** Uses available context and asks focused, prioritized questions when missing details would materially improve the message or block accurate or safe work.
 2. **Follows the brief.** The user's requested format, amount, and scope take precedence. Open-ended ideation can include distinct options when useful. AIDA, PAS and BAB are examples; any suitable advertising or copywriting framework may be used, including frameworks outside the reference library.
 3. **Uses research in the requested way.** It can synthesize research or use it to write copy, depending on the request.
 4. **Writes clearly and humanely.** Uses concrete, natural language without invented evidence or generic hype.
@@ -105,7 +105,7 @@ A weak prompt is “Make my product irresistible.” It omits the product, audie
 
 ### When the assistant asks questions
 
-The assistant asks a concise bundled question when a missing product identity, conflicting price, or required regulated permission blocks useful work. It proceeds when context is adequate, chooses a reasonable tone if none is supplied, and does not demand testimonials to fill a template. If you request no questions, it uses verified facts and holds unsupported promises. It never guesses material terms or permission.
+For an incomplete or open-ended project, the assistant asks a concise set of tailored questions, normally up to three, prioritizing details that will shape the message: audience, objective, offer, objections, channel, and evidence. It asks about missing product identity, conflicting price, or required regulated permission first when these block useful work. It proceeds when context is adequate, chooses a reasonable tone if none is supplied, and does not demand testimonials to fill a template. If you request no questions, it uses verified facts and holds unsupported promises. It never guesses material terms or permission.
 
 Open-ended strategy can use Brief, Audience, Problem, Offer, Proof, CTA, Risks, and Final copy. A request for one CTA receives one CTA, with no audit or feedback questionnaire. Research-only work receives findings and next decisions rather than unsolicited sales copy.
 

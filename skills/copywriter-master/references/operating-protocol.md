@@ -6,7 +6,7 @@ The user's requested language, quantity, format, and scope override the default 
 
 1. **Scope:** Is the task commercial? If not, do not apply a sales framework. Identify the requested work mode from SKILL.md.
 2. **Context:** Extract audience, problem, offer and terms, channel, conversion action, proof, and jurisdiction when material. Use supplied facts before asking questions.
-3. **Blockers:** If the product is unidentified, material terms conflict, or a required regulated permission is missing, ask one bundled set of essential questions. If a safe useful part can be delivered, provide it. For a request to proceed without questions, omit or hold unsupported claims and use verified neutral attributes. Never infer a price, benefit, testimonial, deadline, or authorization.
+3. **Questions and blockers:** For incomplete or open-ended projects, ask a concise bundled set of prioritized, project-specific questions when answers would materially improve the message. If the product is unidentified, material terms conflict, or a required regulated permission is missing, ask about those blockers first. If a safe useful part can be delivered, provide it. For a request to proceed without questions, omit or hold unsupported claims and use verified neutral attributes. Never infer a price, benefit, testimonial, deadline, or authorization.
 4. **Awareness:** If the source describes only the problem, explain the problem and mechanism. If it describes evaluating alternatives, lead with relevant fit and a supported differentiator. If it describes a purchase decision, prioritize terms, objections, and the action. Mark inferred awareness as a hypothesis; do not claim to know the audience's mental state.
 5. **Barrier:** Prioritize explicit feedback, then observed research, then a labeled hypothesis. Relevance → recognizable situation; comprehension → plain mechanism; proof → scoped evidence; trust → verified terms or guarantees; convenience → explain the next step. Route technical failures to technical diagnosis.
 6. **Evidence:** A supported nonregulated claim may be used within its exact scope. An overbroad claim may be narrowed only to what the source supports. If no support exists, remove or hold it and name the missing evidence. A prohibited or unconfirmed regulated benefit remains held even when softened. Never treat a placeholder as approval.
@@ -35,6 +35,16 @@ For an open-ended campaign or strategic request, use these compact fields in the
 For a short writing request, return the requested copy only; add an essential blocking question only when necessary. Never add eight headings to a single CTA. For diagnosis/research, omit Final copy and include findings, source references, gaps, and next decision. For a review, show prioritized issue → supporting evidence → fix, then revised copy if requested. For CTA optimization, deliver the requested CTA quantity; discuss business-term proposals only when requested or needed to avoid changing the offer.
 
 ## Questions: ask or proceed
+
+Use the existing brief first. For discovery, normally ask up to three focused questions in one message, selected for their impact on the copy; combine related details when useful. Ask for concrete situations, customer language, or examples instead of vague descriptions. Do not demand information that is unavailable, and distinguish a strategic gap from a fact or permission required to make a claim. If the user asks to proceed without questions, respect that instruction and use only supported facts.
+
+Examples for an incomplete project (adapt, do not ask all by default):
+
+- “Who is the ideal customer, and what situation makes them look for this solution now?”
+- “What exactly is the offer, and what makes it a relevant choice compared with the alternatives customers already use?”
+- “Where will this copy appear, what action should the reader take, and what evidence can support the main benefit?”
+- “What is the main reason a potential customer hesitates? Is there customer feedback or an example in their own words?”
+
 
 - “Write a product ad” without an identifiable product: ask what the product is and who it serves.
 - Known product, audience, action, and constraints, but no tone: choose a direct tone and proceed.
