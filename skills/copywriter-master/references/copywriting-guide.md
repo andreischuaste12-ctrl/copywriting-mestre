@@ -1,6 +1,6 @@
 # Copywriting Strategy Guide
 
-Use this guide to choose an argument and structure for the audience, offer, and channel. No framework guarantees performance. Start with the decision the reader needs to make, not with an acronym.
+Use this guide to choose an argument and structure for the audience, offer, and channel. No framework guarantees performance. Start with the decision the reader needs to make, not with an acronym. Research-backed rules for specific barriers are in [evidence/principles.md](evidence/principles.md).
 
 ## 1. Audience, awareness, and market sophistication
 

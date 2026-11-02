@@ -11,7 +11,7 @@ from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from copywriter_runtime import references
+from copywriter_runtime import evidence, references
 from copywriter_runtime.validation import InputError
 
 REAL = ROOT / 'skills/copywriter-master/references'
@@ -25,7 +25,9 @@ class ReferenceRegistryTests(unittest.TestCase):
         shutil.copytree(REAL, self.refs)
         patches = [mock.patch.object(references, 'REFERENCES', self.refs),
                    mock.patch.object(references, 'REGISTRY', self.refs / 'registry.json'),
-                   mock.patch.object(references, 'INDEX', self.refs / 'index.md')]
+                   mock.patch.object(references, 'INDEX', self.refs / 'index.md'),
+                   mock.patch.object(evidence, 'EVIDENCE_DIR', self.refs / 'evidence'),
+                   mock.patch.object(evidence, 'STUDIES', self.refs / 'evidence/studies.json')]
         for patch in patches:
             patch.start()
             self.addCleanup(patch.stop)
@@ -91,6 +93,19 @@ class ReferenceRegistryTests(unittest.TestCase):
         path = self.refs / 'copywriters/index.md'
         path.write_text(path.read_text(encoding='utf-8').replace('| powers.md |', '| missing-profile.md |'), encoding='utf-8')
         with self.assertRaisesRegex(InputError, 'disagree on profiles'):
+            references.check()
+
+    def test_evidence_files_must_be_registered_and_described_consistently(self):
+        registry = self.registry()
+        entry = next(e for e in registry['references'] if e['path'] == 'evidence/language-and-clarity.md')
+        entry['load_when'] = 'Something else.'
+        self.save(registry)
+        with self.assertRaisesRegex(InputError, 'disagree on title or load_when'):
+            references.check()
+        registry['references'] = [e for e in registry['references'] if e['path'] != 'evidence/language-and-clarity.md']
+        (self.refs / 'evidence/language-and-clarity.md').rename(self.refs / 'evidence/orphan.md')
+        self.save(registry)
+        with self.assertRaises(InputError):
             references.check()
 
     def test_registry_entry_validation(self):

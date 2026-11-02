@@ -1,0 +1,781 @@
+{
+  "schema_version": "1.0",
+  "note": "Source of truth for the generated evidence/*.md files. Edit here, then run: python tools/references.py index",
+  "axes": [
+    {
+      "id": "cognition",
+      "file": "cognition-and-structure.md",
+      "title": "Evidence: cognitive process, load and structure",
+      "load_when": "Planning long or complex copy, structuring a page, or fixing flow between paragraphs."
+    },
+    {
+      "id": "language",
+      "file": "language-and-clarity.md",
+      "title": "Evidence: language, clarity and concreteness",
+      "load_when": "Choosing vocabulary, depth of explanation for a beginner or expert, or making a benefit concrete."
+    },
+    {
+      "id": "attention",
+      "file": "attention-and-emotion.md",
+      "title": "Evidence: attention, curiosity and activation",
+      "load_when": "Writing headlines, openings, subject lines, or content meant to be shared."
+    },
+    {
+      "id": "persuasion",
+      "file": "persuasion-and-credibility.md",
+      "title": "Evidence: persuasion, credibility and social proof",
+      "load_when": "Deciding how much argument or proof to include, placing credentials, or using social proof."
+    },
+    {
+      "id": "decision",
+      "file": "decision-and-pricing.md",
+      "title": "Evidence: decision framing and price presentation",
+      "load_when": "Framing cost of inaction, presenting or reframing a price, or choosing a price reference."
+    },
+    {
+      "id": "resistance",
+      "file": "resistance-and-barriers.md",
+      "title": "Evidence: resistance, prior beliefs and first steps",
+      "load_when": "Writing a firm CTA, correcting a common belief, or designing a low-friction first step."
+    },
+    {
+      "id": "narrative",
+      "file": "narrative-and-familiarity.md",
+      "title": "Evidence: narrative and familiarity",
+      "load_when": "Using a customer story, planning a multi-touch sequence, or keeping voice consistent across touchpoints."
+    },
+    {
+      "id": "meta",
+      "file": "effect-sizes-and-testing.md",
+      "title": "Evidence: effect sizes and why strategy needs a test",
+      "load_when": "Justifying a structural choice, comparing techniques, or planning what to test."
+    }
+  ],
+  "studies": [
+    {
+      "number": 1,
+      "id": "flower-hayes-1981",
+      "axis": "cognition",
+      "citation": {
+        "authors": "Flower, L., & Hayes, J. R.",
+        "year": 1981,
+        "title": "A Cognitive Process Theory of Writing",
+        "venue": "College Composition and Communication",
+        "details": "32(4), 365-387"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "theory",
+      "transfer": "extrapolated",
+      "finding": "Writing is a recursive, goal-directed process in which planning, translating ideas into text and reviewing interleave, rather than a straight line from first line to last.",
+      "rule": {
+        "if": "A long or strategic piece is requested.",
+        "then": "Work in internal stages: diagnose the barrier, build the argument, draft, then review critically against the brief."
+      },
+      "practice": "Name the central objection the piece must overcome before drafting the first paragraph.",
+      "limits": [
+        "A short operational request (microcopy, one headline) does not need the full staged process.",
+        "Staging is the order of your own work. It does not mean asking the user to approve each stage, and the requested format still wins."
+      ],
+      "caveats": [
+        "A descriptive model of how writers work. It does not show that staging raises conversion."
+      ],
+      "topic": "Writing as a recursive process"
+    },
+    {
+      "number": 2,
+      "id": "sweller-1988",
+      "axis": "cognition",
+      "citation": {
+        "authors": "Sweller, J.",
+        "year": 1988,
+        "title": "Cognitive Load During Problem Solving: Effects on Learning",
+        "venue": "Cognitive Science",
+        "details": "12(2), 257-285"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment and theory",
+      "transfer": "extrapolated",
+      "finding": "Working memory is limited, and unnecessary processing demands compete with the processing that builds understanding.",
+      "rule": {
+        "if": "The offer or concept is complex.",
+        "then": "Give each paragraph one main idea, group related items and use short lists, so the reader spends effort on the message and not on decoding the page."
+      },
+      "practice": "At the decision point, remove competing elements such as secondary links and parallel jargon.",
+      "limits": [
+        "Never cut price, guarantee, cancellation or legal terms in the name of simplicity."
+      ],
+      "caveats": [
+        "The \"4 to 7 elements\" figure in popular summaries is not from this paper: Miller (1956) gave about seven and Cowan (2001) argues for about four chunks.",
+        "The terms extraneous and germane load come from later cognitive-load work, not from this 1988 paper.",
+        "The research concerns learning from problem solving; applying it to landing pages is an extrapolation."
+      ],
+      "related": [
+        {
+          "citation": "Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. Behavioral and Brain Sciences, 24(1), 87-114.",
+          "status": "confirm-before-quoting"
+        }
+      ],
+      "topic": "Cognitive load and working memory"
+    },
+    {
+      "number": 3,
+      "id": "kintsch-van-dijk-1978",
+      "axis": "cognition",
+      "citation": {
+        "authors": "Kintsch, W., & van Dijk, T. A.",
+        "year": 1978,
+        "title": "Toward a Model of Text Comprehension and Production",
+        "venue": "Psychological Review",
+        "details": "85(5), 363-394"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "theory",
+      "transfer": "extrapolated",
+      "finding": "Readers understand text by linking sentence-level propositions to a global topic structure. When the link breaks, they must reread or lose the thread.",
+      "rule": {
+        "if": "The topic or argument shifts between paragraphs.",
+        "then": "Add a plain logical connective that ties the previous point to the next one."
+      },
+      "practice": "State how the next paragraph follows from the last (a consequence, an obstacle, a contrast) instead of jumping topic.",
+      "limits": [
+        "Do not use inflated connectives that nobody says aloud."
+      ],
+      "caveats": [
+        "A comprehension model; it does not rank connective styles by persuasiveness."
+      ],
+      "example": "That works until [specific obstacle]. Here is where it breaks: [mechanism].",
+      "topic": "Coherence and global structure"
+    },
+    {
+      "number": 4,
+      "id": "oppenheimer-2006",
+      "axis": "language",
+      "citation": {
+        "authors": "Oppenheimer, D. M.",
+        "year": 2006,
+        "title": "Consequences of Erudite Vernacular Utilized Irrespective of Necessity: Problems with Using Long Words Needlessly",
+        "venue": "Applied Cognitive Psychology",
+        "details": "20(2), 139-156"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Needlessly complex wording lowered readers' ratings of the author's intelligence and of the text, rather than raising them.",
+      "rule": {
+        "if": "A simple, common word carries the full meaning of a more elaborate one.",
+        "then": "Use the simple word."
+      },
+      "practice": "Replace abstract business phrasing with the concrete thing that actually happens for the reader.",
+      "limits": [
+        "Keep technical terms when the audience needs exact terminology (medicine, software, tax law)."
+      ],
+      "caveats": [
+        "The finding concerns needless complexity, not technical precision."
+      ],
+      "example": "Instead of \"leverage operational synergies\", write \"remove repetitive tasks so your team ships sooner\".",
+      "topic": "Needless complexity"
+    },
+    {
+      "number": 5,
+      "id": "mcnamara-1996",
+      "axis": "language",
+      "citation": {
+        "authors": "McNamara, D. S., Kintsch, E., Songer, N. B., & Kintsch, W.",
+        "year": 1996,
+        "title": "Are Good Texts Always Better? Interactions of Text Coherence, Prior Knowledge, and Levels of Understanding in Learning from Text",
+        "venue": "Cognition and Instruction",
+        "details": "14(1), 1-43"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Highly coherent, explicit text helps readers with low prior knowledge, while readers with high prior knowledge can do better with less explicit text that makes them work.",
+      "rule": {
+        "if": "The audience is a beginner (low awareness) versus a senior specialist.",
+        "then": "For beginners, explain premises step by step. For specialists, skip the basics and go to mechanism, specifications and metrics."
+      },
+      "practice": "Selling to a technical buyer: do not define the category; show the numbers and constraints they evaluate.",
+      "limits": [
+        "Never assume prior knowledge the brief does not support. When unsure, start at an intermediate level."
+      ],
+      "caveats": [
+        "Measured learning from science texts, not purchase decisions."
+      ],
+      "topic": "Prior knowledge and cohesion"
+    },
+    {
+      "number": 6,
+      "id": "sadoski-2000",
+      "axis": "language",
+      "citation": {
+        "authors": "Sadoski, M., Goetz, E. T., & Rodriguez, M.",
+        "year": 2000,
+        "title": "Engaging Texts: Effects of Concreteness on Comprehensibility, Interest, and Recall in Four Text Types",
+        "venue": "Journal of Educational Psychology",
+        "details": "92(1), 85-95"
+      },
+      "citation_status": {
+        "state": "index-checked",
+        "note": "bibliographic record matched through a web search of secondary indexes; full text not read"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Across four text types, concreteness was strongly associated with comprehensibility and interest, consistent with dual coding of verbal and imagery information.",
+      "rule": {
+        "if": "You state an abstract benefit such as comfort, speed or savings.",
+        "then": "Attach an observable, checkable anchor to it."
+      },
+      "practice": "Pair each abstract claim with a specification or a familiar comparison taken from the brief.",
+      "limits": [
+        "The anchor must be a true specification of the product. Do not invent a comparison that distorts it."
+      ],
+      "caveats": [
+        "Some of the supplied base's numbers, such as \"twice as fast\", are not supported by anything we could verify and are not used here.",
+        "Part of the evidence is correlational."
+      ],
+      "example": "[Abstract benefit]: [verified measurement], about the size or weight of [familiar object].",
+      "topic": "Concreteness and dual coding"
+    },
+    {
+      "number": 7,
+      "id": "loewenstein-1994",
+      "axis": "attention",
+      "citation": {
+        "authors": "Loewenstein, G.",
+        "year": 1994,
+        "title": "The Psychology of Curiosity: A Review and Reinterpretation",
+        "venue": "Psychological Bulletin",
+        "details": "116(1), 75-98"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "theory and review",
+      "transfer": "extrapolated",
+      "finding": "Curiosity arises when people notice a gap between what they know and what they want to know, so it needs some existing knowledge to open the gap.",
+      "rule": {
+        "if": "You write a headline, an opening or an email subject line.",
+        "then": "State something the reader already recognizes, then expose a specific piece of missing information."
+      },
+      "practice": "Contrast a familiar situation with an unexplained detail that the body then resolves.",
+      "limits": [
+        "No empty clickbait. The promised information must be delivered substantially in the body."
+      ],
+      "caveats": [
+        "A theoretical account of curiosity, not a measured effect on click-through."
+      ],
+      "example": "[Familiar situation]. [Specific missing piece] is explained in the next section.",
+      "topic": "Curiosity as an information gap"
+    },
+    {
+      "number": 8,
+      "id": "berger-milkman-2012",
+      "axis": "attention",
+      "citation": {
+        "authors": "Berger, J., & Milkman, K. L.",
+        "year": 2012,
+        "title": "What Makes Online Content Viral?",
+        "venue": "Journal of Marketing Research",
+        "details": "49(2), 192-205"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "field data and experiment",
+      "transfer": "adjacent",
+      "finding": "Sharing is driven by physiological arousal: high-arousal emotions such as awe and anger increased sharing, while low-arousal emotions such as sadness did not.",
+      "rule": {
+        "if": "The goal is organic sharing or engagement.",
+        "then": "Build the angle around awe or a justified moral objection that the facts support."
+      },
+      "practice": "Prefer a factual, energetic point of view to a lukewarm tip.",
+      "limits": [
+        "Never use fear or outrage to spread panic or misinformation, especially in health and finance.",
+        "Invented urgency or fear violates the project integrity rules whatever the study says."
+      ],
+      "caveats": [
+        "The data came from news articles, not advertising; transfer to sales copy is not shown."
+      ],
+      "topic": "Arousal and sharing"
+    },
+    {
+      "number": 9,
+      "id": "petty-cacioppo-1986",
+      "axis": "persuasion",
+      "citation": {
+        "authors": "Petty, R. E., & Cacioppo, J. T.",
+        "year": 1986,
+        "title": "The Elaboration Likelihood Model of Persuasion",
+        "venue": "Advances in Experimental Social Psychology",
+        "details": "19, 123-205"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "theory",
+      "transfer": "extrapolated",
+      "finding": "People process messages by a central route (scrutinizing arguments) when motivated and able, and by a peripheral route (cues) otherwise.",
+      "rule": {
+        "if": "The decision is high-involvement or high-risk, versus a low-involvement impulse choice.",
+        "then": "High involvement: lead with argument quality, evidence and causal logic. Low involvement: lead with clarity, ease of action and credible social proof."
+      },
+      "practice": "Judge involvement from the audience and the decision, not only from the price tag.",
+      "limits": [
+        "Credibility basics matter on both routes. Do not assume polish compensates for a weak argument."
+      ],
+      "caveats": [
+        "The routes are not mutually exclusive in practice; involvement varies by person."
+      ],
+      "topic": "Central and peripheral routes"
+    },
+    {
+      "number": 10,
+      "id": "hovland-weiss-1951",
+      "axis": "persuasion",
+      "citation": {
+        "authors": "Hovland, C. I., & Weiss, W.",
+        "year": 1951,
+        "title": "The Influence of Source Credibility on Communication Effectiveness",
+        "venue": "Public Opinion Quarterly",
+        "details": "15(4), 635-650"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Messages from sources seen as expert and trustworthy produced more immediate opinion change than the same message from a low-credibility source.",
+      "rule": {
+        "if": "You have verifiable authority, such as real experience, certification or documented results.",
+        "then": "Say it early, next to the claim it supports, and tie it to the reader's outcome."
+      },
+      "practice": "Use only credentials the brief contains and that you can source.",
+      "limits": [
+        "No vanity self-promotion. Authority matters only as a guarantee for the customer's result.",
+        "Do not rely on a \"sleeper effect\" to recover a weak source later."
+      ],
+      "caveats": [
+        "The sleeper effect is not robust: a meta-analysis found it only under specific conditions."
+      ],
+      "related": [
+        {
+          "citation": "Kumkale, G. T., & Albarracin, D. (2004). The sleeper effect in persuasion: A meta-analytic review. Psychological Bulletin, 130(1), 143-172.",
+          "status": "index-checked"
+        }
+      ],
+      "topic": "Source credibility"
+    },
+    {
+      "number": 11,
+      "id": "cialdini-1990",
+      "axis": "persuasion",
+      "citation": {
+        "authors": "Cialdini, R. B., Reno, R. R., & Kallgren, C. A.",
+        "year": 1990,
+        "title": "A Focus Theory of Normative Conduct: Recycling the Concept of Norms to Reduce Littering in Public Places",
+        "venue": "Journal of Personality and Social Psychology",
+        "details": "58(6), 1015-1026"
+      },
+      "citation_status": {
+        "state": "index-checked",
+        "note": "bibliographic data and main finding matched in secondary indexes; the supplied claim that descriptive norms beat injunctive norms is not what the paper reports"
+      },
+      "evidence_type": "field experiments",
+      "transfer": "extrapolated",
+      "finding": "Norms influence behavior when they are made salient: descriptive norms (what others do) and injunctive norms (what is approved) each changed littering when attention was on that type. A littered setting led to more littering.",
+      "rule": {
+        "if": "You ask the reader to adopt or buy.",
+        "then": "Show what comparable people actually do, using real and sourced data."
+      },
+      "practice": "State the real adoption of people like the reader, with the source and the date.",
+      "limits": [
+        "Do not highlight an undesired behavior as common (\"many customers pay late\"); that can normalize it.",
+        "Never use an invented count. Use only figures in the brief, and obtain consent for testimonials."
+      ],
+      "caveats": [
+        "A follow-up reported injunctive norm manipulations were more robust across situations than descriptive ones, and a 2021 replication of parts of the work was mixed. Do not state that descriptive norms are generally stronger."
+      ],
+      "example": "[Verified number] [comparable customers] already [action] ([source], [date]).",
+      "related": [
+        {
+          "citation": "Reno, R. R., Cialdini, R. B., & Kallgren, C. A. (1993). The transsituational influence of social norms. Journal of Personality and Social Psychology, 64(1), 104-112.",
+          "status": "confirm-before-quoting"
+        }
+      ],
+      "topic": "Descriptive and injunctive norms"
+    },
+    {
+      "number": 12,
+      "id": "tversky-kahneman-1981",
+      "axis": "decision",
+      "citation": {
+        "authors": "Tversky, A., & Kahneman, D.",
+        "year": 1981,
+        "title": "The Framing of Decisions and the Psychology of Choice",
+        "venue": "Science",
+        "details": "211(4481), 453-458"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Choices changed when the same outcomes were described as gains or as losses.",
+      "rule": {
+        "if": "The audience is comfortable with the status quo, or is risk-averse.",
+        "then": "Make the cost of inaction concrete for the first, and frame the offer as protecting something the reader already has for the second."
+      },
+      "practice": "Quantify what the current approach costs using the reader's own numbers or a sourced figure.",
+      "limits": [
+        "No invented losses and no alarmism. The cost of waiting must be a supported fact.",
+        "Health, finance and other regulated categories need claim and permission review before any loss framing."
+      ],
+      "caveats": [
+        "The commonly quoted loss-to-gain weight of about 2 to 2.5 is not from this paper. It comes from a 1992 estimate based on a small student sample, and loss aversion has since been argued to be over-generalized."
+      ],
+      "example": "Right now [current method] costs you [verified amount or time] each [period].",
+      "related": [
+        {
+          "citation": "Tversky, A., & Kahneman, D. (1992). Advances in prospect theory: Cumulative representation of uncertainty. Journal of Risk and Uncertainty, 5(4), 297-323.",
+          "status": "confirm-before-quoting"
+        },
+        {
+          "citation": "Gal, D., & Rucker, D. D. (2018). The loss of loss aversion: Will it loom larger than its gain? Journal of Consumer Psychology, 28(3), 497-516.",
+          "status": "confirm-before-quoting"
+        }
+      ],
+      "topic": "Framing and loss"
+    },
+    {
+      "number": 13,
+      "id": "thaler-1985",
+      "axis": "decision",
+      "citation": {
+        "authors": "Thaler, R.",
+        "year": 1985,
+        "title": "Mental Accounting and Consumer Choice",
+        "venue": "Marketing Science",
+        "details": "4(3), 199-214"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "theory",
+      "transfer": "extrapolated",
+      "finding": "People code spending into separate mental accounts, and how a cost is categorized changes how acceptable it feels.",
+      "rule": {
+        "if": "The absolute price feels high.",
+        "then": "Relate it to a recurring unit or to a comparable spend the buyer already makes, when the comparison is true."
+      },
+      "practice": "Show the per-period figure only together with the total, billing cadence and cancellation terms.",
+      "limits": [
+        "The total price, recurrence and cancellation terms stay visible wherever a per-day or per-month figure appears.",
+        "The comparison must be realistic and causal for this buyer."
+      ],
+      "caveats": [
+        "The \"pennies-a-day\" tactic is from Gourville (1998), whose results depend on which comparison standard the reframing triggers. It is not a guaranteed lever."
+      ],
+      "example": "[Total price] [billing cadence], about [per-day figure] ([cancellation terms]).",
+      "related": [
+        {
+          "citation": "Gourville, J. T. (1998). Pennies-a-day: The effect of temporal reframing on transaction evaluation. Journal of Consumer Research, 24(4), 395-408.",
+          "status": "index-checked"
+        }
+      ],
+      "topic": "Mental accounting"
+    },
+    {
+      "number": 14,
+      "id": "ariely-2003",
+      "axis": "decision",
+      "citation": {
+        "authors": "Ariely, D., Loewenstein, G., & Prelec, D.",
+        "year": 2003,
+        "title": "\"Coherent Arbitrariness\": Stable Demand Curves Without Stable Preferences",
+        "venue": "The Quarterly Journal of Economics",
+        "details": "118(1), 73-106"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Willingness to pay was strongly influenced by arbitrary initial anchors while remaining coherent across related goods.",
+      "rule": {
+        "if": "You are about to introduce a price.",
+        "then": "Establish a legitimate reference first, such as the documented cost of the current alternative."
+      },
+      "practice": "Place the real cost of the incumbent method or competing option before the offer price, in the same view.",
+      "limits": [
+        "The reference must be a documented fact in the brief, not an invented number.",
+        "An implausible anchor reduces trust. The actual price and terms must stay plainly visible."
+      ],
+      "caveats": [
+        "Anchoring magnitudes vary across studies. Using competitor cost as the anchor is a practical extension, not what this paper tested."
+      ],
+      "example": "[Documented cost of the current alternative], versus [offer price and terms].",
+      "topic": "Arbitrary anchors"
+    },
+    {
+      "number": 15,
+      "id": "rains-2013",
+      "axis": "resistance",
+      "citation": {
+        "authors": "Rains, S. A.",
+        "year": 2013,
+        "title": "The Nature of Psychological Reactance Revisited: A Meta-Analytic Review",
+        "venue": "Human Communication Research",
+        "details": "39(1), 47-73"
+      },
+      "citation_status": {
+        "state": "corrected",
+        "note": "the supplied base gave a different title and pages 108-137; corrected from the publisher record found through a web search"
+      },
+      "evidence_type": "meta-analysis",
+      "transfer": "extrapolated",
+      "finding": "Messages perceived as threatening freedom of choice arouse reactance (anger and negative thoughts), which works against compliance.",
+      "rule": {
+        "if": "You write a firm call to action or an assertive invitation.",
+        "then": "Avoid coercive absolutes and keep the choice explicitly with the reader, without making the action vague."
+      },
+      "practice": "Replace \"you must\" with a clear action that names the condition under which it makes sense.",
+      "limits": [
+        "Do not weaken the CTA until it is hesitant or unclear."
+      ],
+      "caveats": [
+        "The \"but you are free\" technique is not from this paper. A re-examination of its literature found a medium pooled effect but no clear effect in the lowest-risk-of-bias studies, so treat it as something to test, not a default."
+      ],
+      "example": "If this fits your situation, [specific action].",
+      "related": [
+        {
+          "citation": "Fillon et al., re-examination of the \"but you are free\" technique, Meta-Psychology (found via search summary; confirm the reference before quoting).",
+          "status": "confirm-before-quoting"
+        }
+      ],
+      "topic": "Psychological reactance"
+    },
+    {
+      "number": 16,
+      "id": "nickerson-1998",
+      "axis": "resistance",
+      "citation": {
+        "authors": "Nickerson, R. S.",
+        "year": 1998,
+        "title": "Confirmation Bias: A Ubiquitous Phenomenon in Many Guises",
+        "venue": "Review of General Psychology",
+        "details": "2(2), 175-220"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "review",
+      "transfer": "extrapolated",
+      "finding": "People tend to seek, interpret and remember evidence in ways that favor beliefs they already hold.",
+      "rule": {
+        "if": "You are correcting a common belief of the audience.",
+        "then": "Acknowledge what is reasonable about the belief before presenting the contrary evidence."
+      },
+      "practice": "Say under which conditions the old belief was correct, then show what changed, with a source.",
+      "limits": [
+        "Never mock the reader for the old belief.",
+        "Acknowledging a belief must not endorse a false claim."
+      ],
+      "caveats": [
+        "A review of the bias itself. \"Agree first, then redirect\" is a practitioner tactic that is not tested by this review."
+      ],
+      "example": "That was a reasonable conclusion when [condition]. [Verified change] means [new situation].",
+      "topic": "Confirmation bias"
+    },
+    {
+      "number": 17,
+      "id": "freedman-fraser-1966",
+      "axis": "resistance",
+      "citation": {
+        "authors": "Freedman, J. L., & Fraser, S. C.",
+        "year": 1966,
+        "title": "Compliance Without Pressure: The Foot-in-the-Door Technique",
+        "venue": "Journal of Personality and Social Psychology",
+        "details": "4(2), 195-202"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "field experiment",
+      "transfer": "extrapolated",
+      "finding": "Agreeing to a small first request raised compliance with a larger later request in the original studies.",
+      "rule": {
+        "if": "Friction for a direct purchase or proposal is high.",
+        "then": "Offer a low-friction first step such as a trial, a short diagnostic or a sample."
+      },
+      "practice": "Make the first step genuinely useful and clearly described, with exact terms.",
+      "limits": [
+        "Do not insert a pointless step for someone ready to buy now.",
+        "Do not promise free access, no commitment or a refund unless the brief confirms it."
+      ],
+      "caveats": [
+        "Later meta-analyses found small effects, and a direct replication reported that the original magnitude was not reproduced. Expect much less than the 1966 results."
+      ],
+      "related": [
+        {
+          "citation": "Dillard, J. P., Hunter, J. E., & Burgoon, M. (1984). Sequential-request persuasive strategies: Meta-analysis of foot-in-the-door and door-in-the-face. Human Communication Research, 10(4), 461-488.",
+          "status": "confirm-before-quoting"
+        }
+      ],
+      "topic": "Foot-in-the-door"
+    },
+    {
+      "number": 18,
+      "id": "green-brock-2000",
+      "axis": "narrative",
+      "citation": {
+        "authors": "Green, M. C., & Brock, T. C.",
+        "year": 2000,
+        "title": "The Role of Transportation in the Persuasiveness of Public Narrative",
+        "venue": "Journal of Personality and Social Psychology",
+        "details": "79(5), 701-721"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Readers who become absorbed in a story adopt more story-consistent beliefs and notice fewer flaws.",
+      "rule": {
+        "if": "The audience is skeptical of dry claims.",
+        "then": "Use a real case with a protagonist who faced the same obstacle, resolved with verifiable facts."
+      },
+      "practice": "Open with the situation the reader recognizes, not with the product.",
+      "limits": [
+        "The story must be true, sourced and approved for use. A fabricated case is a hard failure.",
+        "Reduced counter-arguing is a reason for more care, not for exploiting the effect.",
+        "Skip long stories in fast-decision channels such as SMS."
+      ],
+      "caveats": [
+        "Studies used narrative texts, mostly outside advertising."
+      ],
+      "topic": "Narrative transportation"
+    },
+    {
+      "number": 19,
+      "id": "braddock-dillard-2016",
+      "axis": "narrative",
+      "citation": {
+        "authors": "Braddock, K., & Dillard, J. P.",
+        "year": 2016,
+        "title": "Meta-Analytic Evidence for the Persuasive Effect of Narratives on Beliefs, Attitudes, Intentions, and Behaviors",
+        "venue": "Communication Monographs",
+        "details": "83(4), 446-467"
+      },
+      "citation_status": {
+        "state": "index-checked",
+        "note": "bibliographic record matched through a web search of secondary indexes; full text not read"
+      },
+      "evidence_type": "meta-analysis",
+      "transfer": "adjacent",
+      "finding": "Narratives had small-to-moderate positive effects on beliefs, attitudes, intentions and behaviors.",
+      "rule": {
+        "if": "You build an institutional or long-term retention piece.",
+        "then": "Center the story on the customer's situation and outcome, with the brand as the tool."
+      },
+      "practice": "Make the user the protagonist; keep the company as the facilitator.",
+      "limits": [
+        "Do not use long narratives in fast-decision channels."
+      ],
+      "caveats": [
+        "The supplied base said the effects are \"highly durable\" and depend on value identification with the protagonist. We could not confirm either claim, so neither is used.",
+        "Fictionality results were reported as mixed; for commercial copy use real stories only."
+      ],
+      "topic": "Persuasive effect of narratives"
+    },
+    {
+      "number": 20,
+      "id": "zajonc-1968",
+      "axis": "narrative",
+      "citation": {
+        "authors": "Zajonc, R. B.",
+        "year": 1968,
+        "title": "Attitudinal Effects of Mere Exposure",
+        "venue": "Journal of Personality and Social Psychology",
+        "details": "9(2, Pt.2), 1-27"
+      },
+      "citation_status": {
+        "state": "supplied",
+        "note": "bibliographic data taken from the supplied base; not independently checked"
+      },
+      "evidence_type": "experiment",
+      "transfer": "extrapolated",
+      "finding": "Repeated exposure to a neutral stimulus tended to increase liking for it.",
+      "rule": {
+        "if": "You design an email sequence, a campaign or a nurture flow.",
+        "then": "Keep terms, positioning line and voice consistent across touchpoints."
+      },
+      "practice": "Reuse the same name for the mechanism and the same promise wording, and vary format and angle.",
+      "limits": [
+        "Repetition without variation causes fatigue.",
+        "Consistency must not carry over a claim that has since been found unsupported."
+      ],
+      "caveats": [
+        "Effects are modest and depend on stimulus and number of exposures."
+      ],
+      "topic": "Mere exposure"
+    },
+    {
+      "number": 21,
+      "id": "okeefe-hoeken-2021",
+      "axis": "meta",
+      "citation": {
+        "authors": "O'Keefe, D. J., & Hoeken, H.",
+        "year": 2021,
+        "title": "Message Design Choices Don't Make Much Difference to Persuasiveness and Can't Be Counted On: Not Even When Moderating Conditions Are Specified",
+        "venue": "Frontiers in Psychology",
+        "details": "12, 664160",
+        "doi": "10.3389/fpsyg.2021.664160"
+      },
+      "citation_status": {
+        "state": "corrected",
+        "note": "the supplied base gave Frontiers in Communication 6, 686734 and a different title; corrected from the publisher record found through a web search"
+      },
+      "evidence_type": "meta-analytic review",
+      "transfer": "adjacent",
+      "finding": "Reviewing 30 message variations across 1,149 studies, mean effects were small (median about r = .10) and the prediction intervals included zero, even when moderating conditions were specified.",
+      "rule": {
+        "if": "You choose a copy strategy or structure.",
+        "then": "Justify the choice by the diagnosed audience barrier, and propose a test when a decision depends on it."
+      },
+      "practice": "Describe why a version addresses a specific barrier. Never claim it converts because it follows a named formula.",
+      "limits": [
+        "Theory generates hypotheses. Measured results in the real market decide."
+      ],
+      "caveats": [
+        "The review covers message variations in persuasion research, not only advertising."
+      ],
+      "example": "This version addresses [diagnosed barrier] with [element]; test it against [alternative] using [metric] and [guardrail].",
+      "topic": "Small and variable effects of message design"
+    }
+  ]
+}

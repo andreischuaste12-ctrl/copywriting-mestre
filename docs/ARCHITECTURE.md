@@ -7,6 +7,7 @@ The instruction skill and local tooling are separate. Installing the skill does 
 | Assistant behavior | `skills/copywriter-master/SKILL.md` | Modes, routing, requested scope, editorial review |
 | Knowledge | `skills/copywriter-master/references/` | Strategy, examples, jurisdiction packs, sector review prompts, copywriter profiles and source limits |
 | Reference registry | `references/registry.json`, generated `references/index.md`, `copywriter_runtime/references.py` | What exists, when to load it, kind and size budget; drift fails `release.py check` |
+| Evidence base | `references/evidence/studies.json`, generated `evidence/*.md`, `copywriter_runtime/evidence.py` | Research findings as conditioned if/then rules with limits, caveats and citation status |
 | Contracts | `skills/copywriter-master/schemas/` and `runtime-contract.json` | Strict brief/output, batch and event contracts |
 | Rule catalog | `skills/copywriter-master/rules/validation.json` | Stable finding codes, risk priority, category, remediation, pattern signals |
 | Execution | `copywriter_runtime/` | Deterministic validation, batch workflow, report rendering, explicit event logging |
@@ -31,3 +32,7 @@ The assistant loads references on demand, so the library can grow without growin
 3. Run `python tools/references.py index`, then `python tools/release.py check`.
 
 The check enforces a per-file word budget (`budget.max_words_per_file`): when a file outgrows it, split it and register the parts rather than raising the limit. Sector guidance currently lives in one file, `sector-review.md`; give a sector its own `sectors/` file and a registry entry when its checklist stops fitting a table row. New legal or historical content still needs a human reviewer; the registry controls routing, not accuracy.
+
+### Adding or correcting a study
+
+Edit `references/evidence/studies.json`, never the generated axis files, then run `python tools/references.py index`. Each study needs a rule with its condition, at least one limit and a citation status; downgrade or correct the status when a source is checked. Example copy must use `[placeholders]` instead of figures. `release.py check` fails if a generated file is stale. A new axis needs a matching entry in `registry.json` with the same title and `load_when`.

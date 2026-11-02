@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Maintain the reference registry: regenerate references/index.md or check for drift."""
+"""Maintain the reference registry: regenerate generated references or check for drift."""
 import argparse
 from pathlib import Path
 import sys
@@ -12,7 +12,7 @@ from copywriter_runtime.validation import InputError
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
-    sub.add_parser('index', help='Regenerate references/index.md from registry.json')
+    sub.add_parser('index', help='Regenerate references/index.md and the evidence/*.md files from their sources')
     sub.add_parser('check', help='Fail if the registry, files, profiles or generated index disagree')
     args = parser.parse_args(argv)
     try:

@@ -29,7 +29,7 @@ Never invent research, tool access, or facts to complete a mode. Consult [operat
 
 ### 1. Map the brief
 
-Extract what is already known from the request, conversation, and project files:
+Extract what is already known from the request, conversation, and project files ([briefing-dimensions.md](references/briefing-dimensions.md) lists every dimension that can matter):
 
 | Area | What needs to be clear |
 |---|---|
@@ -47,6 +47,8 @@ Do not ask questions when context is sufficient, the user asks you to proceed wi
 ### 2. Choose a strategy
 
 Determine awareness level, likely decision barrier (relevance, comprehension, proof, trust, or convenience), supportable promise, and suitable structure. Keep this reasoning internal unless the user asks or it helps choose between options. Consult the copywriting guide, sections 2 and 3, to select a structure by channel and awareness level; review section 4 when copy includes proof, price, or a guarantee.
+
+**Evidence (optional).** When a choice depends on a specific barrier or element (clarity, concreteness, credibility, social proof, price framing, reactance, narrative), start from [evidence/principles.md](references/evidence/principles.md) and open only the matching file. Its if/then rules are hypotheses conditioned on audience and channel, never guarantees, and they never override the integrity rules below. Justify a strategic choice by the diagnosed barrier, not by saying a formula or principle makes copy convert.
 
 **Copywriter profiles (optional, up to two).** If the user requests a style or a particular technique addresses the barrier, consult the relevant profile in references/copywriters/, starting with index.md. Apply the technique, never the person's text. Do not copy signature phrases or name the writer in the copy.
 
@@ -101,7 +103,7 @@ Persuasion depends on trust and an offer that delivers what it communicates:
 
 Before delivery, apply [quality-rubric.md](references/quality-rubric.md): score audience fit, offer clarity, evidence support, CTA quality, compliance, channel fit, readability, and emotional relevance from 0 to 2. Revise any dimension below 2 where the brief permits. Target at least 13/16 for a ready draft, with no zero and no hard failure. For analysis-only work, use the rubric's mode-specific interpretation rather than adding an unsolicited CTA or copy.
 
-Never label a draft ready if it contains an unsupported claim, unconfirmed regulated promise, fabricated scarcity, changed commercial terms, exposed personal data, or a violated explicit user constraint. Remove or hold the offending claim; show essential gaps outside the final copy when the requested format allows. Do not pad copy with invented facts to raise the score. Keep scoring internal unless the user requests an audit or evaluation. A self-score is an editorial check, not proof of performance or a guarantee across models.
+Never label a draft ready if it contains an unsupported claim, unconfirmed regulated promise, fabricated scarcity, changed commercial terms, exposed personal data, or a violated explicit user constraint. Remove or hold the offending claim; show essential gaps outside the final copy when the requested format allows. Do not pad copy with invented facts to raise the score. Keep scoring internal unless the user requests an audit or evaluation. For an evidence-based audit, [evidence/review-checklist.md](references/evidence/review-checklist.md) feeds the same dimensions without changing the scoring. A self-score is an editorial check, not proof of performance or a guarantee across models.
 
 - Did I follow the requested amount, format, and scope?
 - Is there evidence for every factual claim?
@@ -129,5 +131,6 @@ Start from [references/index.md](references/index.md): it lists every reference 
 - [operating-protocol.md](references/operating-protocol.md) — mode routing, decision rules, questions, and output contract.
 - [quality-rubric.md](references/quality-rubric.md) — anchored editorial scoring and publication blockers.
 - [copywriting-guide.md](references/copywriting-guide.md) — structures by channel and awareness level.
+- [evidence/principles.md](references/evidence/principles.md) — what the research supports, tiers of authority, and how to apply it.
 - [claims-matrix.md](references/claims-matrix.md) and [jurisdictions/brazil.md](references/jurisdictions/brazil.md) — evidence versus permission for claims.
 - [copywriters/index.md](references/copywriters/index.md) — historical copywriter and framework profiles (at most two per task).

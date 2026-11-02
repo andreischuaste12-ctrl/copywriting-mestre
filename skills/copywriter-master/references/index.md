@@ -20,10 +20,26 @@ Load a reference only when its condition applies. Prefer the smallest set that r
 | [Optimization and testing](optimization-and-testing.md) | Recommending tests, sample size, SRM, guardrails and diagnosis. | Optimize, Review |
 | [Research and positioning](research-and-positioning.md) | Audience research, VoC, interviews, positioning and argument development. | Diagnose, Research, Write |
 
+## Evidence base
+
+| Reference | Load when | Modes |
+|---|---|---|
+| [Evidence principles](evidence/principles.md) | Before applying any research-backed rule, or when asked what the science says about a copy choice; tiers of authority, precedence and citation status. | Diagnose, Write, Review, Research, Optimize |
+| [Evidence: attention, curiosity and activation](evidence/attention-and-emotion.md) | Writing headlines, openings, subject lines, or content meant to be shared. | Write, Review |
+| [Evidence: cognitive process, load and structure](evidence/cognition-and-structure.md) | Planning long or complex copy, structuring a page, or fixing flow between paragraphs. | Write, Review |
+| [Evidence: decision framing and price presentation](evidence/decision-and-pricing.md) | Framing cost of inaction, presenting or reframing a price, or choosing a price reference. | Write, Review, Optimize |
+| [Evidence: effect sizes and why strategy needs a test](evidence/effect-sizes-and-testing.md) | Justifying a structural choice, comparing techniques, or planning what to test. | Diagnose, Optimize, Review |
+| [Evidence: language, clarity and concreteness](evidence/language-and-clarity.md) | Choosing vocabulary, depth of explanation for a beginner or expert, or making a benefit concrete. | Write, Review |
+| [Evidence: narrative and familiarity](evidence/narrative-and-familiarity.md) | Using a customer story, planning a multi-touch sequence, or keeping voice consistent across touchpoints. | Write, Review |
+| [Evidence: persuasion, credibility and social proof](evidence/persuasion-and-credibility.md) | Deciding how much argument or proof to include, placing credentials, or using social proof. | Write, Review, Optimize |
+| [Evidence: resistance, prior beliefs and first steps](evidence/resistance-and-barriers.md) | Writing a firm CTA, correcting a common belief, or designing a low-friction first step. | Write, Review |
+| [Evidence-based review checklist](evidence/review-checklist.md) | Auditing or reviewing a draft against the research-backed rules; maps each check to the existing rubric dimensions. | Review, Optimize |
+
 ## Review processes
 
 | Reference | Load when | Modes |
 |---|---|---|
+| [Briefing dimensions](briefing-dimensions.md) | Deciding what is still unknown in a commercial request and which gaps to ask about. | Diagnose, Write, Research |
 | [Claims matrix](claims-matrix.md) | Several benefits, numbers, comparisons, studies, guarantees or regulated claims. | Write, Review, Research |
 | [Feedback loop](feedback-loop.md) | Feedback is given, or the user asks to record a case or result. | Diagnose, Write, Review, Research, Optimize |
 | [Local validation contract](local-validation.md) | Machine-readable output or the local validator is requested. | Write, Review |

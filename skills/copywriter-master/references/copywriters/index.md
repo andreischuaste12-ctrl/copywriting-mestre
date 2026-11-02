@@ -2,6 +2,8 @@
 
 These short profiles are operational references: principles, when to consult, application, and cautions. Load only the profiles relevant to the task, usually no more than two.
 
+These profiles are professional heuristics (tier 3 in [evidence/principles.md](../evidence/principles.md)), not experimental findings; for empirically studied principles, start there.
+
 Quantities in profile examples are heuristics, not quotas. Follow the user's requested amount and use only available facts and audience language. Never invent or duplicate material to fill a count. Editorial principles are modern adaptations unless a source supports a qualified historical attribution.
 
 ## How to use a profile

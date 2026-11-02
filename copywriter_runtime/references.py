@@ -8,6 +8,7 @@ from __future__ import annotations
 from pathlib import Path
 import re
 
+from . import evidence
 from .validation import InputError, ROOT, load_json
 
 REFERENCES = ROOT / 'skills/copywriter-master/references'
@@ -20,6 +21,7 @@ MAINTENANCE_KINDS = ('template',)
 SECTION_ORDER = (
     ('protocol', 'Protocol and quality gates'),
     ('guide', 'Strategy and craft'),
+    ('evidence', 'Evidence base'),
     ('process', 'Review processes'),
     ('sector', 'Sector and market review'),
     ('jurisdiction', 'Jurisdiction packs'),
@@ -78,7 +80,7 @@ def render_index(registry):
         if not rows:
             continue
         lines += [f'## {heading}', '', '| Reference | Load when | Modes |', '|---|---|---|']
-        for e in sorted(rows, key=lambda e: e['path']):
+        for e in sorted(rows, key=lambda e: (not e['path'].endswith('principles.md'), e['path'])):
             lines.append(f'| [{e["title"]}]({e["path"]}) | {e["load_when"]} | {", ".join(e["modes"])} |')
         lines.append('')
     profiles = sorted(e['path'] for e in entries if e['kind'] == 'profile')
@@ -134,13 +136,28 @@ def check(registry=None):
     if listed != profile_files:
         diff = sorted(listed ^ profile_files)
         raise InputError('copywriters/index.md and the registry disagree on profiles: ' + ', '.join(diff))
+    check_evidence(registry)
     if not INDEX.is_file() or INDEX.read_text(encoding='utf-8') != render_index(registry):
         raise InputError('references/index.md is stale; run: python tools/references.py index')
     return registry
 
 
+def check_evidence(registry):
+    """Generated evidence files must be current, registered and described the same way as in studies.json."""
+    data = evidence.check()
+    by_path = {e['path']: e for e in registry['references']}
+    for axis in data['axes']:
+        entry = by_path.get('evidence/' + axis['file'])
+        if entry is None:
+            raise InputError(f'evidence/{axis["file"]} is generated but not in registry.json')
+        if entry['title'] != axis['title'] or entry['load_when'] != axis['load_when']:
+            raise InputError(f'registry.json and studies.json disagree on title or load_when for evidence/{axis["file"]}')
+
+
 def write_index():
+    """Regenerate every generated reference: the evidence files first, then the routing index."""
     registry = load_registry()
+    evidence.write_generated()
     text = render_index(registry)
     INDEX.write_text(text, encoding='utf-8', newline='\n')
     return INDEX

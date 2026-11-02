@@ -31,6 +31,7 @@ It is intended for commercial copy such as headlines, product pages, landing pag
 
 - skills/copywriter-master/SKILL.md — the assistant's core behavior and routing instructions.
 - skills/copywriter-master/references/ — supporting knowledge to consult only when relevant, routed by a generated [reference index](skills/copywriter-master/references/index.md): strategy, research, humanization, jurisdiction packs, sector review, testing, source notes, and copywriter profiles. Adding one is a registry entry plus `python tools/references.py index` (see [architecture](docs/ARCHITECTURE.md)).
+- [Evidence principles](skills/copywriter-master/references/evidence/principles.md) — 21 research findings as conditioned rules with limits, caveats and citation status; hypotheses to test, never guarantees of conversion.
 - [Output examples](skills/copywriter-master/references/output-examples.md) — ten complete synthetic good/bad examples for ads, headlines, landing sections, emails, CTAs, review, research, regulated claims, subscriptions, and premium offers.
 - [Operating protocol](skills/copywriter-master/references/operating-protocol.md) — mode routing, decision tree, and proportional output contract.
 - [Quality rubric](skills/copywriter-master/references/quality-rubric.md) — eight anchored dimensions, a 13/16 gate, and hard failures.

@@ -8,6 +8,7 @@
     "index",
     "protocol",
     "guide",
+    "evidence",
     "process",
     "sector",
     "jurisdiction",
@@ -439,6 +440,123 @@
         "Review",
         "Research",
         "Optimize"
+      ]
+    },
+    {
+      "path": "evidence/principles.md",
+      "kind": "evidence",
+      "title": "Evidence principles",
+      "load_when": "Before applying any research-backed rule, or when asked what the science says about a copy choice; tiers of authority, precedence and citation status.",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "evidence/cognition-and-structure.md",
+      "kind": "evidence",
+      "title": "Evidence: cognitive process, load and structure",
+      "load_when": "Planning long or complex copy, structuring a page, or fixing flow between paragraphs.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "evidence/language-and-clarity.md",
+      "kind": "evidence",
+      "title": "Evidence: language, clarity and concreteness",
+      "load_when": "Choosing vocabulary, depth of explanation for a beginner or expert, or making a benefit concrete.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "evidence/attention-and-emotion.md",
+      "kind": "evidence",
+      "title": "Evidence: attention, curiosity and activation",
+      "load_when": "Writing headlines, openings, subject lines, or content meant to be shared.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "evidence/persuasion-and-credibility.md",
+      "kind": "evidence",
+      "title": "Evidence: persuasion, credibility and social proof",
+      "load_when": "Deciding how much argument or proof to include, placing credentials, or using social proof.",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "evidence/decision-and-pricing.md",
+      "kind": "evidence",
+      "title": "Evidence: decision framing and price presentation",
+      "load_when": "Framing cost of inaction, presenting or reframing a price, or choosing a price reference.",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "evidence/resistance-and-barriers.md",
+      "kind": "evidence",
+      "title": "Evidence: resistance, prior beliefs and first steps",
+      "load_when": "Writing a firm CTA, correcting a common belief, or designing a low-friction first step.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "evidence/narrative-and-familiarity.md",
+      "kind": "evidence",
+      "title": "Evidence: narrative and familiarity",
+      "load_when": "Using a customer story, planning a multi-touch sequence, or keeping voice consistent across touchpoints.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "evidence/effect-sizes-and-testing.md",
+      "kind": "evidence",
+      "title": "Evidence: effect sizes and why strategy needs a test",
+      "load_when": "Justifying a structural choice, comparing techniques, or planning what to test.",
+      "modes": [
+        "Diagnose",
+        "Optimize",
+        "Review"
+      ]
+    },
+    {
+      "path": "evidence/review-checklist.md",
+      "kind": "evidence",
+      "title": "Evidence-based review checklist",
+      "load_when": "Auditing or reviewing a draft against the research-backed rules; maps each check to the existing rubric dimensions.",
+      "modes": [
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "briefing-dimensions.md",
+      "kind": "process",
+      "title": "Briefing dimensions",
+      "load_when": "Deciding what is still unknown in a commercial request and which gaps to ask about.",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Research"
       ]
     }
   ]
