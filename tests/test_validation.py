@@ -162,12 +162,23 @@ class ValidationTests(unittest.TestCase):
 
     def test_quantities_written_as_words_are_flagged_for_review(self):
         # The numeric-token check cannot compare "dois mil" with a trusted figure; the signal keeps it visible.
-        for text in (' Mais de dois mil clientes aprovam.', ' Over two thousand customers approve.'):
+        for text in (' Mais de dois mil clientes aprovam.', ' Over two thousand customers approve.',
+                     ' Noventa clientes.', ' Duzentos clientes.', ' Quinze dias.', ' Dezesseis pessoas.',
+                     ' Sessenta por cento.', ' Eleven days.', ' Ninety customers.', ' Two hundred people.'):
             with self.subTest(text=text):
                 output = copy.deepcopy(self.output)
                 output['items'][0]['text'] += text
                 report = validator.validate_copy(self.brief, output)
                 self.assertIn('number_word_signal', [f['code'] for f in report['findings']])
+                self.assertEqual(report['disposition'], 'needs_human_review')
+
+    def test_common_articles_do_not_alone_trigger_number_word_signal(self):
+        for text in (' Um calendário para uma equipe.', ' A calendar for one team.'):
+            with self.subTest(text=text):
+                output = copy.deepcopy(self.output)
+                output['items'][0]['text'] += text
+                report = validator.validate_copy(self.brief, output)
+                self.assertNotIn('number_word_signal', [f['code'] for f in report['findings']])
                 self.assertEqual(report['disposition'], 'needs_human_review')
 
     def test_health_signal_ignores_the_idiom_se_trata_but_keeps_real_claims(self):

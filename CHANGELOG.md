@@ -2,6 +2,10 @@
 
 ## 1.4.0 — 2026-11-02
 
+- **Unreleased 1.4.0 adjustments:** clarified that research-only requests do not produce copy. Markdown and HTML validation reports now include item IDs and finding messages; HTML uses a real table. Consumers parsing the old Markdown layout should update their parser; the JSON report structure and exit codes are unchanged. Semantic review now explicitly warns that an allowed number can be attached to an unsupported fact.
+- **Rule catalog 1.2.0:** expanded the partial Portuguese/English number-word review signal to cover common teens, tens and hundreds. This is not a complete parser or a fact check; ambiguous articles remain excluded. The catalog hash changed: summarize old event logs using their matching runtime/catalog and keep them separate from new logs.
+- Pinned CI actions to commit hashes using Node 24 releases; ignored local coverage files. No live model benchmark, independent legal review, or complete primary-source verification is claimed.
+
 - **Reference architecture.** `references/registry.json` is now the single source for what each reference is, when to load it, and its size budget. `references/index.md` is generated from it (`python tools/references.py index`), and `tools/release.py check` fails on an unregistered or missing reference, a stale index, a profile list that disagrees with the registry, a file over the word budget, a profile without a source note, or a jurisdiction pack without a not-legal-advice statement.
 - Added `jurisdictions/` (Brazil guidance moved from `brazilian-compliance.md` to `jurisdictions/brazil.md`, content unchanged) plus jurisdiction and copywriter-profile templates, so new markets and profiles are additive. No new legal content was written; other markets remain starting-point links in `sector-review.md`.
 - **Evidence base.** New `references/evidence/` layer: `studies.json` is the source of truth for 21 research findings, each with an if/then rule, how to apply it, limits, caveats, evidence type, how far it transfers to commercial copy and a citation status (`supplied`, `index-checked`, `corrected`). Eight axis files are generated from it, alongside hand-written `principles.md` (four tiers of authority, precedence over integrity rules, citation legend, barrier-to-evidence map) and `review-checklist.md` (feeds the existing rubric dimensions; scoring and rubric 1.1.0 are unchanged). `release.py check` fails on a stale generated file, a study without limits, guarantee language, or example copy with concrete figures instead of placeholders.
@@ -13,7 +17,7 @@
 - **Rule catalog 1.1.0.** New review-level `number_word_signal` flags quantities written as words (for example "dois mil", "two thousand"), which the numeric-token check cannot compare. `health_signal` no longer fires on the Portuguese idiom "se trata de" / "trata-se". Existing logs recorded with catalog 1.0.0 are rejected by `summary` because the catalog hash changed; keep them separate.
 - `contains()` raises `InputError` on an empty phrase instead of `IndexError`. The event-log lock file now records the owner PID and time so a stale lock is recognizable.
 - Maintainer tooling: `pyproject.toml` (ruff, mypy, coverage), `requirements-dev.txt`, a `quality` CI job with an 85% coverage gate, and `push` CI limited to `main` plus pull requests to avoid duplicate runs.
-- The skill's behavior rules, schemas, report format and exit codes are unchanged. No live model benchmark was run; no performance claim is made.
+- The original 1.4.0 changes retained the earlier schemas and exit codes. See the unreleased adjustments above for subsequent behavior and report changes. No live model benchmark was run; no performance claim is made.
 
 ## 1.3.1 — 2026-10-30
 
