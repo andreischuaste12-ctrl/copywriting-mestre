@@ -53,6 +53,32 @@ class ValidationTests(unittest.TestCase):
         review = next(f for f in report['findings'] if f['code'] == 'semantic_review')
         self.assertIn('allowed number can still describe an unsupported fact', review['message'])
 
+    def test_unprovided_compact_numbers_and_identifiers_are_blocked(self):
+        for token in ('24h', '2x', '10k', '30dias', '5min', '1º', '50x', 'ISO9001', 'v2.0', 'abc123', 'foo_24'):
+            with self.subTest(token=token):
+                output = copy.deepcopy(self.output)
+                output['items'][0]['text'] += ' ' + token
+                report = validator.validate_copy(self.brief, output)
+                self.assertEqual(report['disposition'], 'blocked')
+                self.assertIn('unprovided_number', [f['code'] for f in report['findings']])
+
+    def test_compact_numeric_tokens_must_match_trusted_tokens_in_full(self):
+        for trusted, candidate, passes in [('10', '10k', False), ('24', '24h', False),
+                                            ('2', '2x', False), ('v2.0', 'v2.0', True),
+                                            ('ISO9001', 'iso9001', True), ('24h', '24H', True),
+                                            ('10k', '10k', True), ('1º', '1º', True),
+                                            ('2.300', '2,300', False)]:
+            with self.subTest(trusted=trusted, candidate=candidate):
+                brief, output = copy.deepcopy(self.brief), copy.deepcopy(self.output)
+                brief['offer']['facts'].append(trusted)
+                output['items'][0]['text'] += ' ' + candidate
+                report = validator.validate_copy(brief, output)
+                self.assertEqual(report['automated_checks'], 'passed' if passes else 'failed')
+                if passes:
+                    self.assertEqual(report['disposition'], 'needs_human_review')
+                else:
+                    self.assertIn('unprovided_number', [f['code'] for f in report['findings']])
+
     def test_deceptive_suffix_does_not_satisfy_price(self):
         self.replace('R$ 49', 'R$ 490')
         self.check('required_phrase')
@@ -164,7 +190,9 @@ class ValidationTests(unittest.TestCase):
         # The numeric-token check cannot compare "dois mil" with a trusted figure; the signal keeps it visible.
         for text in (' Mais de dois mil clientes aprovam.', ' Over two thousand customers approve.',
                      ' Noventa clientes.', ' Duzentos clientes.', ' Quinze dias.', ' Dezesseis pessoas.',
-                     ' Sessenta por cento.', ' Eleven days.', ' Ninety customers.', ' Two hundred people.'):
+                     ' Sessenta por cento.', ' Eleven days.', ' Ninety customers.', ' Two hundred people.',
+                     ' Zero risco.', ' Uma dúzia.', ' Metade do tempo.', ' Dobro de vendas.',
+                     ' A dozen.', ' Half the time.', ' Twice as fast.', ' Triple the sales.'):
             with self.subTest(text=text):
                 output = copy.deepcopy(self.output)
                 output['items'][0]['text'] += text

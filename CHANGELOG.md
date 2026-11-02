@@ -2,6 +2,7 @@
 
 ## 1.4.0 — 2026-11-02
 
+- **Rule catalog 2.0.0 — numeric-token behavior change:** numeric-containing alphanumeric tokens are now compared in full, so unregistered `24h`, `10k`, `1º`, `ISO9001` or `v2.0` are blocked. An earlier passing draft can now fail; register verified exact product identifiers and quantities in the trusted brief, then rerun and retain human review. Review signals also recognize selected quantity words such as “metade” and “twice”. Matching does not establish meaning or truth. Keep older event logs with the corresponding catalog/runtime; hashes and rule versions differ.
 - **Unreleased 1.4.0 adjustments:** clarified that research-only requests do not produce copy. Markdown and HTML validation reports now include item IDs and finding messages; HTML uses a real table. Consumers parsing the old Markdown layout should update their parser; the JSON report structure and exit codes are unchanged. Semantic review now explicitly warns that an allowed number can be attached to an unsupported fact.
 - **Rule catalog 1.2.0:** expanded the partial Portuguese/English number-word review signal to cover common teens, tens and hundreds. This is not a complete parser or a fact check; ambiguous articles remain excluded. The catalog hash changed: summarize old event logs using their matching runtime/catalog and keep them separate from new logs.
 - Pinned CI actions to commit hashes using Node 24 releases; ignored local coverage files. No live model benchmark, independent legal review, or complete primary-source verification is claimed.

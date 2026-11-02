@@ -9,7 +9,7 @@ Andrei Schuaste is the project author and copyright holder under Apache-2.0. Mai
 | Skill behavior | Release 1.4.0; contract 1.0 | Incompatible mode routing, mandatory wrappers for previously copy-only requests |
 | Brief/output | Schema contract 1.0 | Required new fields, removed enums, changed field meaning |
 | Reports/events/batches | Contract 1.0 | Removed fields, changed status/exit meaning, altered event denominator |
-| Rule catalog | 1.2.0 | Removed/renamed finding codes or materially changed rule meaning |
+| Rule catalog | 2.0.0 | Removed/renamed finding codes or materially changed rule meaning |
 | Editorial rubric | 1.1.0 | Changed anchors, weights, threshold or interpretation |
 
 Use a patch for compatible fixes/documentation; a minor for additive capabilities; a major for incompatible public behavior. A newly blocking rule or changed limit needs an explicit impact note and migration examples even when input fields stay identical. Keep the version 1.2 validator wrapper and exit codes during the 1.x series. Additive report fields are allowed; strict input schemas need a new schema version for new fields. Do not reuse a version or silently reinterpret old logs. No calendar support duration is promised.

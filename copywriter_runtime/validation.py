@@ -15,8 +15,9 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / 'skills/copywriter-master/schemas'
-# Preserve separators: 2,300 is not silently rewritten as 2300 or 2.300.
-NUMBER = re.compile(r'(?<!\w)\d+(?:[.,:/-]\d+)*(?:\s*%)?(?!\w)')
+# Compare complete alphanumeric tokens containing a digit, including units and identifiers.
+# Keep separators and suffixes: 10, 10k, 2,300 and 2.300 are different tokens.
+NUMBER = re.compile(r'(?<!\w)(?=\w*\d)\w+(?:[.,:/-]\w+)*(?:\s*%)?(?!\w)')
 
 
 class InputError(ValueError):

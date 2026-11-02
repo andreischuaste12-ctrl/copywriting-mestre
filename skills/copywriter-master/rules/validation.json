@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "rules": [
     {
       "code": "brief_id_mismatch",
@@ -172,7 +172,7 @@
       "priority": "high",
       "severity": "review",
       "remediation": "A quantity is written as a word, which the numeric-token check cannot compare; verify it against the trusted facts.",
-      "pattern": "\\b(?:dois|duas|três|tres|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dezesseis|dezasseis|dezessete|dezassete|dezoito|dezenove|dezanove|vinte|trinta|quarenta|cinquenta|sessenta|setenta|oitenta|noventa|cem|cento|duzentos|duzentas|trezentos|trezentas|quatrocentos|quatrocentas|quinhentos|quinhentas|seiscentos|seiscentas|setecentos|setecentas|oitocentos|oitocentas|novecentos|novecentas|mil|milhão|milhões|milhao|milhoes|bilhão|bilhões|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion)\\b"
+      "pattern": "\\b(?:zero|dúzia|duzia|metade|dobro|triplo|dozen|half|twice|double|triple|dois|duas|três|tres|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dezesseis|dezasseis|dezessete|dezassete|dezoito|dezenove|dezanove|vinte|trinta|quarenta|cinquenta|sessenta|setenta|oitenta|noventa|cem|cento|duzentos|duzentas|trezentos|trezentas|quatrocentos|quatrocentas|quinhentos|quinhentas|seiscentos|seiscentas|setecentos|setecentas|oitocentos|oitocentas|novecentos|novecentas|mil|milhão|milhões|milhao|milhoes|bilhão|bilhões|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|billion)\\b"
     },
     {
       "code": "testimonial_signal",
