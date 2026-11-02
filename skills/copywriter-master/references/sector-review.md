@@ -19,7 +19,7 @@ Record country/member state, audience age, product category, exact claim, suppor
 
 | Market | Review questions | Official starting points (not checked for current permission in this release) |
 |---|---|---|
-| Brazil | CDC advertising/offer rules; CONAR guidance; LGPD and relevant sector rules; current product-specific wording | [ANVISA](https://www.gov.br/anvisa/), [CVM](https://www.gov.br/cvm/), [ANPD](https://www.gov.br/anpd/); see [Brazil guidance](brazilian-compliance.md) |
+| Brazil | CDC advertising/offer rules; CONAR guidance; LGPD and relevant sector rules; current product-specific wording | [ANVISA](https://www.gov.br/anvisa/), [CVM](https://www.gov.br/cvm/), [ANPD](https://www.gov.br/anpd/); see [Brazil guidance](jurisdictions/brazil.md) |
 | United States | FTC truthfulness/substantiation; applicable federal/state and sector rules; endorsements and material disclosures | [FTC advertising guidance](https://www.ftc.gov/business-guidance/advertising-marketing), [FDA](https://www.fda.gov/) |
 | European Union | Applicable member-state requirements, unfair commercial practices, GDPR, category/label restrictions and channel rules | [Unfair Commercial Practices Directive](https://eur-lex.europa.eu/eli/dir/2005/29/oj), [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) |
 

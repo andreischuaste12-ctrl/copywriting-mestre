@@ -1,4 +1,4 @@
-name: Check and package release
+name: Check, package and publish release
 on:
   push:
     tags: ['v*']
@@ -21,8 +21,26 @@ jobs:
           RELEASE_VERSION: ${{ github.ref_name }}
         run: python tools/release.py build --out dist --expected-version "$RELEASE_VERSION"
       - run: python tools/release.py verify --directory dist
+      - name: Add installers so the release is self-contained
+        run: cp install.sh install.ps1 dist/
       - uses: actions/upload-artifact@v4
         with:
           name: copywriter-master-${{ github.ref_name }}
           path: dist/
           if-no-files-found: error
+  publish:
+    # Installers download this release's archive and SHA256SUMS, so the release must exist for remote installs to work.
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: copywriter-master-${{ github.ref_name }}
+          path: dist
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" dist/* --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes "Installable skill archive with SHA256SUMS. See CHANGELOG.md for changes."

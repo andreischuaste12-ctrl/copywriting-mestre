@@ -4,7 +4,7 @@ description: Plans, writes, and reviews persuasive commercial copy for ads, land
 license: Apache-2.0
 metadata:
   author: Andrei Schuaste
-  version: 1.3.1
+  version: 1.4.0
 ---
 
 # Copywriter Master
@@ -109,36 +109,25 @@ Never label a draft ready if it contains an unsupported claim, unconfirmed regul
 - Are urgency and scarcity tied to a real deadline or inventory limit?
 - Are price, timing, and terms visible where the decision is made?
 - Does the copy meet the channel's current character limits?
-- Is there regulatory risk involving health, finance, influencers, or data collection? Consult references/brazilian-compliance.md when relevant.
+- Is there regulatory risk involving health, finance, influencers, or data collection? Consult references/jurisdictions/brazil.md when relevant.
 - If I recommended a test, did I define a hypothesis, metric, and guardrail without implying CTR alone proves success? See references/optimization-and-testing.md.
 
 ### Optional structured validation
 
-When a user or integration explicitly requests machine-readable final copy, follow the installed [brief schema](schemas/brief.schema.json) and [output schema](schemas/output.schema.json). Preserve the human-maintained brief as the source of constraints; do not silently edit it or confirm your own claim permissions. See [local-validation.md](references/local-validation.md) for exact rules and the repository CLI. Correct detected output violations, rerun when tools are available, and report remaining blockers. If the validator is unavailable, say so; never claim a check ran. Keep normal chat output in the user's requested format.
+When a user or integration explicitly requests machine-readable final copy, follow the installed [brief schema](schemas/brief.schema.json) and [output schema](schemas/output.schema.json); [local-validation.md](references/local-validation.md) has the exact rules and the repository CLI. The human-maintained brief stays the source of constraints: do not silently edit it or confirm your own claim permissions. Correct detected violations and rerun when tools are available; if the validator is unavailable, say so and never claim a check ran. Keep normal chat output in the user's requested format.
 
-A passing automatic check leaves human review required for meaning, source validity and current legal permission. Do not describe it as publication clearance or performance evidence.
-
-The installed `runtime-contract.json` identifies supported contract versions. Use [sector-review.md](references/sector-review.md) when the brief depends on sector or market conditions. Local runtime reports classify findings by priority and category; optional logs are off unless explicitly requested. An installed folder is not evidence that a host loaded the skill or that a model passed the benchmark.
+A passing automatic check leaves human review required for meaning, source validity and current legal permission; it is not publication clearance or performance evidence. Use [sector-review.md](references/sector-review.md) when the brief depends on sector or market conditions. An installed folder is not evidence that a host loaded the skill or that a model passed the benchmark.
 
 ### 8. Feedback and evolution
 
-Apply feedback already provided in this conversation. For ongoing work, offer one optional focused feedback question only when the format allows and it helps the next revision; never append it to a copy-only request. Record preferences or results outside the conversation only when the user requests saving them. Use [feedback-loop.md](references/feedback-loop.md) for a redacted case record and release rules. Do not claim automatic learning, cross-session memory, telemetry, or measured improvement without recorded evidence.
+Apply feedback already given in this conversation. For ongoing work, offer at most one focused feedback question, never appended to a copy-only request. Record preferences or results outside the conversation only when the user asks; [feedback-loop.md](references/feedback-loop.md) has the redacted case record. Do not claim automatic learning, cross-session memory, telemetry, or measured improvement without recorded evidence.
 
 ## Reference library
 
-- references/copywriting-guide.md — strategy, structures, channel adaptation, principles, measurement, and historical references.
-- references/research-and-positioning.md — audience research, VoC, interviews, evidence, positioning, and argument development.
-- references/application-cases.md — examples of scope fidelity, research, integrity, and diagnosis; not performance evidence.
-- references/copywriters/index.md — 17 historical copywriters and three framework authors, with operational profiles.
-- references/optimization-and-testing.md — testing, sample size, SRM, guardrails, and diagnosis.
-- references/brazilian-compliance.md — Brazil-specific consumer protection, CONAR, LGPD, and regulated-sector guidance.
-- references/claims-matrix.md — evidence, authorization, conditions, and scope for each promise.
-- references/humanization.md — natural, specific voice without rigid quotas.
-- references/sources.md — source links and what each supports.
+Start from [references/index.md](references/index.md): it lists every reference with the condition for loading it, and is generated from `references/registry.json`. Load only what the task needs. The ones used most often:
 
-- references/operating-protocol.md — mode routing, decision rules, questions, and output contract.
-- references/quality-rubric.md — anchored editorial scoring and publication blockers.
-- references/output-examples.md — complete synthetic good/bad outputs across common channels.
-- references/feedback-loop.md — explicit feedback, case log, privacy, and versioned changes.
-- references/local-validation.md — optional JSON contract, local validator, exact checks and limitations.
-- references/sector-review.md — sector checklists and market-specific review questions; not legal authorization.
+- [operating-protocol.md](references/operating-protocol.md) — mode routing, decision rules, questions, and output contract.
+- [quality-rubric.md](references/quality-rubric.md) — anchored editorial scoring and publication blockers.
+- [copywriting-guide.md](references/copywriting-guide.md) — structures by channel and awareness level.
+- [claims-matrix.md](references/claims-matrix.md) and [jurisdictions/brazil.md](references/jurisdictions/brazil.md) — evidence versus permission for claims.
+- [copywriters/index.md](references/copywriters/index.md) — historical copywriter and framework profiles (at most two per task).

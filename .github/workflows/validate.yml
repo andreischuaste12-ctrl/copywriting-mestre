@@ -1,6 +1,7 @@
 name: Validate skill package
 on:
   push:
+    branches: [main]
   pull_request:
 permissions:
   contents: read
@@ -21,6 +22,20 @@ jobs:
       - if: runner.os != 'Windows'
         run: bash -n install.sh
       - run: python -m unittest discover -s tests -v
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install -r requirements-validation.txt -r requirements-dev.txt
+      - run: ruff check .
+      - run: mypy
+      - name: Tests with coverage gate
+        run: |
+          python -m coverage run -m unittest discover -s tests
+          python -m coverage report --fail-under=85
   powershell-install:
     runs-on: windows-latest
     steps:
@@ -41,6 +56,24 @@ jobs:
           }
           ./install.ps1 -Dest $dest -Uninstall
           if (Test-Path (Join-Path $dest 'copywriter-master')) { throw 'Uninstall failed' }
+      - name: Remote install path (pinned release, checksum) from a directory mirror
+        shell: pwsh
+        run: |
+          python -m pip install -r requirements-validation.txt
+          $mirror = Join-Path $env:RUNNER_TEMP 'mirror'
+          python tools/release.py build --out $mirror
+          $alone = Join-Path $env:RUNNER_TEMP 'alone'
+          New-Item -ItemType Directory -Path $alone | Out-Null
+          Copy-Item install.ps1 $alone
+          $dest = Join-Path $env:RUNNER_TEMP 'remote skills'
+          $env:COPYWRITER_RELEASE_BASE_URL = $mirror
+          & (Join-Path $alone 'install.ps1') -Dest $dest
+          if (-not (Test-Path (Join-Path $dest 'copywriter-master/SKILL.md'))) { throw 'Remote install failed' }
+          $version = (Get-Content VERSION).Trim()
+          Set-Content -LiteralPath (Join-Path $mirror 'SHA256SUMS') -Value (('f' * 64) + "  copywriter-master-$version.zip")
+          $failed = $false
+          try { & (Join-Path $alone 'install.ps1') -Dest (Join-Path $env:RUNNER_TEMP 'tampered') } catch { $failed = $true }
+          if (-not $failed) { throw 'Tampered checksum was accepted' }
       - name: Check both project installation targets
         shell: pwsh
         run: |

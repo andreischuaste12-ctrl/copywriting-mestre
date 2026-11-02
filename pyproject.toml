@@ -1,0 +1,27 @@
+# Maintainer tooling configuration only. The skill itself is not a Python package.
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+extend-exclude = ["dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP"]
+ignore = ["UP015", "B904"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests and entrypoints extend sys.path before importing the package under test.
+"tests/*" = ["E402"]
+
+[tool.mypy]
+files = ["copywriter_runtime", "tools"]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = true
+
+[tool.coverage.run]
+source = ["copywriter_runtime", "tools"]
+omit = ["tools/__init__.py"]
+
+[tool.coverage.report]
+# Thin script entrypoints are exercised through subprocess tests, which coverage does not trace.
+exclude_lines = ["pragma: no cover", "if __name__ == .__main__.:"]

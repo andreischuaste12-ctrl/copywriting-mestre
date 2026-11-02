@@ -6,3 +6,5 @@
 - Consult for high-consideration offers, skeptical audiences, long sales pages, and objection handling.
 - List claims and available proof; revise or remove unsupported claims; order evidence by relevance to the reader's doubt.
 - Never invent proof. The project summarizes this approach; consult the original work before making detailed historical attributions.
+
+Source note: no primary link is listed; verify attributions against the author's original work.

@@ -8,6 +8,10 @@
   .\install.ps1 -Project             # installs in the current directory (this project only)
   .\install.ps1 -Uninstall           # removes the skill from the same destinations
   .\install.ps1 -DryRun              # shows what would happen without making changes
+  .\install.ps1 -Sha256 <hash>      # when downloading, also require this archive hash (published out of band)
+
+  Run from a checkout it installs that checkout. Run on its own it downloads the pinned release
+  archive ($ReleaseVersion below) and verifies its SHA-256 before installing; it never follows a branch.
 
 .NOTES
   If PowerShell blocks script execution, run:
@@ -18,12 +22,18 @@ param(
   [string[]]$Dest,
   [switch]$Project,
   [switch]$Uninstall,
-  [switch]$DryRun
+  [switch]$DryRun,
+  [string]$Sha256
 )
 
 $ErrorActionPreference = 'Stop'
 $SkillName  = 'copywriter-master'
-$ZipUrl     = 'https://github.com/andreischuaste12-ctrl/copywriting-mestre/archive/refs/heads/main.zip'
+# Remote installs fetch this exact release archive and verify its SHA-256. tools/release.py check fails
+# when this pin differs from VERSION.
+$ReleaseVersion = '1.4.0'
+$ReleaseBase = if ($env:COPYWRITER_RELEASE_BASE_URL) { $env:COPYWRITER_RELEASE_BASE_URL } else {
+  "https://github.com/andreischuaste12-ctrl/copywriting-mestre/releases/download/v$ReleaseVersion" }
+$ArchiveName = "$SkillName-$ReleaseVersion.zip"
 # Skill directories read by AI assistants that support the SKILL.md format.
 $DefaultSubdirs = @('.claude\skills', '.agents\skills')
 
@@ -109,7 +119,16 @@ if ($Uninstall) {
   return
 }
 
-# Locate source beside this script, or download the repository.
+# Locate source beside this script, or download the pinned release archive.
+function Get-ReleaseFile([string]$Name, [string]$OutFile) {
+  # An http(s) base is downloaded; a plain directory is copied (mirror or offline testing).
+  if ($ReleaseBase -match '^https?://') {
+    Invoke-WebRequest -Uri ($ReleaseBase.TrimEnd('/') + '/' + $Name) -OutFile $OutFile -UseBasicParsing
+  } else {
+    Copy-Item -LiteralPath (Join-Path $ReleaseBase $Name) -Destination $OutFile
+  }
+}
+
 $src = $null
 $tmp = $null
 if ($LocalSrc) {
@@ -117,13 +136,25 @@ if ($LocalSrc) {
 } else {
   $tmp = Join-Path ([System.IO.Path]::GetTempPath()) ("$SkillName-" + [guid]::NewGuid())
   New-Item -ItemType Directory -Path $tmp | Out-Null
-  $zip = Join-Path $tmp 'repo.zip'
-  Write-Host 'Downloading the skill...'
-  Invoke-WebRequest -Uri $ZipUrl -OutFile $zip -UseBasicParsing
-  Expand-Archive -Path $zip -DestinationPath $tmp -Force
-  $found = Get-ChildItem -Path $tmp -Directory -Recurse | Where-Object { $_.FullName -like "*\skills\$SkillName" } | Select-Object -First 1
-  if (-not $found -or -not (Test-Path (Join-Path $found.FullName 'SKILL.md'))) { throw 'Skill not found in the download.' }
-  $src = $found.FullName
+  $zip = Join-Path $tmp $ArchiveName
+  $sums = Join-Path $tmp 'SHA256SUMS'
+  Write-Host "Downloading $ArchiveName (release v$ReleaseVersion)..."
+  try {
+    Get-ReleaseFile $ArchiveName $zip
+    Get-ReleaseFile 'SHA256SUMS' $sums
+  } catch {
+    throw "Could not download release v$ReleaseVersion from $ReleaseBase. Has it been published? $($_.Exception.Message)"
+  }
+  $listed = Get-Content -LiteralPath $sums | ForEach-Object {
+    $parts = $_ -split '\s+', 2
+    if ($parts.Count -eq 2 -and $parts[1].Trim() -eq $ArchiveName) { $parts[0].ToLowerInvariant() }
+  } | Select-Object -First 1
+  $actual = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+  if (-not $listed -or $listed -ne $actual) { throw "Checksum mismatch for $ArchiveName; refusing to install." }
+  if ($Sha256 -and $Sha256.ToLowerInvariant() -ne $actual) { throw 'Archive does not match the -Sha256 you supplied; refusing to install.' }
+  Expand-Archive -LiteralPath $zip -DestinationPath (Join-Path $tmp 'extract') -Force
+  $src = Join-Path $tmp "extract\$SkillName"
+  if (-not (Test-Path -LiteralPath (Join-Path $src 'SKILL.md'))) { throw 'Skill not found in the archive.' }
 }
 $src = Get-CanonicalPath $src
 Assert-SkillDir $src

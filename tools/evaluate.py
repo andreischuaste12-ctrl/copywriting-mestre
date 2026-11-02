@@ -219,7 +219,8 @@ def compare_runs(runs):
             'model': reports[0]['model'], 'settings': reports[0]['settings'],
             'suite_sha256': reports[0]['suite_sha256'], 'rubric_version': reports[0]['rubric_version'],
             'skill_fingerprints': fingerprints, 'run_count': len(reports), 'cases': cells,
-            'limitation': 'Human editorial ratings only, not conversion evidence. Complete means matched repetitions, not proven improvement.'}
+            'limitation': 'Human editorial ratings only, not conversion evidence. '
+                          'Complete means matched repetitions, not proven improvement.'}
 
 
 def render_comparison(report, format):
@@ -229,12 +230,15 @@ def render_comparison(report, format):
              'Model: ' + report['model'], 'Settings: ' + report['settings'], '',
              '| Condition | Case | Runs | Mean / 16 | Range | Pass rate | Hard failures |', '|---|---|---|---|---|---|---|']
     for row in report['cases']:
-        lines.append(f"| {row['condition']} | {row['case_id']} | {row['runs']} | {row['mean_score']:.2f} | {row['score_min']}–{row['score_max']} | {row['pass_rate']:.1%} | {row['hard_failures']} |")
+        lines.append(f"| {row['condition']} | {row['case_id']} | {row['runs']} | {row['mean_score']:.2f} | "
+                     f"{row['score_min']}–{row['score_max']} | {row['pass_rate']:.1%} | {row['hard_failures']} |")
     lines += ['', report['limitation']]
     text = '\n'.join(lines) + '\n'
     if format == 'html':
         import html
-        return '<!doctype html><html lang="en"><meta charset="utf-8"><title>Editorial benchmark</title><style>body{font:16px system-ui;max-width:1200px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;line-height:1.6}</style><body><pre>' + html.escape(text) + '</pre></body></html>\n'
+        return ('<!doctype html><html lang="en"><meta charset="utf-8"><title>Editorial benchmark</title>'
+                '<style>body{font:16px system-ui;max-width:1200px;margin:40px auto;padding:20px}'
+                'pre{white-space:pre-wrap;line-height:1.6}</style><body><pre>' + html.escape(text) + '</pre></body></html>\n')
     return text
 
 

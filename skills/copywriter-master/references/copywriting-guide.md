@@ -64,7 +64,7 @@ Use one central message per section, informative headings, concrete verbs, and m
 
 Answer actual purchase barriers—price, quality, use, compatibility, delivery, support, privacy, trust—near the point where they arise. Explain price, terms, bonuses, deadlines, guarantees, and the next step. A bonus or scarcity does not make an offer good by itself; limited time or stock must be real. A CTA should say what the action does and must not promise a destination different from the actual flow.
 
-For regulated claims, check evidence and permission separately. See brazilian-compliance.md and claims-matrix.md for Brazil-specific and claim-level review.
+For regulated claims, check evidence and permission separately. See jurisdictions/brazil.md and claims-matrix.md for Brazil-specific and claim-level review.
 
 ## 5. Measurement
 

@@ -6,3 +6,5 @@
 - Consult for headline and email-subject ideation or long direct-response ads. Works well alongside Caples and Ogilvy.
 - For open ideation, generate internal alternatives only when the brief supports them, then deliver exactly the requested number. If the request is open, three or four distinct options can be useful.
 - The guide summarizes Schwab without a primary link; avoid attributing numbered rules without consulting the book.
+
+Source note: no primary link is listed; verify attributions against the author's original work.

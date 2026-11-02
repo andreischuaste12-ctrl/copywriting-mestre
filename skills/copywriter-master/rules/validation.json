@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "rules": [
     {
       "code": "brief_id_mismatch",
@@ -156,7 +156,7 @@
       "priority": "critical",
       "severity": "review",
       "remediation": "Verify product-specific health wording and current applicable permission.",
-      "pattern": "\\b(?:cures?|treats?|prevents?|cura|curar|trata|tratar|previne|prevenir)\\b"
+      "pattern": "\\b(?:cures?|treats?|prevents?|cura|curar|(?<!se )trata(?!-se)|tratar|previne|prevenir)\\b"
     },
     {
       "code": "financial_signal",
@@ -165,6 +165,14 @@
       "severity": "review",
       "remediation": "Verify financial claims, risk disclosure and applicable permission.",
       "pattern": "\\b(?:guaranteed (?:income|returns?)|risk.free investment|renda garantida|retorno garantido|investimento sem risco)\\b"
+    },
+    {
+      "code": "number_word_signal",
+      "category": "evidence",
+      "priority": "high",
+      "severity": "review",
+      "remediation": "A quantity is written as a word, which the numeric-token check cannot compare; verify it against the trusted facts.",
+      "pattern": "\\b(?:dois|duas|três|tres|quatro|cinco|seis|sete|oito|nove|dez|vinte|trinta|quarenta|cinquenta|cem|cento|mil|milhão|milhões|milhao|milhoes|bilhão|bilhões|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|hundred|thousand|million|billion)\\b"
     },
     {
       "code": "testimonial_signal",

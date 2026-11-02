@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.0 — 2026-11-02
+
+- **Reference architecture.** `references/registry.json` is now the single source for what each reference is, when to load it, and its size budget. `references/index.md` is generated from it (`python tools/references.py index`), and `tools/release.py check` fails on an unregistered or missing reference, a stale index, a profile list that disagrees with the registry, a file over the word budget, a profile without a source note, or a jurisdiction pack without a not-legal-advice statement.
+- Added `jurisdictions/` (Brazil guidance moved from `brazilian-compliance.md` to `jurisdictions/brazil.md`, content unchanged) plus jurisdiction and copywriter-profile templates, so new markets and profiles are additive. No new legal content was written; other markets remain starting-point links in `sector-review.md`.
+- Four profiles (Bencivenga, Bernbach, Schwab, Schwartz) now carry an explicit source note stating that no primary link is listed.
+- `SKILL.md` is shorter: the reference list points to the generated index, and the validation and feedback sections are condensed with no change in rules.
+- **Installers.** Remote installs now download the release archive pinned to their own version and verify its SHA-256 against `SHA256SUMS` instead of fetching the `main` branch; `--sha256` / `-Sha256` accepts an out-of-band hash. The release workflow publishes the archive, `SHA256SUMS` and both installers as a GitHub Release. **A release must exist for remote install to work.** `release.py check` fails if an installer pin differs from `VERSION`.
+- **Rule catalog 1.1.0.** New review-level `number_word_signal` flags quantities written as words (for example "dois mil", "two thousand"), which the numeric-token check cannot compare. `health_signal` no longer fires on the Portuguese idiom "se trata de" / "trata-se". Existing logs recorded with catalog 1.0.0 are rejected by `summary` because the catalog hash changed; keep them separate.
+- `contains()` raises `InputError` on an empty phrase instead of `IndexError`. The event-log lock file now records the owner PID and time so a stale lock is recognizable.
+- Maintainer tooling: `pyproject.toml` (ruff, mypy, coverage), `requirements-dev.txt`, a `quality` CI job with an 85% coverage gate, and `push` CI limited to `main` plus pull requests to avoid duplicate runs.
+- The skill's behavior rules, schemas, report format and exit codes are unchanged. No live model benchmark was run; no performance claim is made.
+
 ## 1.3.1 — 2026-10-30
 
 - Clarified that AIDA, PAS, BAB, draft angles and the framework library are illustrative rather than restrictive. Any suitable advertising/copywriting framework may be selected, adapted or combined; a named formula is optional.

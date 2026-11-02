@@ -1,0 +1,445 @@
+{
+  "schema_version": "1.0",
+  "budget": {
+    "max_words_per_file": 2500,
+    "max_profiles_per_task": 2
+  },
+  "kinds": [
+    "index",
+    "protocol",
+    "guide",
+    "process",
+    "sector",
+    "jurisdiction",
+    "profile-index",
+    "profile",
+    "example",
+    "source",
+    "template"
+  ],
+  "references": [
+    {
+      "path": "index.md",
+      "kind": "index",
+      "title": "Reference index",
+      "load_when": "Always first when a task needs more than SKILL.md; it routes to every other reference.",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "operating-protocol.md",
+      "kind": "protocol",
+      "title": "Operating protocol",
+      "load_when": "Mode routing, ask-or-proceed decisions, and the default output contract.",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "quality-rubric.md",
+      "kind": "protocol",
+      "title": "Quality rubric",
+      "load_when": "Before delivering a draft, or when asked to audit or score copy.",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriting-guide.md",
+      "kind": "guide",
+      "title": "Copywriting strategy guide",
+      "load_when": "Choosing a structure by channel and awareness level; proof, price and guarantee copy.",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "research-and-positioning.md",
+      "kind": "guide",
+      "title": "Research and positioning",
+      "load_when": "Audience research, VoC, interviews, positioning and argument development.",
+      "modes": [
+        "Diagnose",
+        "Research",
+        "Write"
+      ]
+    },
+    {
+      "path": "humanization.md",
+      "kind": "guide",
+      "title": "Humanization",
+      "load_when": "Making copy specific and natural without simulated imperfections.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "optimization-and-testing.md",
+      "kind": "guide",
+      "title": "Optimization and testing",
+      "load_when": "Recommending tests, sample size, SRM, guardrails and diagnosis.",
+      "modes": [
+        "Optimize",
+        "Review"
+      ]
+    },
+    {
+      "path": "claims-matrix.md",
+      "kind": "process",
+      "title": "Claims matrix",
+      "load_when": "Several benefits, numbers, comparisons, studies, guarantees or regulated claims.",
+      "modes": [
+        "Write",
+        "Review",
+        "Research"
+      ]
+    },
+    {
+      "path": "sector-review.md",
+      "kind": "sector",
+      "title": "Sector and market review",
+      "load_when": "The brief depends on a sector or market; per-market starting points for review.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "jurisdictions/brazil.md",
+      "kind": "jurisdiction",
+      "title": "Brazil advertising and data notes",
+      "load_when": "Brazil applies: consumer advertising, health/supplements, privacy, testimonials.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "jurisdictions/_template.md",
+      "kind": "template",
+      "title": "Jurisdiction pack template",
+      "load_when": "Adding a new market. Not loaded during normal tasks.",
+      "modes": [
+        "Research"
+      ]
+    },
+    {
+      "path": "application-cases.md",
+      "kind": "example",
+      "title": "Application cases",
+      "load_when": "Examples of scope fidelity, research, integrity and diagnosis; not performance evidence.",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "output-examples.md",
+      "kind": "example",
+      "title": "Output examples",
+      "load_when": "The format is unfamiliar or an example would resolve ambiguity.",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "local-validation.md",
+      "kind": "process",
+      "title": "Local validation contract",
+      "load_when": "Machine-readable output or the local validator is requested.",
+      "modes": [
+        "Write",
+        "Review"
+      ]
+    },
+    {
+      "path": "feedback-loop.md",
+      "kind": "process",
+      "title": "Feedback loop",
+      "load_when": "Feedback is given, or the user asks to record a case or result.",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "sources.md",
+      "kind": "source",
+      "title": "Source notes",
+      "load_when": "Before repeating a historical attribution, date or effectiveness claim.",
+      "modes": [
+        "Write",
+        "Research",
+        "Review"
+      ]
+    },
+    {
+      "path": "copywriters/index.md",
+      "kind": "profile-index",
+      "title": "Copywriter profile index",
+      "load_when": "A style or technique is requested, or a barrier maps to a known technique.",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/_template.md",
+      "kind": "template",
+      "title": "Copywriter profile template",
+      "load_when": "Adding a new profile. Not loaded during normal tasks.",
+      "modes": [
+        "Research"
+      ]
+    },
+    {
+      "path": "copywriters/powers.md",
+      "kind": "profile",
+      "title": "John E. Powers - Plain, candid retail copy",
+      "load_when": "Product pages, retail, skeptical audiences",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/john-kennedy.md",
+      "kind": "profile",
+      "title": "John E. Kennedy - Reason-why advertising",
+      "load_when": "The argument needs a concrete reason to believe",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/hopkins.md",
+      "kind": "profile",
+      "title": "Claude C. Hopkins - Measurable direct response",
+      "load_when": "A response can be tracked or tested",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/schwab.md",
+      "kind": "profile",
+      "title": "Victor O. Schwab - Direct-response headlines",
+      "load_when": "Generating or editing headline options",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/caples.md",
+      "kind": "profile",
+      "title": "John Caples - Headline appeals and testing",
+      "load_when": "Headlines, subject lines, experiments",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/collier.md",
+      "kind": "profile",
+      "title": "Robert Collier - Reader context and conversation",
+      "load_when": "Cold-audience openings, letters, email",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/ogilvy.md",
+      "kind": "profile",
+      "title": "David Ogilvy - Research, facts, clarity, brand",
+      "load_when": "Considered purchases and longer copy",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/reeves.md",
+      "kind": "profile",
+      "title": "Rosser Reeves - Unique Selling Proposition",
+      "load_when": "Positioning in a crowded category",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/bernbach.md",
+      "kind": "profile",
+      "title": "Bill Bernbach - Integrated creative concept",
+      "load_when": "Brand campaigns and creative concepts",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/resor.md",
+      "kind": "profile",
+      "title": "Helen Lansdowne Resor - Emotional and sensory appeal",
+      "load_when": "Beauty, home, family, personal care",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/schwartz.md",
+      "kind": "profile",
+      "title": "Eugene Schwartz - Desire and awareness",
+      "load_when": "Audience diagnosis and message entry point",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/wunderman.md",
+      "kind": "profile",
+      "title": "Lester Wunderman - Direct response and relationships",
+      "load_when": "CRM, retention, subscriptions",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/halbert.md",
+      "kind": "profile",
+      "title": "Gary Halbert - Conversational direct response",
+      "load_when": "Informal sales email and letters",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/sugarman.md",
+      "kind": "profile",
+      "title": "Joe Sugarman - Reading momentum",
+      "load_when": "Complex products and long pages",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/bencivenga.md",
+      "kind": "profile",
+      "title": "Gary Bencivenga - Proof and argument",
+      "load_when": "High-consideration offers and skepticism",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/dan-kennedy.md",
+      "kind": "profile",
+      "title": "Dan Kennedy - Offer and direct marketing",
+      "load_when": "Offer, CTA, sales letter, launch",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/wiebe.md",
+      "kind": "profile",
+      "title": "Joanna Wiebe - VoC and conversion copy",
+      "load_when": "Digital copy with audience research",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/edwards.md",
+      "kind": "profile",
+      "title": "Ray Edwards - PASTOR framework",
+      "load_when": "Long copy for a problem-aware audience",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/fortin.md",
+      "kind": "profile",
+      "title": "Michel Fortin - QUEST framework",
+      "load_when": "Educating before presenting an offer",
+      "modes": [
+        "Write",
+        "Review",
+        "Optimize"
+      ]
+    },
+    {
+      "path": "copywriters/colley.md",
+      "kind": "profile",
+      "title": "Russell Colley - DAGMAR framework",
+      "load_when": "Setting and evaluating communication goals",
+      "modes": [
+        "Diagnose",
+        "Write",
+        "Review",
+        "Research",
+        "Optimize"
+      ]
+    }
+  ]
+}

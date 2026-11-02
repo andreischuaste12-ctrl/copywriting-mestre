@@ -11,3 +11,5 @@
 | Most-aware | Offer, price, deadline if real, and CTA |
 
 Assess repeated category promises; greater familiarity may call for clearer differentiation and proof, not a larger unsupported promise. Consult during audience diagnosis. Awareness levels are a working map, not a validated psychological scale; one person may vary by category. Do not claim a mechanism is unique unless it is.
+
+Source note: no primary link is listed; verify attributions against the author's original work.

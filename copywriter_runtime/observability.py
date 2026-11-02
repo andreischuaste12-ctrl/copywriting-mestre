@@ -19,6 +19,13 @@ def event_for(report):
             'category_counts': dict(Counter(f['category'] for f in report['findings']))}
 
 
+def _describe_lock(lock):
+    try:
+        return 'lock ' + lock.read_text(encoding='utf-8').strip()[:120]
+    except (OSError, UnicodeError):
+        return 'lock owner unknown'
+
+
 def append_events(path, reports):
     events = [event_for(report) for report in reports]
     for event in events:
@@ -29,9 +36,12 @@ def append_events(path, reports):
     try:
         fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
     except FileExistsError as exc:
-        raise InputError('Event log is locked by another writer; retry after it finishes. Inspect a stale lock manually.') from exc
+        raise InputError(f'Event log is locked by another writer ({_describe_lock(lock)}); retry after it finishes. '
+                         'Inspect a stale lock manually.') from exc
     try:
-        os.close(fd)
+        # Owner details make a crashed writer's stale lock recognizable; nothing here is sent anywhere.
+        with os.fdopen(fd, 'w', encoding='utf-8') as stream:
+            stream.write(f'pid={os.getpid()} created={datetime.now(timezone.utc).isoformat()}\n')
         if path.exists():
             # Refuse to append to a brief, draft, report, corrupt log or incompatible catalog.
             summarize(path)

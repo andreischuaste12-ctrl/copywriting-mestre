@@ -5,23 +5,41 @@ import argparse
 import hashlib
 import importlib.util
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
-import subprocess
+import shutil
 import sys
 import tempfile
 import zipfile
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-from copywriter_runtime.validation import InputError, ROOT, load_json, validate_copy, validate_structure
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+try:
+    from jsonschema import Draft202012Validator
+except ImportError:  # Reported as a normal error by lint(), like the validator CLI.
+    Draft202012Validator = None
+
+from copywriter_runtime import references
+from copywriter_runtime.validation import InputError, ROOT, load_json, validate_copy
+
+
+def check_installer_pins():
+    """Installers download a pinned release; the pin must follow VERSION or installs fetch the wrong archive."""
+    version = (ROOT / 'VERSION').read_text(encoding='utf-8').strip()
+    for name, pattern in (('install.sh', r'^RELEASE_VERSION="([^"]+)"'), ('install.ps1', r"^\$ReleaseVersion\s*=\s*'([^']+)'")):
+        match = re.search(pattern, (ROOT / name).read_text(encoding='utf-8'), re.MULTILINE)
+        if not match or match.group(1) != version:
+            raise InputError(f'{name} release pin must equal VERSION ({version})')
 
 
 def lint():
+    if Draft202012Validator is None:
+        raise InputError('Install the optional validator: python -m pip install -r requirements-validation.txt')
     spec = importlib.util.spec_from_file_location('release_evaluate', ROOT / 'tools/evaluate.py')
     ev = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(ev)
     ev.check_repository()
+    references.check()
+    check_installer_pins()
     skill = ROOT / 'skills/copywriter-master'
     contract = load_json(skill / 'runtime-contract.json')
     for field in ('schema_version', 'skill_contract_version', 'runtime_contract_version', 'brief_version',
@@ -32,7 +50,6 @@ def lint():
         raise InputError('Contract must preserve opt-in logging and human review')
     for name in ('brief', 'output', 'batch', 'event'):
         schema = load_json(skill / f'schemas/{name}.schema.json')
-        from jsonschema import Draft202012Validator
         Draft202012Validator.check_schema(schema)
         if schema.get('additionalProperties') is not False:
             raise InputError('Contract schemas must reject unknown root fields')
@@ -111,7 +128,6 @@ def build(destination, expected_version=None):
         # Reserve without replacing another process's output directory.
         dest.mkdir()
         try:
-            import shutil
             for p in stage.iterdir():
                 shutil.copyfile(p, dest / p.name)
         except OSError:
@@ -144,7 +160,6 @@ def verify(directory):
         if len(names) != len(set(names)) or set(names) != set(manifest['files']):
             raise InputError('Archive contents differ from manifest')
         for name, expected in manifest['files'].items():
-            from pathlib import PurePosixPath
             path = PurePosixPath(name)
             if path.is_absolute() or '..' in path.parts or not name.startswith('copywriter-master/'):
                 raise InputError('Unsafe archive entry')

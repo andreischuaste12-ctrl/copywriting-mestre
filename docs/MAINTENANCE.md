@@ -6,21 +6,21 @@ Andrei Schuaste is the project author and copyright holder under Apache-2.0. Mai
 
 | Component | Current version | Breaking change examples |
 |---|---|---|
-| Skill behavior | Release 1.3.1; contract 1.0 | Incompatible mode routing, mandatory wrappers for previously copy-only requests |
+| Skill behavior | Release 1.4.0; contract 1.0 | Incompatible mode routing, mandatory wrappers for previously copy-only requests |
 | Brief/output | Schema contract 1.0 | Required new fields, removed enums, changed field meaning |
 | Reports/events/batches | Contract 1.0 | Removed fields, changed status/exit meaning, altered event denominator |
-| Rule catalog | 1.0.0 | Removed/renamed finding codes or materially changed rule meaning |
+| Rule catalog | 1.1.0 | Removed/renamed finding codes or materially changed rule meaning |
 | Editorial rubric | 1.1.0 | Changed anchors, weights, threshold or interpretation |
 
 Use a patch for compatible fixes/documentation; a minor for additive capabilities; a major for incompatible public behavior. A newly blocking rule or changed limit needs an explicit impact note and migration examples even when input fields stay identical. Keep the version 1.2 validator wrapper and exit codes during the 1.x series. Additive report fields are allowed; strict input schemas need a new schema version for new fields. Do not reuse a version or silently reinterpret old logs. No calendar support duration is promised.
 
 ## Release checklist
 
-1. Review behavior, rules, schemas and examples together. Identify breaking changes and migration impact. Update VERSION, skill metadata, README and CHANGELOG consistently.
+1. Review behavior, rules, schemas, references (run `python tools/references.py check`) and examples together. Identify breaking changes and migration impact. Update VERSION, skill metadata, README and CHANGELOG consistently.
 2. Preserve the separate rubric version unless editorial scoring changes; preserve old raw benchmark runs. Compare completed runs only with matching model/settings and fixed suite. Do not label fixtures as real campaigns.
 3. Run `python tools/release.py check`, the unit suite, and Bash syntax checks. Inspect native Linux/macOS/Windows CI results for the exact commit. Installer checks must include licenses, schemas, project destinations, update and uninstall.
-4. Run `python tools/release.py build --out ./dist --expected-version v1.3.1` into a new directory, then `python tools/release.py verify --directory ./dist`. The archive is reproducible for identical skill bytes and compression runtime; checksums verify every included file.
-5. Review package contents, changelog, risk-regression results, known limitations and live benchmark status. Tag only the reviewed commit with the matching version. The tag-triggered workflow builds and uploads a workflow artifact; it does not create a GitHub Release or publish a service automatically.
+4. Run `python tools/release.py build --out ./dist --expected-version v1.4.0` into a new directory, then `python tools/release.py verify --directory ./dist`. The archive is reproducible for identical skill bytes and compression runtime; checksums verify every included file.
+5. Review package contents, changelog, risk-regression results, known limitations and live benchmark status. Tag only the reviewed commit with the matching version. The tag-triggered workflow builds the archive, uploads it as a workflow artifact and then creates a GitHub Release carrying the archive, `manifest.json`, `SHA256SUMS`, `install.sh` and `install.ps1`; remote installs depend on that release. It publishes no service. Bump `VERSION`, the skill metadata and both installer pins together; `release.py check` fails on a mismatch. Tag only after the checks pass: a tag with no published release leaves remote installs failing with a clear error.
 6. After release, retain the archive/manifest and commit identity, link actual CI results, and record regressions or rollback decisions. Revert the affected code/version through a reviewed change; do not overwrite previous artifacts.
 
 ## Real case intake and regressions

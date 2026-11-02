@@ -6,3 +6,5 @@
 - Consult for brand campaigns, ads, video, and concept development.
 - State the product truth in one line, find an unexpected way to express it, and check whether the idea still works without the visual or slogan.
 - A creative concept does not replace a sound offer, proof, or measurement. Attribute campaigns to teams and clients, not one person alone.
+
+Source note: no primary link is listed; verify attributions against the author's original work.

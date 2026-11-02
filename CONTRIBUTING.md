@@ -15,12 +15,13 @@ Contribuições são bem-vindas: correções, documentação, exemplos, melhoria
 3. Para executar as verificações locais (Python 3.10+):
 
    ```sh
-   python -m pip install -r requirements-validation.txt
+   python -m pip install -r requirements-validation.txt -r requirements-dev.txt
    python tools/release.py check
    python -m unittest discover -s tests -v
+   ruff check . && mypy
    ```
 
-   Em macOS, Linux ou WSL, execute também `bash -n install.sh`. O CI verifica outras plataformas e o instalador PowerShell.
+   Ao adicionar ou mover uma referência, registre-a em `skills/copywriter-master/references/registry.json` e rode `python tools/references.py index` (ver [arquitetura](docs/ARCHITECTURE.md)). Em macOS, Linux ou WSL, execute também `bash -n install.sh`. O CI verifica outras plataformas e o instalador PowerShell.
 4. Abra um pull request descrevendo o problema, a solução, como foi verificada e eventuais limitações. Vincule a issue relacionada, se houver. Se alguma verificação não puder ser executada, informe isso no PR.
 
 Para relatar um problema, informe o comportamento esperado e o observado, passos para reproduzir, ambiente e exemplos sem dados sensíveis. Para propor uma melhoria, explique a necessidade e o resultado desejado. Não publique vulnerabilidades ou segredos em issues públicas.
