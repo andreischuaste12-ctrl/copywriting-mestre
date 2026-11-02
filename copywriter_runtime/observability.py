@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import time
 import uuid
 
 from .validation import InputError, load_json, ROOT, validate_structure, fingerprint
@@ -24,6 +25,19 @@ def _describe_lock(lock):
         return 'lock ' + lock.read_text(encoding='utf-8').strip()[:120]
     except (OSError, UnicodeError):
         return 'lock owner unknown'
+
+
+def _release_lock(lock):
+    # On Windows a file another writer is briefly reading to report the lock owner cannot be deleted
+    # (WinError 32). The reader closes it at once, so a short bounded retry removes our own lock safely.
+    for attempt in range(20):
+        try:
+            lock.unlink()
+            return
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(0.05)
 
 
 def append_events(path, reports):
@@ -50,7 +64,7 @@ def append_events(path, reports):
             for event in events:
                 stream.write(json.dumps(event, ensure_ascii=False, separators=(',', ':')) + '\n')
     finally:
-        lock.unlink()
+        _release_lock(lock)
 
 
 def summarize(path):

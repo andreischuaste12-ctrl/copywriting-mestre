@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -102,6 +103,29 @@ class CliTests(unittest.TestCase):
         append_events(log, [report])
         self.assertFalse(lock.exists())
         self.assertNotIn('pid=', log.read_text(encoding='utf-8'))
+
+    def test_lock_release_survives_a_reader_holding_the_file_on_windows(self):
+        # Windows refuses to delete a file another handle has open; the owner must retry, not crash.
+        from copywriter_runtime import observability
+        lock = self.dir / 'held.lock'
+        lock.write_text('pid=1\n', encoding='utf-8')
+        real_unlink = Path.unlink
+        calls = []
+
+        def flaky_unlink(self, *args, **kwargs):
+            calls.append(1)
+            if len(calls) < 3:
+                raise PermissionError(32, 'The process cannot access the file')
+            return real_unlink(self, *args, **kwargs)
+
+        with mock.patch.object(Path, 'unlink', flaky_unlink), mock.patch.object(observability.time, 'sleep'):
+            observability._release_lock(lock)
+        self.assertEqual(len(calls), 3)
+        self.assertFalse(lock.exists())
+        with mock.patch.object(Path, 'unlink', side_effect=PermissionError(32, 'busy')), \
+                mock.patch.object(observability.time, 'sleep'):
+            with self.assertRaises(PermissionError):
+                observability._release_lock(lock)
 
 
 class EntrypointTests(unittest.TestCase):
